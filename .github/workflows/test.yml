@@ -71,11 +71,11 @@ jobs:
       - name: Install Node package
         working-directory: frontend
         run: |
-          npm install
+          make install
 
       - name: Build frontend
         run: |
-          npm run build
+          make build
         working-directory: frontend
 
       - name: Save cache

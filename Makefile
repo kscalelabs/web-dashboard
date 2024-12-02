@@ -1,13 +1,23 @@
 start:
-	@if [ -f env.sh ]; then source env.sh; fi; cd frontend && npm run dev
+	@if [ -f env.sh ]; then source env.sh; fi; pnpm run dev
+.PHONY: start
 
 format:
-	@cd frontend && npm run format
+	@pnpm run format
 .PHONY: format
 
 lint:
-	@cd frontend && npm run lint
+	@pnpm run lint
 .PHONY: lint
 
-test-frontend:
-	@cd frontend && npm run test -- --watchAll=false
+test:
+	@pnpm run test -- --watchAll=false
+.PHONY: test
+
+install:
+	@pnpm install
+.PHONY: install
+
+build:
+	@pnpm run build
+.PHONY: build
