@@ -56,8 +56,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Replace S3 bucket contents
+      - name: Trigger Amplify Deploy
         run: |
-          aws s3 rm s3://${{ secrets.AWS_FRONTEND_S3_BUCKET }} --recursive
-          aws s3 cp dist s3://${{ secrets.AWS_FRONTEND_S3_BUCKET }} --recursive
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          aws amplify start-job --app-id ${{ secrets.AMPLIFY_APP_ID }} --branch-name master --job-type RELEASE
