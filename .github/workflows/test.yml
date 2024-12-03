@@ -69,14 +69,12 @@ jobs:
             tests-
 
       - name: Install Node package
-        working-directory: frontend
         run: |
-          make install
+          npm install
 
       - name: Build frontend
         run: |
-          make build
-        working-directory: frontend
+          npm run build
 
       - name: Save cache
         uses: actions/cache/save@v3
