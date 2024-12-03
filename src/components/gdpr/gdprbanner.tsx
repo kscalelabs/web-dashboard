@@ -54,7 +54,7 @@ const GDPRBanner: React.FC = () => {
             improve it. We want to better understand how our website is used.
             You can find out more about our use of cookies in our
             <a
-              href="https://kscale.store/privacy"
+              href="https://kscale.dev/privacy"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-9 underline ml-1"

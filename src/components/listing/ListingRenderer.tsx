@@ -9,13 +9,8 @@ import ListingImageGallery from "@/components/listing/ListingImageGallery";
 import ListingMetadata from "@/components/listing/ListingMetadata";
 import ListingName from "@/components/listing/ListingName";
 import ListingOnshape from "@/components/listing/ListingOnshape";
-import ListingPayment from "@/components/listing/ListingPayment";
 import ListingRegisterRobot from "@/components/listing/ListingRegisterRobot";
-import {
-  Artifact,
-  InventoryType,
-  ListingResponse,
-} from "@/components/listing/types";
+import { Artifact, ListingResponse } from "@/components/listing/types";
 
 const ListingRenderer = ({ listing }: { listing: ListingResponse }) => {
   const {
@@ -33,12 +28,6 @@ const ListingRenderer = ({ listing }: { listing: ListingResponse }) => {
     user_vote: userVote,
     onshape_url: onshapeUrl,
     is_featured: isFeatured,
-    stripe_product_id: stripeProductId,
-    price_amount: priceAmount,
-    inventory_type: inventoryType,
-    inventory_quantity: inventoryQuantity,
-    preorder_release_date: preorderReleaseDate,
-    preorder_deposit_amount: preorderDepositAmount,
   } = listing;
   const [artifacts, setArtifacts] = useState(initialArtifacts);
   const [currentImageIndex, setCurrentImageIndex] = useState(() => {
@@ -47,7 +36,6 @@ const ListingRenderer = ({ listing }: { listing: ListingResponse }) => {
     );
     return firstImageIndex >= 0 ? firstImageIndex : 0;
   });
-  const isForSale = priceAmount && stripeProductId && inventoryType;
 
   const handleAddArtifacts = (newArtifacts: Artifact[]) => {
     setArtifacts((prevArtifacts) => [
@@ -101,22 +89,6 @@ const ListingRenderer = ({ listing }: { listing: ListingResponse }) => {
             description={description}
             edit={canEdit}
           />
-
-          {/* Add payment section if price exists */}
-          {isForSale && (
-            <>
-              <hr className="border-gray-2 my-4" />
-              <ListingPayment
-                listingId={listingId}
-                stripeProductId={stripeProductId}
-                priceAmount={priceAmount}
-                inventoryType={inventoryType as InventoryType}
-                inventoryQuantity={inventoryQuantity || undefined}
-                preorderReleaseDate={preorderReleaseDate || undefined}
-                preorderDepositAmount={preorderDepositAmount || undefined}
-              />
-            </>
-          )}
 
           <hr className="border-gray-200 my-4" />
 
