@@ -11,7 +11,7 @@ import { GoogleOAuthProvider, useGoogleLogin } from "@react-oauth/google";
 const GITHUB_OAUTH_URL_BASE =
   "https://github.com/login/oauth/authorize?scope=user:email&client_id=";
 
-const GoogleAuthButton = () => {
+const GoogleAuthButton = ({ isSignup }: { isSignup: boolean }) => {
   const [credential, setCredential] = useState<string | null>(null);
   const auth = useAuthentication();
   const { addErrorAlert } = useAlertQueue();
@@ -53,18 +53,21 @@ const GoogleAuthButton = () => {
 
   return (
     <Button
-      variant={"outline"}
-      size={"lg"}
-      className="w-full hover:bg-gray-6"
+      variant="outline"
+      size="lg"
+      className="w-full hover:bg-gray-9 dark:hover:bg-gray-800 flex items-center justify-center gap-3"
       onClick={() => handleGoogleLogin()}
       disabled={credential !== null}
     >
       <FcGoogle className="w-5 h-5" />
+      <span className="font-medium">
+        {isSignup ? "Sign up with Google" : "Login with Google"}
+      </span>
     </Button>
   );
 };
 
-const GoogleAuthButtonWrapper = () => {
+const GoogleAuthButtonWrapper = ({ isSignup }: { isSignup: boolean }) => {
   const [googleClientId, setGoogleClientId] = useState<string | null>(null);
   const auth = useAuthentication();
   const { addErrorAlert } = useAlertQueue();
@@ -86,19 +89,19 @@ const GoogleAuthButtonWrapper = () => {
     <Button
       variant={"outline"}
       size={"lg"}
-      className="w-full hover:bg-gray-6"
+      className="w-full hover:bg-gray-9 dark:hover:bg-gray-800 flex items-center justify-center gap-3"
       disabled={true}
     >
       <Spinner />
     </Button>
   ) : (
     <GoogleOAuthProvider clientId={googleClientId}>
-      <GoogleAuthButton />
+      <GoogleAuthButton isSignup={isSignup} />
     </GoogleOAuthProvider>
   );
 };
 
-const GithubAuthButton = () => {
+const GithubAuthButton = ({ isSignup }: { isSignup: boolean }) => {
   const [githubClientId, setGithubClientId] = useState<string | null>(null);
   const auth = useAuthentication();
   const { addErrorAlert } = useAlertQueue();
@@ -118,9 +121,9 @@ const GithubAuthButton = () => {
 
   return githubClientId === null ? (
     <Button
-      variant={"outline"}
-      size={"lg"}
-      className="w-full bg-gray-7"
+      variant="outline"
+      size="lg"
+      className="w-full bg-gray-9 flex items-center justify-center gap-3"
       disabled={true}
     >
       <Spinner />
@@ -129,31 +132,31 @@ const GithubAuthButton = () => {
     <Button
       variant="outline"
       size="lg"
-      className="w-full hover:bg-gray-7"
+      className="w-full hover:bg-gray-9 dark:hover:bg-gray-800 flex items-center justify-center gap-3"
       onClick={() => {
         window.open(`${GITHUB_OAUTH_URL_BASE}${githubClientId}`, "_self");
       }}
     >
       <FaGithub className="w-5 h-5" />
+      <span className="font-medium">
+        {isSignup ? "Sign up with GitHub" : "Login with GitHub"}
+      </span>
     </Button>
   );
 };
 
-const AuthProvider = () => {
-  return (
-    <div className="flex flex-col w-full">
-      <div className="flex justify-center items-center mb-4">
-        <div className="border-t border-gray-300 flex-grow mr-3"></div>
-        <span className="text-white flex-shrink">OR</span>
-        <div className="border-t border-gray-300 flex-grow ml-3"></div>
-      </div>
-      <div className="flex items-center w-full gap-x-2">
-        {/* Google */}
-        <GoogleAuthButtonWrapper />
+interface AuthProviderProps {
+  isSignup: boolean;
+}
 
-        {/* Github */}
-        <GithubAuthButton />
-      </div>
+const AuthProvider: React.FC<AuthProviderProps> = ({ isSignup }) => {
+  return (
+    <div className="flex flex-col w-full space-y-3">
+      {/* Google */}
+      <GoogleAuthButtonWrapper isSignup={isSignup} />
+
+      {/* Github */}
+      <GithubAuthButton isSignup={isSignup} />
     </div>
   );
 };

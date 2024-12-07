@@ -281,73 +281,7 @@ export const RenderProfile = (props: RenderProfileProps) => {
       </Card>
 
       <Card className="w-full max-w-4xl mx-auto">
-        <CardHeader>
-          {canEdit && <h2 className="text-2xl font-bold">Store</h2>}
-        </CardHeader>
-        <CardContent>
-          {canEdit && (
-            <>
-              <div className="mb-4">
-                {user.stripe_connect &&
-                !user.stripe_connect.onboarding_completed ? (
-                  <p className="text-gray-6 text-sm">
-                    Your Stripe account setup is not complete. Please resolve
-                    outstanding requirements to begin selling robots. It may
-                    take some time for Stripe to process your info between
-                    submissions.
-                  </p>
-                ) : user.stripe_connect &&
-                  user.stripe_connect.onboarding_completed ? (
-                  <p className="text-gray-6 text-sm">
-                    You are set up to sell robots on K-Scale.
-                  </p>
-                ) : (
-                  <p>Complete seller onboarding to sell robots on K-Scale</p>
-                )}
-              </div>
-              <div className="flex sm:flex-row flex-col gap-2 mb-8">
-                <Tooltip content="View your orders" position="bottom">
-                  <Button
-                    onClick={() => navigate(ROUTES.ORDERS.path)}
-                    variant="outline"
-                  >
-                    Orders
-                  </Button>
-                </Tooltip>
-                {!user.stripe_connect ? (
-                  <Tooltip content="Start selling on K-Scale" position="bottom">
-                    <Button
-                      onClick={() => navigate(ROUTES.SELL.ONBOARDING.path)}
-                      variant="outline"
-                    >
-                      Start Seller Onboarding
-                    </Button>
-                  </Tooltip>
-                ) : !user.stripe_connect.onboarding_completed ? (
-                  <Tooltip content="Continue onboarding" position="bottom">
-                    <Button
-                      onClick={() => navigate(ROUTES.SELL.ONBOARDING.path)}
-                      variant="outline"
-                    >
-                      Complete Seller Onboarding
-                    </Button>
-                  </Tooltip>
-                ) : (
-                  <Tooltip
-                    content="Sell Robots or View Your Dashboard"
-                    position="bottom"
-                  >
-                    <Button
-                      onClick={() => navigate(ROUTES.SELL.DASHBOARD.path)}
-                      variant="outline"
-                    >
-                      Seller Dashboard
-                    </Button>
-                  </Tooltip>
-                )}
-              </div>
-            </>
-          )}
+        <CardContent className="pt-6">
           <div className="flex flex-col items-center space-y-4">
             <Tabs
               defaultValue="own"
@@ -355,16 +289,15 @@ export const RenderProfile = (props: RenderProfileProps) => {
               onValueChange={setValue}
               value={value}
             >
-              <TabsList className="flex justify-center space-x-2 sm:space-x-4 mb-4">
+              <TabsList className="flex justify-center space-x-2 sm:space-x-4 mb-6 mt-2">
                 <Button
                   variant="outline"
                   asChild
-                  className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-gray-11 ${value === "own" ? "border text-gray-12" : ""}`}
+                  className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-gray-11 ${
+                    value === "own" ? "border text-gray-12" : ""
+                  }`}
                 >
-                  <TabsTrigger
-                    value="own"
-                    className="data-[state=active]:bg-gray-3"
-                  >
+                  <TabsTrigger value="own" className="data-[state=active]:bg-gray-3">
                     {getListingsTabLabel()}
                   </TabsTrigger>
                 </Button>
@@ -372,12 +305,11 @@ export const RenderProfile = (props: RenderProfileProps) => {
                   <Button
                     variant="outline"
                     asChild
-                    className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-gray-11 ${value === "upvoted" ? "border text-gray-12" : ""}`}
+                    className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-gray-11 ${
+                      value === "upvoted" ? "border text-gray-12" : ""
+                    }`}
                   >
-                    <TabsTrigger
-                      value="upvoted"
-                      className="data-[state=active]:bg-gray-3"
-                    >
+                    <TabsTrigger value="upvoted" className="data-[state=active]:bg-gray-3">
                       Upvoted Robots
                     </TabsTrigger>
                   </Button>
