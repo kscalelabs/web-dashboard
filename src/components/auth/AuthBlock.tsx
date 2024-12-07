@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import AuthProvider from "@/components/auth/AuthProvider";
-import LoginForm from "@/components/auth/LoginForm";
-import SignupWithEmail from "@/components/auth/SignupWithEmail";
 import {
   Card,
   CardContent,
@@ -40,6 +39,7 @@ export const AuthBlockInner: React.FC<{ initialSignup?: boolean }> = ({
 }) => {
   const auth = useAuthentication();
   const { addErrorAlert } = useAlertQueue();
+  const navigate = useNavigate();
 
   const [isSignup, setIsSignup] = useState(initialSignup ?? false);
   const [useSpinner, setUseSpinner] = useState(false);
@@ -78,15 +78,18 @@ export const AuthBlockInner: React.FC<{ initialSignup?: boolean }> = ({
 
   return (
     <>
-      <CardContent>
-        {isSignup ? <SignupWithEmail /> : <LoginForm />}
-      </CardContent>
       <CardFooter>
-        <AuthProvider />
+        <AuthProvider isSignup={isSignup} />
       </CardFooter>
       <CardFooter>
         <Button
-          onClick={() => setIsSignup((s) => !s)}
+          onClick={() => {
+            if (isSignup) {
+              navigate('/login');
+            } else {
+              navigate('/signup');
+            }
+          }}
           variant="link"
           className="w-full"
         >

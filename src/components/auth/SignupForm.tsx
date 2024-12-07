@@ -90,7 +90,6 @@ const SignupForm: React.FC<SignupFormProps> = ({ signupTokenId }) => {
       } else {
         addAlert("Registration successful! You can now log in.", "success");
         navigate(ROUTES.LOGIN.path);
-        // Sign user in automatically?
       }
     } catch (err) {
       addErrorAlert(err);
