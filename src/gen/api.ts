@@ -669,94 +669,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/orders/me": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Get User Orders */
-        get: operations["get_user_orders_orders_me_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/orders/{order_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Get Order */
-        get: operations["get_order_orders__order_id__get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/orders/shipping-address/{order_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        /** Update Order Shipping Address */
-        put: operations["update_order_shipping_address_orders_shipping_address__order_id__put"];
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/orders/admin/all": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get All Orders
-         * @description Get all orders (admin only).
-         */
-        get: operations["get_all_orders_orders_admin_all_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/orders/admin/status/{order_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        /** Update Order Status */
-        put: operations["update_order_status_orders_admin_status__order_id__put"];
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/robots/create": {
         parameters: {
             query?: never;
@@ -891,159 +803,6 @@ export interface paths {
         get: operations["get_robot_urdf_robots_urdf__listing_id__get"];
         put?: never;
         post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/stripe/refunds/{order_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        /** Refund Payment Intent */
-        put: operations["refund_payment_intent_stripe_refunds__order_id__put"];
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/stripe/webhook": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Stripe Webhook */
-        post: operations["stripe_webhook_stripe_webhook_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/stripe/connect/webhook": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Stripe Connect Webhook */
-        post: operations["stripe_connect_webhook_stripe_connect_webhook_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/stripe/checkout-session": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Create Checkout Session */
-        post: operations["create_checkout_session_stripe_checkout_session_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/stripe/get-product/{product_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Get Product */
-        get: operations["get_product_stripe_get_product__product_id__get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/stripe/connect/account": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Create Connect Account */
-        post: operations["create_connect_account_stripe_connect_account_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/stripe/connect/account/session": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Create Connect Account Session */
-        post: operations["create_connect_account_session_stripe_connect_account_session_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/stripe/connect/delete/accounts": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Delete Test Accounts */
-        post: operations["delete_test_accounts_stripe_connect_delete_accounts_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/stripe/process/preorder/{order_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Process Preorder */
-        post: operations["process_preorder_stripe_process_preorder__order_id__post"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1400,11 +1159,6 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        /** AdminOrdersResponse */
-        AdminOrdersResponse: {
-            /** Orders */
-            orders: components["schemas"]["OrderWithProduct"][];
-        };
         /** ArtifactUrls */
         ArtifactUrls: {
             /** Small */
@@ -1432,32 +1186,8 @@ export interface components {
             child_ids: string;
             /** Slug */
             slug: string;
-            /** Price Amount */
-            price_amount?: string | null;
-            /**
-             * Currency
-             * @default usd
-             */
-            currency: string;
-            /**
-             * Inventory Type
-             * @default finite
-             * @enum {string}
-             */
-            inventory_type: "finite" | "preorder";
-            /** Inventory Quantity */
-            inventory_quantity?: string | null;
-            /** Preorder Deposit Amount */
-            preorder_deposit_amount?: string | null;
-            /** Preorder Release Date */
-            preorder_release_date?: string | null;
             /** Photos */
             photos?: string[];
-        };
-        /** Body_create_connect_account_session_stripe_connect_account_session_post */
-        Body_create_connect_account_session_stripe_connect_account_session_post: {
-            /** Account Id */
-            account_id: string;
         };
         /** Body_pull_onshape_document_onshape_pull__listing_id__get */
         Body_pull_onshape_document_onshape_pull__listing_id__get: {
@@ -1475,13 +1205,6 @@ export interface components {
             /** Files */
             files: string[];
         };
-        /** CancelReason */
-        CancelReason: {
-            /** Reason */
-            reason: string;
-            /** Details */
-            details: string;
-        };
         /** CheckAuthResponse */
         CheckAuthResponse: {
             /** User Id */
@@ -1491,27 +1214,6 @@ export interface components {
         ClientIdResponse: {
             /** Client Id */
             client_id: string;
-        };
-        /** CreateCheckoutSessionRequest */
-        CreateCheckoutSessionRequest: {
-            /** Listing Id */
-            listing_id: string;
-            /** Stripe Product Id */
-            stripe_product_id: string;
-            /** Cancel Url */
-            cancel_url: string;
-        };
-        /** CreateCheckoutSessionResponse */
-        CreateCheckoutSessionResponse: {
-            /** Session Id */
-            session_id: string;
-            /** Stripe Connect Account Id */
-            stripe_connect_account_id: string;
-        };
-        /** CreateConnectAccountResponse */
-        CreateConnectAccountResponse: {
-            /** Account Id */
-            account_id: string;
         };
         /** CreateKRecRequest */
         CreateKRecRequest: {
@@ -1531,14 +1233,6 @@ export interface components {
             /** Expires At */
             expires_at: number;
         };
-        /** CreateRefundsRequest */
-        CreateRefundsRequest: {
-            /** Payment Intent Id */
-            payment_intent_id: string;
-            cancel_reason: components["schemas"]["CancelReason"];
-            /** Amount */
-            amount: number;
-        };
         /** CreateRobotRequest */
         CreateRobotRequest: {
             /** Listing Id */
@@ -1554,15 +1248,6 @@ export interface components {
         CreateRobotResponse: {
             /** Robot Id */
             robot_id: string;
-        };
-        /** DeleteTestAccountsResponse */
-        DeleteTestAccountsResponse: {
-            /** Success */
-            success: boolean;
-            /** Deleted Accounts */
-            deleted_accounts: string[];
-            /** Count */
-            count: number;
         };
         /** DeleteTokenResponse */
         DeleteTokenResponse: {
@@ -1629,24 +1314,6 @@ export interface components {
             onshape_url: string | null;
             /** Is Featured */
             is_featured: boolean;
-            /** Currency */
-            currency?: string | null;
-            /** Price Amount */
-            price_amount?: number | null;
-            /** Stripe Product Id */
-            stripe_product_id?: string | null;
-            /** Stripe Price Id */
-            stripe_price_id?: string | null;
-            /** Preorder Deposit Amount */
-            preorder_deposit_amount?: number | null;
-            /** Stripe Preorder Deposit Id */
-            stripe_preorder_deposit_id?: string | null;
-            /** Preorder Release Date */
-            preorder_release_date?: number | null;
-            /** Inventory Type */
-            inventory_type?: string | null;
-            /** Inventory Quantity */
-            inventory_quantity?: number | null;
         };
         /** GetTokenResponse */
         GetTokenResponse: {
@@ -1778,31 +1445,6 @@ export interface components {
              * @default 0
              */
             score: number;
-            /** Price Amount */
-            price_amount?: number | null;
-            /**
-             * Currency
-             * @default usd
-             */
-            currency: string;
-            /** Stripe Product Id */
-            stripe_product_id?: string | null;
-            /** Stripe Price Id */
-            stripe_price_id?: string | null;
-            /** Preorder Deposit Amount */
-            preorder_deposit_amount?: number | null;
-            /** Stripe Preorder Deposit Id */
-            stripe_preorder_deposit_id?: string | null;
-            /**
-             * Inventory Type
-             * @default finite
-             * @enum {string}
-             */
-            inventory_type: "finite" | "preorder";
-            /** Inventory Quantity */
-            inventory_quantity?: number | null;
-            /** Preorder Release Date */
-            preorder_release_date?: number | null;
         };
         /** ListingInfo */
         ListingInfo: {
@@ -1839,14 +1481,6 @@ export interface components {
             score: number;
             /** User Vote */
             user_vote: boolean | null;
-            /** Price Amount */
-            price_amount: number | null;
-            /** Currency */
-            currency: string | null;
-            /** Inventory Type */
-            inventory_type: ("finite" | "preorder") | null;
-            /** Inventory Quantity */
-            inventory_quantity: number | null;
         };
         /** LoginRequest */
         LoginRequest: {
@@ -1885,7 +1519,6 @@ export interface components {
             name: string | null;
             /** Bio */
             bio: string | null;
-            stripe_connect: components["schemas"]["UserStripeConnect"] | null;
         };
         /** NewKeyRequest */
         NewKeyRequest: {
@@ -1910,138 +1543,12 @@ export interface components {
             /** Slug */
             slug: string;
         };
-        /**
-         * Order
-         * @description Tracks completed user orders through Stripe.
-         */
-        Order: {
-            /** Id */
-            id: string;
-            /** User Id */
-            user_id: string;
-            /** Listing Id */
-            listing_id: string;
-            /** User Email */
-            user_email: string;
-            /** Created At */
-            created_at: number;
-            /** Updated At */
-            updated_at: number;
-            /**
-             * Status
-             * @enum {string}
-             */
-            status: "processing" | "in_development" | "being_assembled" | "shipped" | "delivered" | "preorder_placed" | "awaiting_final_payment" | "cancelled" | "refunded";
-            /** Price Amount */
-            price_amount: number;
-            /** Currency */
-            currency: string;
-            /** Quantity */
-            quantity: number;
-            /** Stripe Checkout Session Id */
-            stripe_checkout_session_id: string;
-            /** Stripe Connect Account Id */
-            stripe_connect_account_id: string;
-            /** Stripe Product Id */
-            stripe_product_id: string;
-            /** Stripe Price Id */
-            stripe_price_id: string;
-            /** Stripe Payment Intent Id */
-            stripe_payment_intent_id: string;
-            /** Preorder Release Date */
-            preorder_release_date?: number | null;
-            /** Preorder Deposit Amount */
-            preorder_deposit_amount?: number | null;
-            /** Stripe Preorder Deposit Id */
-            stripe_preorder_deposit_id?: string | null;
-            /**
-             * Inventory Type
-             * @enum {string}
-             */
-            inventory_type: "finite" | "preorder";
-            /** Final Payment Checkout Session Id */
-            final_payment_checkout_session_id?: string | null;
-            /** Final Payment Intent Id */
-            final_payment_intent_id?: string | null;
-            /** Final Payment Date */
-            final_payment_date?: number | null;
-            /** Shipping Name */
-            shipping_name?: string | null;
-            /** Shipping Address Line1 */
-            shipping_address_line1?: string | null;
-            /** Shipping Address Line2 */
-            shipping_address_line2?: string | null;
-            /** Shipping City */
-            shipping_city?: string | null;
-            /** Shipping State */
-            shipping_state?: string | null;
-            /** Shipping Postal Code */
-            shipping_postal_code?: string | null;
-            /** Shipping Country */
-            shipping_country?: string | null;
-            /** Shipped Date */
-            shipped_date?: number | null;
-            /** Stripe Refund Id */
-            stripe_refund_id?: string | null;
-            /** Delivered Date */
-            delivered_date?: number | null;
-            /** Cancelled Date */
-            cancelled_date?: number | null;
-            /** Refunded Date */
-            refunded_date?: number | null;
-        };
-        /** OrderWithProduct */
-        OrderWithProduct: {
-            order: components["schemas"]["Order"];
-            product: components["schemas"]["ProductInfo"] | null;
-        };
         /** PresignedUrlResponse */
         PresignedUrlResponse: {
             /** Upload Url */
             upload_url: string;
             /** Artifact Id */
             artifact_id: string;
-        };
-        /** ProcessPreorderResponse */
-        ProcessPreorderResponse: {
-            /** Status */
-            status: string;
-            /** Checkout Session */
-            checkout_session: Record<string, never>;
-        };
-        /** ProductInfo */
-        ProductInfo: {
-            /** Id */
-            id: string;
-            /** Name */
-            name: string;
-            /** Description */
-            description: string | null;
-            /** Images */
-            images: string[];
-            /** Metadata */
-            metadata: {
-                [key: string]: string;
-            };
-            /** Active */
-            active: boolean;
-        };
-        /** ProductResponse */
-        ProductResponse: {
-            /** Id */
-            id: string;
-            /** Name */
-            name: string;
-            /** Description */
-            description: string | null;
-            /** Images */
-            images: string[];
-            /** Metadata */
-            metadata: {
-                [key: string]: string;
-            };
-            /** Active */
-            active: boolean;
         };
         /** PublicUserInfoResponseItem */
         PublicUserInfoResponseItem: {
@@ -2232,49 +1739,6 @@ export interface components {
             onshape_url?: string | null;
             /** Slug */
             slug?: string | null;
-            /** Stripe Product Id */
-            stripe_product_id?: string | null;
-            /** Stripe Price Id */
-            stripe_price_id?: string | null;
-            /** Stripe Deposit Price Id */
-            stripe_deposit_price_id?: string | null;
-            /** Price Amount */
-            price_amount?: number | null;
-            /** Preorder Release Date */
-            preorder_release_date?: number | null;
-            /** Preorder Deposit Amount */
-            preorder_deposit_amount?: number | null;
-            /** Stripe Preorder Deposit Id */
-            stripe_preorder_deposit_id?: string | null;
-            /** Inventory Type */
-            inventory_type?: ("finite" | "preorder") | null;
-            /** Inventory Quantity */
-            inventory_quantity?: number | null;
-        };
-        /** UpdateOrderAddressRequest */
-        UpdateOrderAddressRequest: {
-            /** Shipping Name */
-            shipping_name: string;
-            /** Shipping Address Line1 */
-            shipping_address_line1: string;
-            /** Shipping Address Line2 */
-            shipping_address_line2: string | null;
-            /** Shipping City */
-            shipping_city: string;
-            /** Shipping State */
-            shipping_state: string;
-            /** Shipping Postal Code */
-            shipping_postal_code: string;
-            /** Shipping Country */
-            shipping_country: string;
-        };
-        /** UpdateOrderStatusRequest */
-        UpdateOrderStatusRequest: {
-            /**
-             * Status
-             * @enum {string}
-             */
-            status: "processing" | "in_development" | "being_assembled" | "shipped" | "delivered" | "preorder_placed" | "awaiting_final_payment" | "cancelled" | "refunded";
         };
         /** UpdateRobotRequest */
         UpdateRobotRequest: {
@@ -2349,7 +1813,6 @@ export interface components {
             name?: string | null;
             /** Bio */
             bio?: string | null;
-            stripe_connect?: components["schemas"]["UserStripeConnect"] | null;
         };
         /** UserSignup */
         UserSignup: {
@@ -2359,16 +1822,6 @@ export interface components {
             email: string;
             /** Password */
             password: string;
-        };
-        /**
-         * UserStripeConnect
-         * @description Defines information for the user's Stripe Connect account.
-         */
-        UserStripeConnect: {
-            /** Account Id */
-            account_id: string;
-            /** Onboarding Completed */
-            onboarding_completed: boolean;
         };
         /** ValidationError */
         ValidationError: {
@@ -3617,147 +3070,6 @@ export interface operations {
             };
         };
     };
-    get_user_orders_orders_me_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["OrderWithProduct"][];
-                };
-            };
-        };
-    };
-    get_order_orders__order_id__get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                order_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["OrderWithProduct"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    update_order_shipping_address_orders_shipping_address__order_id__put: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                order_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["UpdateOrderAddressRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Order"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    get_all_orders_orders_admin_all_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["AdminOrdersResponse"];
-                };
-            };
-        };
-    };
-    update_order_status_orders_admin_status__order_id__put: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                order_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["UpdateOrderStatusRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Order"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
     create_robot_robots_create_post: {
         parameters: {
             query?: never;
@@ -3955,255 +3267,6 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["RobotURDFResponse"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    refund_payment_intent_stripe_refunds__order_id__put: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                order_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["CreateRefundsRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Order"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    stripe_webhook_stripe_webhook_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: string;
-                    };
-                };
-            };
-        };
-    };
-    stripe_connect_webhook_stripe_connect_webhook_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: string;
-                    };
-                };
-            };
-        };
-    };
-    create_checkout_session_stripe_checkout_session_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["CreateCheckoutSessionRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CreateCheckoutSessionResponse"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    get_product_stripe_get_product__product_id__get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                product_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ProductResponse"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    create_connect_account_stripe_connect_account_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CreateConnectAccountResponse"];
-                };
-            };
-        };
-    };
-    create_connect_account_session_stripe_connect_account_session_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["Body_create_connect_account_session_stripe_connect_account_session_post"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: string;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    delete_test_accounts_stripe_connect_delete_accounts_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["DeleteTestAccountsResponse"];
-                };
-            };
-        };
-    };
-    process_preorder_stripe_process_preorder__order_id__post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                order_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ProcessPreorderResponse"];
                 };
             };
             /** @description Validation Error */
