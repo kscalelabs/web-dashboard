@@ -60,20 +60,6 @@ const ListingGridCard = ({
             />
           </div>
         )}
-        {listing?.price_amount && (
-          <div className="mt-2 text-sm text-gray-300">
-            {formatPrice(listing.price_amount)}
-            {listing.inventory_type === "finite" &&
-              listing.inventory_quantity !== null && (
-                <span className="ml-2 text-gray-400">
-                  ({listing.inventory_quantity} available)
-                </span>
-              )}
-            {listing.inventory_type === "preorder" && (
-              <span className="ml-2 text-gray-400">(Pre-order)</span>
-            )}
-          </div>
-        )}
       </div>
     </div>
   );

@@ -34,12 +34,6 @@ const TERMINAL_NAV_ITEM: BaseNavItem = {
   icon: <FaTerminal />,
 };
 
-const ADMIN_NAV_ITEM: BaseNavItem = {
-  name: "Admin",
-  path: ROUTES.ADMIN.path,
-  icon: <FaChartBar />,
-};
-
 export const AUTHENTICATED_NAV_ITEMS: BaseNavItem[] = [];
 
 export const getNavItems = (
@@ -49,7 +43,7 @@ export const getNavItems = (
   let navItems = [...DEFAULT_NAV_ITEMS];
 
   if (isAdmin) {
-    navItems = [ADMIN_NAV_ITEM, TERMINAL_NAV_ITEM, ...navItems];
+    navItems = [TERMINAL_NAV_ITEM, ...navItems];
   }
 
   if (isAuthenticated) {

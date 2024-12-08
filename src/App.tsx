@@ -13,28 +13,20 @@ import Navbar from "@/components/nav/Navbar";
 import APIKeys from "@/components/pages/APIKeys";
 import About from "@/components/pages/About";
 import Account from "@/components/pages/Account";
-import AdminDashboard from "@/components/pages/AdminDashboard";
 import Browse from "@/components/pages/Browse";
-import CreateSell from "@/components/pages/CreateSell";
 import CreateShare from "@/components/pages/CreateShare";
-import DeleteConnect from "@/components/pages/DeleteConnect";
 import EmailSignup from "@/components/pages/EmailSignup";
 import Eula from "@/components/pages/Eula";
 import FileBrowser from "@/components/pages/FileBrowser";
 import Home from "@/components/pages/Home";
-import KBotPreorderTerms from "@/components/pages/KBotPreorderTerms";
 import LinkRobot from "@/components/pages/LinkRobot";
 import Listing from "@/components/pages/Listing";
 import Login from "@/components/pages/Login";
 import Logout from "@/components/pages/Logout";
 import NotFound from "@/components/pages/NotFound";
-import OrderSuccess from "@/components/pages/OrderSuccess";
-import OrdersPage from "@/components/pages/Orders";
 import PrivacyPolicy from "@/components/pages/PrivacyPolicy";
 import Profile from "@/components/pages/Profile";
 import ResearchPage from "@/components/pages/ResearchPage";
-import SellerDashboard from "@/components/pages/SellerDashboard";
-import SellerOnboarding from "@/components/pages/SellerOnboarding";
 import Signup from "@/components/pages/Signup";
 import Terminal from "@/components/pages/Terminal";
 import TermsOfService from "@/components/pages/TermsOfService";
@@ -74,10 +66,6 @@ const App = () => {
                           path={ROUTES.PRIVACY.path}
                           element={<PrivacyPolicy />}
                         />
-                        <Route
-                          path={ROUTES.PREORDER_TERMS.path}
-                          element={<KBotPreorderTerms />}
-                        />
                         <Route path={ROUTES.EULA.path} element={<Eula />} />
 
                         {/* Account */}
@@ -99,7 +87,6 @@ const App = () => {
                         />
 
                         {/* Listings */}
-                        <Route path={"/create"} element={<CreateSell />} />
                         <Route path={ROUTES.BOTS.path}>
                           <Route
                             path={ROUTES.BOTS.$.BROWSE.relativePath}
@@ -109,43 +96,11 @@ const App = () => {
                             path={ROUTES.BOTS.$.CREATE.relativePath}
                             element={<CreateShare />}
                           />
-                          <Route
-                            path={ROUTES.BOTS.$.SELL.relativePath}
-                            element={<CreateSell />}
-                          />
                         </Route>
                         <Route path={ROUTES.BOT.path} element={<Listing />} />
                         <Route
                           path={ROUTES.FILE.path}
                           element={<FileBrowser />}
-                        />
-
-                        {/* Seller */}
-                        <Route path={ROUTES.SELL.path}>
-                          <Route
-                            path={ROUTES.SELL.$.ONBOARDING.relativePath}
-                            element={<SellerOnboarding />}
-                          />
-                          <Route
-                            path={ROUTES.SELL.$.DASHBOARD.relativePath}
-                            element={<SellerDashboard />}
-                          />
-                          <Route
-                            path={ROUTES.SELL.$.DELETE.relativePath}
-                            element={<DeleteConnect />}
-                          />
-                        </Route>
-
-                        {/* Orders */}
-                        <Route path={ROUTES.ORDER.path}>
-                          <Route
-                            path={ROUTES.ORDER.$.SUCCESS.relativePath}
-                            element={<OrderSuccess />}
-                          />
-                        </Route>
-                        <Route
-                          path={ROUTES.ORDERS.path}
-                          element={<OrdersPage />}
                         />
 
                         {/* Terminal */}
@@ -162,11 +117,6 @@ const App = () => {
                         <Route
                           path={ROUTES.LINK.path}
                           element={<LinkRobot />}
-                        />
-
-                        <Route
-                          path={ROUTES.ADMIN.path}
-                          element={<AdminDashboard />}
                         />
 
                         {/* Not found */}
