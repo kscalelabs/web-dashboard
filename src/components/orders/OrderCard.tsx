@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import AdminManageOrder from "@/components/admin/AdminManageOrder";
-import CancelOrderModal from "@/components/modals/CancelOrderModal";
 import EditAddressModal from "@/components/modals/EditAddressModal";
 import {
   DropdownMenu,
