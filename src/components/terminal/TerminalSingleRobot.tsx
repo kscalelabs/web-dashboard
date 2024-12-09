@@ -39,6 +39,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
   const [krecs, setKrecs] = useState<KRec[]>([]);
   const [deleteKrecId, setDeleteKrecId] = useState<string | null>(null);
   const [selectedKrec, setSelectedKrec] = useState<KRec | null>(null);
+  const [krecInfo, setKrecInfo] = useState<any>(null);
 
   const addTerminalMessage = (message: string) => {
     setTerminalMessages((prev) => [...prev, message]);
@@ -128,6 +129,21 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
 
     fetchKrecs();
   }, [robot.robot_id]);
+
+  const handleKrecSelect = async (krec: KRec) => {
+    setSelectedKrec(krec);
+    const info = await fetchKrecInfo(krec.id);
+    setKrecInfo(info);
+    addTerminalMessage(`KRec URL: ${info?.urls?.url || 'No URL found'}`);
+  };
+
+  const getCleanRrdUrl = (url: string) => {
+    const rrdIndex = url.indexOf('.rrd');
+    if (rrdIndex !== -1) {
+      return url.substring(0, rrdIndex + 4); // +4 to include '.rrd'
+    }
+    return url;
+  };
 
   return (
     <div className="min-h-screen bg-black p-4 font-mono text-white">
@@ -317,7 +333,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
                       <div
                         key={file.id}
                         className="flex flex-col sm:flex-row sm:items-center justify-between p-2 hover:bg-gray-900 rounded cursor-pointer"
-                        onClick={() => setSelectedKrec(file)}
+                        onClick={() => handleKrecSelect(file)}
                       >
                         <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
@@ -339,7 +355,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
 
         {selectedKrec && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-black border border-gray-700 rounded-lg w-full max-w-4xl">
+            <div className="bg-black border border-gray-700 rounded-lg w-full max-w-7xl h-[90vh]">
               <div className="p-4 border-b border-gray-700 flex justify-between items-center">
                 <h3 className="text-lg font-semibold">{selectedKrec.name}</h3>
                 <div className="flex gap-2">
@@ -363,10 +379,22 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
                   </Button>
                 </div>
               </div>
-              <div className="p-4 flex flex-col items-center justify-center h-[400px]">
+              <div className="p-4 flex flex-col items-center justify-center h-[calc(90vh-80px)]">
                 <span className="text-gray-500 mb-4">
-                  Video Playback Coming Soon
+                  Rerun Viewer
                 </span>
+                {selectedKrec && krecInfo?.urls?.url && (
+                  <>
+                    <div className="text-xs text-gray-500 mb-2">
+                      Loading RRD file: {selectedKrec.name}
+                    </div>
+                    <iframe 
+                      src={`https://app.rerun.io/version/0.20.0/?url=${encodeURIComponent(getCleanRrdUrl(krecInfo.urls.url))}`}
+                      className="w-full h-full min-h-[300px] border-0"
+                      onError={(e) => addTerminalMessage(`Iframe error: ${e}`)}
+                    />
+                  </>
+                )}
                 <Button
                   variant="default"
                   onClick={async () => {
