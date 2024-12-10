@@ -2,6 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*@font-face {*/
+  /*  font-family: "KMR Apparat";*/
+  /*  src: url("/assets/fonts/trial/KMR-Apparat-Bold.woff") format("woff");*/
+  /*  font-weight: bold;*/
+  /*  font-style: normal;*/
+  /*}*/
+
+  /*@font-face {*/
+  /*  font-family: "KMR Apparat";*/
+  /*  src: url("/assets/fonts/trial/KMR-Apparat-Medium.woff") format("woff");*/
+  /*  font-weight: 500;*/
+  /*  font-style: normal;*/
+  /*}*/
+
+  @font-face {
+    font-family: "GT Planar";
+    src:
+            url("/assets/fonts/GT-Planar-Regular.woff") format("woff"),
+            url("/assets/fonts/GT-Planar-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "CoFo Sans Mono", monospace, monospace;
+    src:
+            url("/assets/fonts/CoFoSansMono-Regular.woff") format("woff"),
+            url("/assets/fonts/CoFoSansMono-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  :root {
+    --background: #f8f4f2;
+    --foreground: #120e15;
+    --off-white: #f8f4f2;
+    --off-black: #120e15;
+    --accent-aubergine: #7d0d8c;
+    --accent-dragonfruit: #b90674;
+    --accent-apple: #c90e33;
+    --accent-blood-orange: #fa4300;
+    --accent-tangerine: #ff9000;
+    --accent-butter: #f2f091;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0f0f10;
+      --foreground: #ede6e1;
+      --off-black: #0f0f10;
+      --off-white: #ede6e1;
+      --accent-aubergine: #771584;
+      --accent-dragonfruit: #a81770;
+      --accent-apple: #98253c;
+      --accent-blood-orange: #de4208;
+      --accent-tangerine: #f18a03;
+      --accent-butter: #eae9bc;
+    }
+  }
+}
+
+*::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
 :root {
   --radius: 0.5rem;
   --font-mono: monospace;
