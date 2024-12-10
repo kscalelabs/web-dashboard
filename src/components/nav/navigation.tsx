@@ -1,5 +1,4 @@
 import { FaRobot, FaTerminal } from "react-icons/fa";
-import { FaChartBar, FaRegFileLines } from "react-icons/fa6";
 
 import ROUTES from "@/lib/types/routes";
 
@@ -19,12 +18,6 @@ export const DEFAULT_NAV_ITEMS: BaseNavItem[] = [
     name: "Robots Hub",
     path: ROUTES.BOTS.BROWSE.path,
     icon: <FaRobot />,
-  },
-  {
-    name: "Docs",
-    path: "https://docs.kscale.dev/",
-    isExternal: true,
-    icon: <FaRegFileLines />,
   },
 ];
 

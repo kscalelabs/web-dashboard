@@ -21,6 +21,8 @@ const Navbar = () => {
   const isAdmin = currentUser?.permissions?.includes("is_admin") ?? false;
   const navItems = getNavItems(isAuthenticated, isAdmin);
 
+  const isSignupPage = location.pathname === ROUTES.SIGNUP.path;
+
   const handleFeaturedClick = (username: string, slug: string | null) => {
     const path = ROUTES.BOT.buildPath({
       username,
@@ -37,7 +39,7 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between py-3 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 font-mono">
           <div className="flex items-center justify-between w-full lg:w-auto gap-3">
             <Link
-              to={ROUTES.HOME.path}
+              to={isAuthenticated ? ROUTES.HOME.path : ROUTES.LOGIN.path}
               className="flex items-center lg:flex-grow-0 bg-black border border-gray-1 p-2"
             >
               <span className="text-gray-1 text-lg">K-Scale Labs</span>
@@ -82,7 +84,7 @@ const Navbar = () => {
                   </Button>
                 ))}
               </div>
-              {navItems.map((item) =>
+              {isAuthenticated && navItems.map((item) =>
                 item.isExternal ? (
                   <NavButton
                     key={item.path}
@@ -120,20 +122,12 @@ const Navbar = () => {
                   </NavButton>
                 </>
               ) : (
-                <>
-                  <NavButton
-                    to={ROUTES.LOGIN.path}
-                    currentPath={location.pathname}
-                  >
-                    Log In
-                  </NavButton>
-                  <NavButton
-                    to={ROUTES.SIGNUP.path}
-                    currentPath={location.pathname}
-                  >
-                    Sign Up
-                  </NavButton>
-                </>
+                <NavButton
+                  to={isSignupPage ? ROUTES.SIGNUP.path : ROUTES.LOGIN.path}
+                  currentPath={location.pathname}
+                >
+                  {isSignupPage ? "Sign Up" : "Log In"}
+                </NavButton>
               )}
             </div>
           </div>
