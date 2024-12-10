@@ -55,6 +55,15 @@ const Sidebar = ({ show, onClose }: SidebarProps) => {
     }
   };
 
+  const filteredNavItems = navItems.filter(item => {
+    if (!isAuthenticated && item.path.includes('/bots/browse')) {
+      return false;
+    }
+    return true;
+  });
+
+  const hasNavItems = filteredNavItems.length > 0;
+
   return (
     <>
       {show && (
@@ -86,22 +95,24 @@ const Sidebar = ({ show, onClose }: SidebarProps) => {
                         }
                       />
                     ))}
-                    <div className="border-t border-gray-1"></div>
+                    {hasNavItems && <div className="border-t border-gray-1"></div>}
                   </div>
                 )}
-                <div className="flex flex-col gap-2 py-2">
-                  {navItems.map((item) => (
-                    <SidebarItem
-                      key={item.name}
-                      title={item.name}
-                      icon={item.icon}
-                      onClick={() =>
-                        handleItemClick(item.path, item.isExternal)
-                      }
-                      isExternal={item.isExternal}
-                    />
-                  ))}
-                </div>
+                {hasNavItems && (
+                  <div className="flex flex-col gap-2 py-2">
+                    {filteredNavItems.map((item) => (
+                      <SidebarItem
+                        key={item.name}
+                        title={item.name}
+                        icon={item.icon}
+                        onClick={() =>
+                          handleItemClick(item.path, item.isExternal)
+                        }
+                        isExternal={item.isExternal}
+                      />
+                    ))}
+                  </div>
+                )}
                 <div className="border-t border-gray-1"></div>
                 {isAuthenticated ? (
                   <div className="flex flex-col gap-2 py-2">
@@ -117,12 +128,8 @@ const Sidebar = ({ show, onClose }: SidebarProps) => {
                 ) : (
                   <div className="flex flex-col gap-2 py-4">
                     <SidebarItem
-                      title="Sign In"
+                      title="Log In"
                       onClick={() => handleItemClick("/login")}
-                    />
-                    <SidebarItem
-                      title="Sign Up"
-                      onClick={() => handleItemClick("/signup")}
                     />
                   </div>
                 )}

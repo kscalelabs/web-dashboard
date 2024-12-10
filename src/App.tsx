@@ -33,6 +33,7 @@ import TermsOfService from "@/components/pages/TermsOfService";
 import { AlertQueue, AlertQueueProvider } from "@/hooks/useAlertQueue";
 import { AuthenticationProvider } from "@/hooks/useAuth";
 import ROUTES from "@/lib/types/routes";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
 const App = () => {
   return (
@@ -50,10 +51,28 @@ const App = () => {
                   <div className="flex-grow">
                     <div className="mt-24 mb-6 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 max-full">
                       <Routes>
-                        <Route path={ROUTES.HOME.path} element={<Home />} />
+                        {/* Public routes */}
+                        <Route path={ROUTES.LOGIN.path} element={<Login />} />
+                        <Route path={ROUTES.SIGNUP.path} element={<Signup />} />
+                        <Route path={ROUTES.SIGNUP.EMAIL.path} element={<EmailSignup />} />
+
+                        {/* Protected routes */}
+                        <Route
+                          path={ROUTES.HOME.path}
+                          element={
+                            <ProtectedRoute>
+                              <Home />
+                            </ProtectedRoute>
+                          }
+                        />
 
                         {/* General pages */}
-                        <Route path={ROUTES.ABOUT.path} element={<About />} />
+                        <Route
+                          path={ROUTES.ABOUT.path}
+                          element={
+                              <About />
+                          }
+                        />
                         <Route
                           path={ROUTES.RESEARCH.path}
                           element={<ResearchPage />}
@@ -90,14 +109,25 @@ const App = () => {
                         <Route path={ROUTES.BOTS.path}>
                           <Route
                             path={ROUTES.BOTS.$.BROWSE.relativePath}
-                            element={<Browse />}
+                            element={
+                              <ProtectedRoute>
+                                <Browse />
+                              </ProtectedRoute>
+                            }
                           />
                           <Route
                             path={ROUTES.BOTS.$.CREATE.relativePath}
                             element={<CreateShare />}
                           />
                         </Route>
-                        <Route path={ROUTES.BOT.path} element={<Listing />} />
+                        <Route
+                          path={ROUTES.BOT.path}
+                          element={
+                            <ProtectedRoute>
+                              <Listing />
+                            </ProtectedRoute>
+                          }
+                        />
                         <Route
                           path={ROUTES.FILE.path}
                           element={<FileBrowser />}
@@ -122,7 +152,11 @@ const App = () => {
                         {/* Not found */}
                         <Route
                           path={ROUTES.NOT_FOUND.path}
-                          element={<NotFound />}
+                          element={
+                            <ProtectedRoute>
+                              <NotFound />
+                            </ProtectedRoute>
+                          }
                         />
                         <Route path="*" element={<NotFoundRedirect />} />
                       </Routes>
