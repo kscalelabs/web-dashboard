@@ -23,7 +23,7 @@ export const NavButton = ({
       <Button
         asChild
         variant="outline"
-        className="px-2 xl:px-3 py-2 text-sm tracking-wide xl:tracking-widest text-gray-1"
+        className="px-2 xl:px-3 py-2 text-sm tracking-wide xl:tracking-widest text-foreground"
       >
         <a
           href={to}
@@ -42,7 +42,7 @@ export const NavButton = ({
     <Button
       asChild
       variant={isActive ? "ghost" : "outline"}
-      className={`px-3 py-2 text-gray-1 ${
+      className={`px-3 py-2 text-foreground ${
         isActive ? "underline underline-offset-4 decoration-2" : ""
       }`}
     >

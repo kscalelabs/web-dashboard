@@ -4,7 +4,7 @@ import Container from "@/components/ui/container";
 const About = () => {
   return (
     <Container>
-      <div className="text-center bg-gray-12 text-gray-1 rounded-lg p-8">
+      <div className="text-center bg-background text-foreground rounded-lg p-8">
         <h1 className="text-4xl font-bold mb-4">K-Scale Labs</h1>
 
         <div className="my-6">

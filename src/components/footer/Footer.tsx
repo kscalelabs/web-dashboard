@@ -24,7 +24,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-gray-12 text-gray-1 py-10 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 rounded-lg mb-6">
+    <footer className="bg-background text-foreground py-10 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 rounded-lg mb-6">
       <div className="max-w-screen-lg lg:max-w-full mx-auto px-4 sm:px-6 md:px-10">
         {/* Logo and Social Links */}
         <div className="flex flex-col sm:flex-row items-start justify-between sm:items-center mb-8">
@@ -64,16 +64,16 @@ const Footer = () => {
         {/* Footer Links */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           <div className="flex flex-col items-start gap-2">
-            <h2 className="text-base font-bold mb-1">Company</h2>
-            <Link to={ROUTES.ABOUT.path} className="hover:text-primary-9">
+            <h2 className="text-foreground font-bold mb-1">Company</h2>
+            <Link to={ROUTES.ABOUT.path} className="text-foreground bg-background hover:text-background hover:bg-foreground ">
               About
             </Link>
-            <Link to={ROUTES.RESEARCH.path} className="hover:text-primary-9">
+            <Link to={ROUTES.RESEARCH.path} className="text-foreground bg-background hover:text-background hover:bg-foreground ">
               Research
             </Link>
             <Link
               to="https://mailchi.mp/kscale/subscribe"
-              className="hover:text-primary-9"
+              className="text-foreground bg-background hover:text-background hover:bg-foreground "
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -81,19 +81,19 @@ const Footer = () => {
             </Link>
           </div>
           <div className="flex flex-col items-start gap-2">
-            <h2 className="text-base font-bold mb-1">Legal</h2>
-            <Link to={ROUTES.TOS.path} className="hover:text-primary-9">
+            <h2 className="text-foreground font-bold mb-1">Legal</h2>
+            <Link to={ROUTES.TOS.path} className="text-foreground bg-background hover:text-background hover:bg-foreground ">
               Terms of Service
             </Link>
-            <Link to={ROUTES.PRIVACY.path} className="hover:text-primary-9">
+            <Link to={ROUTES.PRIVACY.path} className="text-foreground bg-background hover:text-background hover:bg-foreground ">
               Privacy Policy
             </Link>
           </div>
           <div className="flex flex-col items-start gap-2">
-            <div className="text-base font-bold mb-1">Product</div>
+            <div className="text-foreground font-bold mb-1">Product</div>
             <a
               href="https://forms.gle/HB5uj5r5mGQZUBtd8"
-              className="hover:text-primary-9"
+              className="text-foreground bg-background hover:text-background hover:bg-foreground "
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -101,7 +101,7 @@ const Footer = () => {
             </a>
             <a
               href="https://github.com/kscalelabs/store"
-              className="hover:text-primary-9"
+              className="text-foreground bg-background hover:text-background hover:bg-foreground "
               target="_blank"
               rel="noopener noreferrer"
             >

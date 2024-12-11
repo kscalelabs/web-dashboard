@@ -17,12 +17,12 @@ const Header = ({ title, label, onClosed, className }: HeaderProps) => {
         className,
       )}
     >
-      <h1 className="text-3xl font-semibold text-gray-1 py-4">{title}</h1>
-      {label && <p className="text-gray-3 text-sm">{label}</p>}
+      <h1 className="text-3xl font-semibold text-foreground py-4">{title}</h1>
+      {label && <p className="text-foreground text-sm">{label}</p>}
       {onClosed && (
         <button
           onClick={onClosed}
-          className="absolute top-0 right-0 p-4 text-gray-700"
+          className="absolute top-0 right-0 p-4 text-background"
         >
           <FaTimes />
         </button>

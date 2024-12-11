@@ -24,10 +24,10 @@ const SocialLink: FC<SocialLinkProps> = ({
       rel="noopener noreferrer"
       className={`
         rounded-full
-        text-gray-1
-        bg-gray-12
-        hover:text-gray-12
-        hover:bg-gray-1
+        text-foreground 
+        bg-background 
+        hover:text-background
+        hover:bg-foreground
         cursor-pointer
         focus:outline-none
         focus:ring-2 focus:ring-offset-2 ${ringColor}

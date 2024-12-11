@@ -22,7 +22,7 @@ interface AuthBlockProps {
 
 const AuthBlock: React.FC<AuthBlockProps> = ({ title, onClosed, signup }) => {
   return (
-    <Card className="w-[400px] bg-gray-12 text-gray-12 rounded-lg">
+    <Card className="w-[400px] bg-background text-foreground rounded-lg">
       <CardHeader>
         <Header
           title={title ? title : signup ? "Signup" : "Login"}

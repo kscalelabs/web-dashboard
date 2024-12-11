@@ -43,7 +43,7 @@ const App = () => {
           <AlertQueueProvider>
             <AlertQueue>
               <ScrollToTop>
-                <div className="min-h-screen bg-gray-12 text-gray-100 font-mono">
+                <div className="min-h-screen bg-background text-gray-100 font-mono">
                   <Navbar />
                   <GDPRBanner />
                   <PendoInitializer />

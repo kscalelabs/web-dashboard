@@ -35,19 +35,19 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed w-full z-50 top-0 start-0 bg-background border-b border-gray-1/10">
+      <nav className="fixed w-full z-50 top-0 start-0 bg-background border-b border-background border-1/10">
         <div className="relative flex items-center justify-between py-3 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 font-mono">
           <div className="flex items-center justify-between w-full lg:w-auto gap-3">
             <Link
               to={isAuthenticated ? ROUTES.HOME.path : ROUTES.LOGIN.path}
-              className="flex items-center lg:flex-grow-0 bg-black border border-gray-1 p-2"
+              className="flex items-center lg:flex-grow-0 bg-background hover:bg-foreground border border-foreground hover:border-backgruond p-2"
             >
-              <span className="text-gray-1 text-lg">K-Scale Labs</span>
+              <span className="text-foreground hover:text-background text-lg">K-Scale Labs</span>
             </Link>
             <Button
               onClick={() => setShowSidebar(true)}
               variant="ghost"
-              className="lg:hidden text-gray-1 p-2 text-sm flex items-center"
+              className="lg:hidden text-foreground p-2 text-sm flex items-center"
             >
               <FaBars size={20} />
             </Button>
@@ -70,7 +70,7 @@ const Navbar = () => {
                         ? "ghost"
                         : "outline"
                     }
-                    className={`px-2 xl:px-3 py-2 text-sm tracking-widest text-gray-1 ${
+                    className={`px-2 xl:px-3 py-2 text-sm tracking-widest text-foreground ${
                       location.pathname ===
                       ROUTES.BOT.buildPath({
                         username: listing.username,
@@ -105,7 +105,7 @@ const Navbar = () => {
                 ),
               )}
             </div>
-            <div className="flex items-center space-x-4 text-gray-1 p-2 ml-4 text-sm tracking-widest">
+            <div className="flex items-center space-x-4 text-foreground p-2 ml-4 text-sm tracking-widest">
               {isAuthenticated ? (
                 <>
                   <NavButton

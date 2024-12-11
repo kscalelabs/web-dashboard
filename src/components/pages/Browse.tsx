@@ -166,7 +166,7 @@ const Browse = () => {
                     key={option.value}
                     checked={sortOption === option.value}
                     onCheckedChange={() => setSortOption(option.value)}
-                    className={`text-gray-11 cursor-pointer ${sortOption === option.value ? "text-gray-12 bg-gray-3" : ""}`}
+                    className={`text-background cursor-pointer ${sortOption === option.value ? "text-background bg-foreground" : ""}`}
                   >
                     {option.label}
                   </DropdownMenuCheckboxItem>

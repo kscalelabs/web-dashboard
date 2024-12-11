@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
     <section className="relative overflow-hidden h-[40vh] rounded-lg">
       <PageHeader>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black border border-gray-500 rounded-lg p-4">
-          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold text-gray-1">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold text-foreground">
             K-Scale Labs
           </h1>
           <p className="text-gray-400 mt-2">
