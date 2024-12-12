@@ -1,9 +1,3 @@
-<p align="center">
-  <picture>
-    <img alt="K-Scale Open Source Robotics" src="https://media.kscale.dev/kscale-open-source-header.png" style="max-width: 100%;">
-  </picture>
-</p>
-
 <div align="center">
 
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kscalelabs/ksim/blob/main/LICENSE)
@@ -13,9 +7,6 @@
 [![python](https://img.shields.io/badge/-Python_3.11-blue?logo=python&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![black](https://img.shields.io/badge/Code%20Style-Black-black.svg?labelColor=gray)](https://black.readthedocs.io/en/stable/)
 [![ruff](https://img.shields.io/badge/Linter-Ruff-red.svg?labelColor=gray)](https://github.com/charliermarsh/ruff)
-<br />
-[![CI Checks (Linting and Tests)](https://github.com/kscalelabs/web-frontend/actions/workflows/test.yml/badge.svg)](https://github.com/kscalelabs/web-frontend/actions/workflows/test.yml)
-[![Deploys latest code](https://github.com/kscalelabs/web-frontend/actions/workflows/deploy.yml/badge.svg)](https://github.com/kscalelabs/web-frontend/actions/workflows/deploy.yml)
 
 </div>
 
