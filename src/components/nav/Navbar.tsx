@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between py-3 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 font-mono">
           <div className="flex items-center justify-between w-full lg:w-auto gap-3">
             <Link
-              to={isAuthenticated ? ROUTES.HOME.path : ROUTES.LOGIN.path}
+              to={isAuthenticated ? ROUTES.HOME.path : "https://dashboard.kscale.dev"}
               className="flex items-center lg:flex-grow-0 bg-black border border-gray-1 p-2"
             >
               <span className="text-gray-1 text-lg">K-Scale Labs</span>
@@ -123,7 +123,7 @@ const Navbar = () => {
                 </>
               ) : (
                 <NavButton
-                  to={isSignupPage ? ROUTES.SIGNUP.path : ROUTES.LOGIN.path}
+                  to={isSignupPage ? ROUTES.SIGNUP.path : "https://dashboard.kscale.dev"}
                   currentPath={location.pathname}
                 >
                   {isSignupPage ? "Sign Up" : "Log In"}
