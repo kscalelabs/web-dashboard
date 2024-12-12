@@ -11,6 +11,7 @@ import type { components } from "@/gen/api";
 import { useAuthentication } from "@/hooks/useAuth";
 import ROUTES from "@/lib/types/routes";
 import { FEATURE_FLAGS } from "@/lib/utils/featureFlags";
+import WebViewer from "@rerun-io/web-viewer-react";
 
 interface Props {
   robot: SingleRobotResponse;
@@ -21,6 +22,18 @@ interface Props {
 }
 
 type KRec = components["schemas"]["KRec"];
+
+// Type definition for recording information returned from the API
+// (For rerun viewer) Required for proper typing of recording data structure
+interface KrecInfo {
+  urls: {
+    url: string;
+    filename: string;
+    expires_at: number;
+    checksum?: string | null;
+  };
+  contentType?: string;  // (For debugging) Helps identify file types during development
+}
 
 const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
   const navigate = useNavigate();
@@ -39,6 +52,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
   const [krecs, setKrecs] = useState<KRec[]>([]);
   const [deleteKrecId, setDeleteKrecId] = useState<string | null>(null);
   const [selectedKrec, setSelectedKrec] = useState<KRec | null>(null);
+  const [krecInfo, setKrecInfo] = useState<KrecInfo | null>(null);
 
   const addTerminalMessage = (message: string) => {
     setTerminalMessages((prev) => [...prev, message]);
@@ -89,18 +103,59 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
     }
   };
 
+  // (For rerun viewer) Fetches recording information needed for the viewer
   const fetchKrecInfo = async (krecId: string) => {
     try {
       const { data } = await auth.client.GET("/krecs/info/{krec_id}", {
-        params: {
-          path: { krec_id: krecId },
-        },
+        params: { path: { krec_id: krecId } },
       });
+      
+      // (For debugging) Extract content type for debugging purposes
+      if (data?.urls?.url) {
+        const url = new URL(data.urls.url);
+        return {
+          ...data,
+          contentType: url.searchParams.get("response-content-type") || "application/x-rerun"
+        };
+      }
       return data;
     } catch (error) {
       addTerminalMessage(`Error fetching KRec info: ${error}`);
       return null;
     }
+  };
+
+  // (For rerun viewer) Handles selection and loading of recordings into the viewer
+  const handleKrecSelect = async (krec: KRec) => {
+    // (For debugging) Log selection for troubleshooting
+    console.log("Selected krec:", krec);
+    setSelectedKrec(krec);
+    const info = await fetchKrecInfo(krec.id);
+    console.log("Fetched krec info:", info);
+    
+    // (For rerun viewer) Ensure data is valid before loading into viewer
+    if (info && 'urls' in info && info.urls?.url) {
+      setKrecInfo(info as KrecInfo);
+      addTerminalMessage(`KRec URL: ${info.urls.url}`);
+    } else {
+      addTerminalMessage("No valid URL found in recording info");
+    }
+  };
+
+  // (For rerun viewer) Prepares URLs for the Rerun viewer component
+  const getCleanRrdUrl = (url: string) => {
+    // (For debugging) Log URL processing steps
+    console.log("Original URL:", url);
+    
+    // (For rerun viewer) Remove query parameters which can interfere with viewer
+    const baseUrl = url.split('?')[0];
+    console.log("Base URL:", baseUrl);
+    
+    // (For debugging) Log file extension for troubleshooting
+    const fileExtension = baseUrl.split('.').pop()?.toLowerCase();
+    console.log("File extension:", fileExtension);
+    
+    return baseUrl;
   };
 
   useEffect(() => {
@@ -128,6 +183,24 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
 
     fetchKrecs();
   }, [robot.robot_id]);
+
+  useEffect(() => {
+    if (selectedKrec && krecInfo?.urls?.url) {
+      const cleanUrl = getCleanRrdUrl(krecInfo.urls.url);
+      if (cleanUrl) {
+        fetch(cleanUrl, {
+          mode: "no-cors",
+          credentials: "omit",
+        })
+          .then(() => {
+            console.log("Successfully pre-fetched RRD file");
+          })
+          .catch((error) => {
+            console.error("Error pre-fetching RRD file:", error);
+          });
+      }
+    }
+  }, [selectedKrec, krecInfo]);
 
   return (
     <div className="min-h-screen bg-black p-4 font-mono text-white">
@@ -317,7 +390,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
                       <div
                         key={file.id}
                         className="flex flex-col sm:flex-row sm:items-center justify-between p-2 hover:bg-gray-900 rounded cursor-pointer"
-                        onClick={() => setSelectedKrec(file)}
+                        onClick={() => handleKrecSelect(file)}
                       >
                         <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
@@ -339,7 +412,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
 
         {selectedKrec && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-black border border-gray-700 rounded-lg w-full max-w-4xl">
+            <div className="bg-black border border-gray-700 rounded-lg w-full max-w-7xl h-[90vh]">
               <div className="p-4 border-b border-gray-700 flex justify-between items-center">
                 <h3 className="text-lg font-semibold">{selectedKrec.name}</h3>
                 <div className="flex gap-2">
@@ -363,10 +436,36 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
                   </Button>
                 </div>
               </div>
-              <div className="p-4 flex flex-col items-center justify-center h-[400px]">
-                <span className="text-gray-500 mb-4">
-                  Video Playback Coming Soon
-                </span>
+              <div className="p-4 flex flex-col items-center justify-center h-[calc(90vh-80px)]">
+                <span className="text-gray-500 mb-4">Rerun Viewer</span>
+                {selectedKrec && krecInfo?.urls?.url && (
+                  <>
+                    <div className="text-xs text-gray-500 mb-2">
+                      Loading recording: {selectedKrec.name}
+                    </div>
+                    <div className="w-full h-full min-h-[300px] border border-gray-700">
+                      {/* Debug information panel */}
+                      <div className="p-2 bg-black text-xs">
+                        Debug Info:
+                        <pre className="overflow-auto">
+                          Original URL: {krecInfo.urls.url}
+                          <br />
+                          Clean URL: {getCleanRrdUrl(krecInfo.urls.url)}
+                          <br />
+                          File Name: {selectedKrec.name}
+                          <br />
+                          Content Type: {krecInfo.contentType || "unknown"}
+                        </pre>
+                      </div>
+                      {/* Rerun Web Viewer component */}
+                      <WebViewer
+                        width="100%"
+                        height="100%"
+                        rrd={getCleanRrdUrl(krecInfo.urls.url)}
+                      />
+                    </div>
+                  </>
+                )}
                 <Button
                   variant="default"
                   onClick={async () => {
