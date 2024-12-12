@@ -1,5 +1,4 @@
 import React from "react";
-import { FaDiscord } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -71,12 +70,12 @@ const OptionsSection: React.FC = () => {
             external: true,
           },
           {
-            title: "Discord",
+            title: "Website",
             description:
-              "Connect with fellow robot enthusiasts, industry experts, and researchers. Share projects and ideas, and stay updated on the latest K-Scale developments.",
-            icon: FaDiscord,
-            path: "https://discord.com/invite/kscale",
-            buttonText: "Join our Discord",
+              "Visit our main website to learn more about K-Scale Labs and our mission to advance robotics technology.",
+            icon: ExternalLinkIcon,
+            path: "https://kscale.dev",
+            buttonText: "Visit Website",
             external: true,
           },
         ].map((item, index) => (
