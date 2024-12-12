@@ -13,7 +13,7 @@ const ROUTES = {
 
   // Account routes
   ACCOUNT: route("account"),
-  LOGIN: route("login"),
+  // LOGIN: route("login"), // Removing this as we're using dashboard.kscale.dev directly
   LOGOUT: route("logout"),
   SIGNUP: route(
     "signup",

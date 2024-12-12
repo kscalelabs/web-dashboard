@@ -85,7 +85,7 @@ export const AuthBlockInner: React.FC<{ initialSignup?: boolean }> = ({
         <Button
           onClick={() => {
             if (isSignup) {
-              navigate("/login");
+              window.location.href = "https://dashboard.kscale.dev";
             } else {
               navigate("/signup");
             }

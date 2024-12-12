@@ -129,7 +129,7 @@ const Sidebar = ({ show, onClose }: SidebarProps) => {
                   <div className="flex flex-col gap-2 py-4">
                     <SidebarItem
                       title="Log In"
-                      onClick={() => handleItemClick("/login")}
+                      onClick={() => window.location.href = "https://dashboard.kscale.dev"}
                     />
                   </div>
                 )}

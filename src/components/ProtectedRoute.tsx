@@ -13,7 +13,6 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const { featuredListings } = useFeaturedListings();
 
   const publicPaths = [
-    ROUTES.LOGIN.path,
     ROUTES.SIGNUP.path,
     ROUTES.SIGNUP.EMAIL.path,
   ] as const;
@@ -23,7 +22,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   }
 
   if (location.pathname.includes('/bots/browse') && !isAuthenticated) {
-    return <Navigate to={ROUTES.LOGIN.path} state={{ from: location }} replace />;
+    return <Navigate to="https://dashboard.kscale.dev" state={{ from: location }} replace />;
   }
 
   if (location.pathname.startsWith('/bot/')) {
@@ -36,10 +35,10 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
     });
 
     if (!isAuthenticated && !isFeaturedListing) {
-      return <Navigate to={ROUTES.LOGIN.path} state={{ from: location }} replace />;
+      return <Navigate to="https://dashboard.kscale.dev" state={{ from: location }} replace />;
     }
   } else if (!isAuthenticated) {
-    return <Navigate to={ROUTES.LOGIN.path} state={{ from: location }} replace />;
+    return <Navigate to="https://dashboard.kscale.dev" state={{ from: location }} replace />;
   }
 
   return <>{children}</>;

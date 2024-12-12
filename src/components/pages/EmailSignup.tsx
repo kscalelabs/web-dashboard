@@ -90,7 +90,7 @@ const EmailSignup = () => {
               <Button
                 variant="outline"
                 onClick={() => {
-                  navigate(ROUTES.LOGIN.path);
+                  window.location.href = "https://dashboard.kscale.dev";
                 }}
               >
                 Login / Signup

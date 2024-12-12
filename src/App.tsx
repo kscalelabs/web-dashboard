@@ -52,7 +52,6 @@ const App = () => {
                     <div className="mt-24 mb-6 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 max-full">
                       <Routes>
                         {/* Public routes */}
-                        <Route path={ROUTES.LOGIN.path} element={<Login />} />
                         <Route path={ROUTES.SIGNUP.path} element={<Signup />} />
                         <Route path={ROUTES.SIGNUP.EMAIL.path} element={<EmailSignup />} />
 
@@ -92,7 +91,6 @@ const App = () => {
                           path={ROUTES.ACCOUNT.path}
                           element={<Account />}
                         />
-                        <Route path={ROUTES.LOGIN.path} element={<Login />} />
                         <Route path={ROUTES.LOGOUT.path} element={<Logout />} />
                         <Route path={ROUTES.SIGNUP.path} element={<Signup />} />
                         <Route

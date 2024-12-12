@@ -89,7 +89,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ signupTokenId }) => {
         addErrorAlert(error);
       } else {
         addAlert("Registration successful! You can now log in.", "success");
-        navigate(ROUTES.LOGIN.path);
+        window.location.href = "https://dashboard.kscale.dev";
       }
     } catch (err) {
       addErrorAlert(err);
