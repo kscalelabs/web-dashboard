@@ -70,8 +70,8 @@ const About = () => {
           </div>
         </div>
 
-        {/* Footer */}
-        <footer className="mt-12 space-y-4">
+        {/* Social Links */}
+        <div className="mt-12 space-y-4">
           <div>
             <small className="block italic mb-2">Follow us on</small>
             <div className="space-x-2">
@@ -88,7 +88,7 @@ const About = () => {
               <a href="https://calendly.com/kscale">Schedule a Call</a>
             </small>
           </div>
-        </footer>
+        </div>
       </div>
     </Container>
   );

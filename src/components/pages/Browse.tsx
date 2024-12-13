@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import ListingGrid from "@/components/listings/ListingGrid";
 import { Input } from "@/components/ui/Input/Input";
@@ -17,9 +17,8 @@ import {
 import { components, paths } from "@/gen/api";
 import { useAlertQueue } from "@/hooks/useAlertQueue";
 import { useAuthentication } from "@/hooks/useAuth";
-import { useDebounce } from "@uidotdev/usehooks";
 import ROUTES from "@/lib/types/routes";
-
+import { useDebounce } from "@uidotdev/usehooks";
 
 type SortOption = components["schemas"]["SortOption"];
 

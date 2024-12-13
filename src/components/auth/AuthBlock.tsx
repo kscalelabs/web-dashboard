@@ -85,9 +85,9 @@ export const AuthBlockInner: React.FC<{ initialSignup?: boolean }> = ({
         <Button
           onClick={() => {
             if (isSignup) {
-              navigate('/login');
+              navigate("/login");
             } else {
-              navigate('/signup');
+              navigate("/signup");
             }
           }}
           variant="link"
