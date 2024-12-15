@@ -44,7 +44,7 @@ const App = () => {
             <AlertQueue>
               <ScrollToTop>
                 {NavBar()}
-                <div className="min-h-screen bg-background text-gray-100 font-mono">
+                <div className="min-h-screen bg-background text-foreground font-mono">
                   <GDPRBanner />
                   <PendoInitializer />
                   <SprigInitializer />
@@ -160,8 +160,8 @@ const App = () => {
                       </Routes>
                     </div>
                   </div>
-                  <Footer />
                 </div>
+                <Footer />
               </ScrollToTop>
             </AlertQueue>
           </AlertQueueProvider>
