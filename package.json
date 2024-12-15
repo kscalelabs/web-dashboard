@@ -57,6 +57,7 @@
     "hamburger-react": "^2.5.1",
     "leva": "^0.9.35",
     "lucide-react": "^0.424.0",
+    "motion": "^11.14.4",
     "onnxruntime-web": "^1.19.2",
     "openapi-fetch": "^0.10.5",
     "pako": "^2.1.0",

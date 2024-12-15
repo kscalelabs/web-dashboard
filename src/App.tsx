@@ -1,16 +1,19 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
+
+
 import "@/App.css";
+
+
 
 import NotFoundRedirect from "@/components/NotFoundRedirect";
 import PendoInitializer from "@/components/PendoInitializer";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import SprigInitializer from "@/components/SprigInitializer";
-import Footer from "@/components/footer/Footer";
 import GDPRBanner from "@/components/gdpr/gdprbanner";
 import { FeaturedListingsProvider } from "@/components/listing/FeaturedListings";
-import Navbar from "@/components/nav/Navbar";
+import NavBar from "@/components/navbar/navbar";
 import APIKeys from "@/components/pages/APIKeys";
 import About from "@/components/pages/About";
 import Account from "@/components/pages/Account";
@@ -34,6 +37,8 @@ import TermsOfService from "@/components/pages/TermsOfService";
 import { AlertQueue, AlertQueueProvider } from "@/hooks/useAlertQueue";
 import { AuthenticationProvider } from "@/hooks/useAuth";
 import ROUTES from "@/lib/types/routes";
+import Footer from "@/components/footer/footer";
+
 
 const App = () => {
   return (
@@ -44,7 +49,7 @@ const App = () => {
             <AlertQueue>
               <ScrollToTop>
                 <div className="min-h-screen bg-background text-gray-100 font-mono">
-                  <Navbar />
+                  {NavBar()}
                   <GDPRBanner />
                   <PendoInitializer />
                   <SprigInitializer />
