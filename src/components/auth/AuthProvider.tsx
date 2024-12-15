@@ -55,7 +55,7 @@ const GoogleAuthButton = ({ isSignup }: { isSignup: boolean }) => {
     <Button
       variant="outline"
       size="lg"
-      className="w-full hover:bg-foreground dark:hover:bg-background flex items-center justify-center gap-3"
+      className="w-full hover:bg-rust flex items-center justify-center gap-3"
       onClick={() => handleGoogleLogin()}
       disabled={credential !== null}
     >
@@ -89,7 +89,7 @@ const GoogleAuthButtonWrapper = ({ isSignup }: { isSignup: boolean }) => {
     <Button
       variant={"outline"}
       size={"lg"}
-      className="w-full hover:bg-foreground dark:hover:bg-background flex items-center justify-center gap-3"
+      className="w-full hover:bg-rust flex items-center justify-center gap-3"
       disabled={true}
     >
       <Spinner />
@@ -123,7 +123,7 @@ const GithubAuthButton = ({ isSignup }: { isSignup: boolean }) => {
     <Button
       variant="outline"
       size="lg"
-      className="w-full bg-gray-9 flex items-center justify-center gap-3"
+      className="w-full bg-background text-foreground flex items-center justify-center gap-3"
       disabled={true}
     >
       <Spinner />
@@ -132,7 +132,7 @@ const GithubAuthButton = ({ isSignup }: { isSignup: boolean }) => {
     <Button
       variant="outline"
       size="lg"
-      className="w-full hover:bg-foreground dark:hover:bg-background flex items-center justify-center gap-3"
+      className="w-full bg-background text-foreground  flex items-center justify-center gap-3"
       onClick={() => {
         window.open(`${GITHUB_OAUTH_URL_BASE}${githubClientId}`, "_self");
       }}

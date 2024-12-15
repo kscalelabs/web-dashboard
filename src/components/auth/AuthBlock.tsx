@@ -22,7 +22,7 @@ interface AuthBlockProps {
 
 const AuthBlock: React.FC<AuthBlockProps> = ({ title, onClosed, signup }) => {
   return (
-    <Card className="w-[400px] bg-background text-foreground rounded-lg">
+    <Card className="w-[400px] bg-background text-foreground rounded-lg ">
       <CardHeader>
         <Header
           title={title ? title : signup ? "Signup" : "Login"}
@@ -70,7 +70,7 @@ export const AuthBlockInner: React.FC<{ initialSignup?: boolean }> = ({
 
   if (useSpinner) {
     return (
-      <CardContent className="flex justify-center">
+      <CardContent className="flex justify-center ">
         <Spinner />
       </CardContent>
     );
