@@ -7,7 +7,6 @@ import UpvotedGrid from "@/components/listings/UpvotedGrid";
 import EditProfileForm from "@/components/profile/EditProfileForm";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import Spinner from "@/components/ui/Spinner";
-import { Tooltip } from "@/components/ui/ToolTip";
 import { Button } from "@/components/ui/button";
 import { paths } from "@/gen/api";
 import { useAlertQueue } from "@/hooks/useAlertQueue";
@@ -194,18 +193,18 @@ export const RenderProfile = (props: RenderProfileProps) => {
       <Card className="w-full max-w-4xl mx-auto">
         <CardHeader className="flex flex-col items-center space-y-4">
           <div className="flex flex-col items-center space-y-2">
-            <h1 className="text-3xl font-bold text-primary-9 text-center">
+            <h1 className="text-3xl font-bold text-foreground text-center">
               {user.first_name || user.last_name
                 ? `${user.first_name || ""} ${user.last_name || ""}`
                 : "Name not set"}
             </h1>
             <div className="flex gap-2 text-sm">
-              <p className="text-gray-1 bg-gray-10 pl-2.5 pr-3 py-1 rounded-md">
+              <p className="text-foreground bg-gray-10 pl-2.5 pr-3 py-1 rounded-md">
                 <span className="font-semibold mr-1 select-none">@</span>
                 {user.username}
               </p>
               {user.permissions && (
-                <p className="text-primary-12 bg-gray-4 px-3 py-1 rounded-md">
+                <p className="text-background bg-foreground px-3 py-1 rounded-md">
                   {getRoleName(user.permissions)}
                 </p>
               )}
@@ -294,12 +293,12 @@ export const RenderProfile = (props: RenderProfileProps) => {
                   variant="outline"
                   asChild
                   className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-gray-11 ${
-                    value === "own" ? "border text-gray-12" : ""
+                    value === "own" ? "border text-background" : ""
                   }`}
                 >
                   <TabsTrigger
                     value="own"
-                    className="data-[state=active]:bg-gray-3"
+                    className="data-[state=active]:bg-foreground"
                   >
                     {getListingsTabLabel()}
                   </TabsTrigger>
@@ -309,7 +308,7 @@ export const RenderProfile = (props: RenderProfileProps) => {
                     variant="outline"
                     asChild
                     className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-gray-11 ${
-                      value === "upvoted" ? "border text-gray-12" : ""
+                      value === "upvoted" ? "border text-background" : ""
                     }`}
                   >
                     <TabsTrigger
