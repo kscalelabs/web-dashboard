@@ -199,7 +199,7 @@ export const RenderProfile = (props: RenderProfileProps) => {
                 : "Name not set"}
             </h1>
             <div className="flex gap-2 text-sm">
-              <p className="text-foreground bg-gray-10 pl-2.5 pr-3 py-1 rounded-md">
+              <p className="text-filament bg-plasma pl-2.5 pr-3 py-1 rounded-md">
                 <span className="font-semibold mr-1 select-none">@</span>
                 {user.username}
               </p>
@@ -298,7 +298,7 @@ export const RenderProfile = (props: RenderProfileProps) => {
                 >
                   <TabsTrigger
                     value="own"
-                    className="data-[state=active]:bg-foreground"
+                    className="data-[state=active]:bg-filament text-carbon"
                   >
                     {getListingsTabLabel()}
                   </TabsTrigger>
