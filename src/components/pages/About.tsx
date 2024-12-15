@@ -59,13 +59,11 @@ const About = () => {
               <a href="https://www.alihkw.com/">Ali</a>
               <a href="https://ben.bolte.cc">Ben</a>
               <a href="https://www.linkedin.com/in/denys-bezmenov/">Denys</a>
-              <a href="https://ivntsng.github.io/ivntsng/">Ivan</a>
               <a href="https://www.jingxiangmo.com/">Jingxiang</a>
               <a href="https://budzianowski.github.io/">Paweł</a>
               <a href="https://www.linkedin.com/in/ruixu/">Rui</a>
               <a href="https://www.linkedin.com/in/virajtipnis/">Viraj</a>
               <a href="https://wesleymaa.com/">Wesley</a>
-              <a href="https://www.winstonhsiao.com/">Winston</a>
             </div>
           </div>
         </div>
