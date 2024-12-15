@@ -45,11 +45,11 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({
         <div>
           <label
             htmlFor="username"
-            className="block text-sm font-medium text-gray-1"
+            className="block text-sm font-medium text-foreground"
           >
             Username
           </label>
-          <p className="text-xs text-gray-8 italic">
+          <p className="text-xs text-foreground italic">
             Changing your username will change the URL for all your posted
             listings.
           </p>
@@ -115,7 +115,7 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({
             id="bio"
             value={bio}
             onChange={(e) => setBio(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-11 shadow-sm focus:border-primary-9 focus:ring focus:ring-primary-9 focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-gray-11 shadow-sm focus:border-foreground focus:ring focus:ring-foreground focus:ring-opacity-50"
             rows={3}
           />
         </div>

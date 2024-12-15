@@ -313,7 +313,7 @@ export const RenderProfile = (props: RenderProfileProps) => {
                   >
                     <TabsTrigger
                       value="upvoted"
-                      className="data-[state=active]:bg-gray-3"
+                      className="data-[state=active]:bg-foreground"
                     >
                       Upvoted Robots
                     </TabsTrigger>
