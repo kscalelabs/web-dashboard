@@ -4,11 +4,9 @@ import {
   navItemsMobile,
   transitionEaseLinearDuration300,
 } from "@/components/util/constants";
-import { useAuthentication } from "@/hooks/useAuth";
 import { motion } from "motion/react";
 
-const BurgerMenu = (isOpen: boolean) => {
-  const { isAuthenticated } = useAuthentication();
+export const BurgerMenu = (isOpen: boolean, isAuth: boolean) => {
   return isOpen ? (
     <div className={"grid-m"}>
       <motion.div
@@ -39,18 +37,14 @@ const BurgerMenu = (isOpen: boolean) => {
                 }
                 href={
                   index === 1
-                    ? isAuthenticated
+                    ? isAuth
                       ? "/logout"
                       : navItemLinksMobile[index].link
                     : navItemLinksMobile[index].link
                 }
                 target={navItemLinksMobile[index].target}
               >
-                {index === 1
-                  ? isAuthenticated
-                    ? "Log out"
-                    : navItem
-                  : navItem}
+                {index === 1 ? (isAuth ? "Log out" : navItem) : navItem}
                 {index !== 1 ? <ExpressiveArrow size={"size-10"} /> : <></>}
               </a>
             </motion.button>
@@ -62,5 +56,3 @@ const BurgerMenu = (isOpen: boolean) => {
     <></>
   );
 };
-
-export default BurgerMenu;

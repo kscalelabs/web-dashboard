@@ -32,7 +32,7 @@ import Signup from "@/components/pages/Signup";
 import Terminal from "@/components/pages/Terminal";
 import TermsOfService from "@/components/pages/TermsOfService";
 import { AlertQueue, AlertQueueProvider } from "@/hooks/useAlertQueue";
-import { AuthenticationProvider } from "@/hooks/useAuth";
+import {AuthenticationProvider} from "@/hooks/useAuth";
 import ROUTES from "@/lib/types/routes";
 
 const App = () => {
@@ -43,7 +43,7 @@ const App = () => {
           <AlertQueueProvider>
             <AlertQueue>
               <ScrollToTop>
-                {NavBar()}
+                <NavBar/>
                 <div className="min-h-screen bg-background text-foreground font-mono">
                   <GDPRBanner />
                   <PendoInitializer />

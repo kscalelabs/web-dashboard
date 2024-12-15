@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 import Logotype from "@/components/logotypes/logotype";
-import BurgerMenu from "@/components/navbar/burgerMenu";
+import { BurgerMenu } from "@/components/navbar/burgerMenu";
 import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
 import { NavDocsButton, NavLogInButton } from "@/components/navbar/navButtons";
 import { NavCTAButton } from "@/components/ui/CTAButtons";
 import { FillMode } from "@/components/util/constants";
 import { useWindowSize } from "@/components/util/functions";
+import { useAuthentication } from "@/hooks/useAuth";
 import clsx from "clsx";
 import {
   AnimatePresence,
@@ -15,11 +16,12 @@ import {
   useScroll,
 } from "motion/react";
 
-export default function NavBar() {
+const NavBar = () => {
   const { scrollY } = useScroll();
   const [, setDesktopNavHidden] = useState(false);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
+  const { isAuthenticated } = useAuthentication();
 
   function update(current: number, previous: number): void {
     if (current < previous) {
@@ -47,8 +49,9 @@ export default function NavBar() {
         <menu
           className={clsx(
             "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw]",
-          )}>
-          <Logotype  />
+          )}
+        >
+          <Logotype />
           <BurgerOpenButton
             className="-col-end-1 place-self-end pointer-events-auto"
             atTop={atTop}
@@ -56,7 +59,9 @@ export default function NavBar() {
             onClick={setMobileShouldOpenBurger}
           />
         </menu>
-        <AnimatePresence>{BurgerMenu(mobileShouldOpenBurger)}</AnimatePresence>
+        <AnimatePresence>
+          {BurgerMenu(mobileShouldOpenBurger, isAuthenticated)}
+        </AnimatePresence>
       </>
     );
   };
@@ -64,9 +69,9 @@ export default function NavBar() {
   const desktopNavBar = () => {
     return (
       <>
-        <Logotype  />
-        <NavDocsButton  />
-        <NavLogInButton  />
+        <Logotype />
+        <NavDocsButton />
+        <NavLogInButton />
 
         <NavCTAButton
           className="md:col-span-2 md:-col-end-1 2xl:col-span-3 2xl:-col-end-1"
@@ -98,4 +103,6 @@ export default function NavBar() {
       {navBasedOnWidth(width >= 768)}
     </motion.nav>
   );
-}
+};
+
+export default NavBar;
