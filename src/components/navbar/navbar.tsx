@@ -94,7 +94,7 @@ export default function NavBar() {
   }, [mobileShouldOpenBurger]);
 
   return (
-    <motion.nav className="fixed bg-background top-0 inset-x-0 z-50 md:h-auto md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none">
+    <motion.nav className="fixed bg-background top-0 inset-x-0 z-50 lg:py-7 md:h-auto py-4 grid-a grid-rows-[min-content_auto] pointer-events-none">
       {navBasedOnWidth(width >= 768)}
     </motion.nav>
   );

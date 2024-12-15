@@ -3,7 +3,7 @@ import React from "react";
 const Logotype = () => {
   return (
     <button
-      className="col-start-1 col-span-2 lg:col-start-1 lg:col-span-2 pointer-events-auto"
+      className="col-start-1 col-span-2 md:col-span-2 lg:col-start-1 lg:col-span-2 pointer-events-auto"
       aria-label="Homepage"
     >
       <a href={"/"} aria-label="k-scale labs">
