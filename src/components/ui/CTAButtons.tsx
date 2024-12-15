@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { ColorVariant, FillMode } from "@/components/util/constants";
 import { Size } from "@/components/util/constants";
 import routes from "@/lib/types/routes";
-import {ExpressiveArrow} from "@/components/ui/iconography/Iconography";
 
 const SHOP_URL = "https://shop.kscale.dev/collections/all";
 
@@ -126,7 +125,7 @@ export const NavCTAButton = ({
   return target === "_blank" ? (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body select-none rounded pointer pointer-events-auto z-20",
+        "font-planar font-normal select-none text-2xl rounded pointer pointer-events-auto z-20",
         getVariantClass(variant, mode),
         className
       )}
@@ -150,13 +149,12 @@ export const NavCTAButton = ({
         )}
       >
         {children}
-        <ExpressiveArrow size={"size-6"}/>
       </a>
     </motion.button>
   ) : (
     <motion.button
       className={clsx(
-        "font-planar font-normal text-body px-2 select-none flex flex-row gap-1 justify-center items-center pointer pointer-events-auto z-20",
+        "font-planar font-normal text-2xl px-2 select-none flex flex-row gap-1 justify-center items-center pointer pointer-events-auto z-20",
         size === Size.THIN ? "py-1" : "py-2",
         "cursor-pointer select-none",
         "rounded",
@@ -176,7 +174,6 @@ export const NavCTAButton = ({
       onClick={() => routes.BOTS}
     >
       {children}
-      <ExpressiveArrow size={"size-6"}/>
     </motion.button>
   );
 };

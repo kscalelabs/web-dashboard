@@ -21,18 +21,16 @@
   /*}*/
   @font-face {
     font-family: "GT Planar";
-    src:
-      url("/assets/fonts/GT-Planar-Regular.woff") format("woff"),
-      url("/assets/fonts/GT-Planar-Regular.woff2") format("woff2");
+    src: url("/assets/fonts/GT-Planar-Regular.woff") format("woff"),
+    url("/assets/fonts/GT-Planar-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: "CoFo Sans Mono", monospace, monospace;
-    src:
-      url("/assets/fonts/CoFoSansMono-Regular.woff") format("woff"),
-      url("/assets/fonts/CoFoSansMono-Regular.woff2") format("woff2");
+    src: url("/assets/fonts/CoFoSansMono-Regular.woff") format("woff"),
+    url("/assets/fonts/CoFoSansMono-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
   }
@@ -85,7 +83,7 @@
       --pointer: url("/assets/cursor/pointer_dark.svg"), pointer;
     }
   }
-
+}
   nav, footer  {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -304,7 +302,6 @@
       cursor: url("/assets/cursor/grabbing_dark.svg"), grabbing;
     }
   }
-}
 
 .scroll-lock {
   overflow: hidden;
@@ -320,10 +317,9 @@
 }
 
 nav a {
-  border : none;
+  border: none;
   white-space: nowrap;
   color: var(--foreground);
-  padding: 0;
   margin: 0;
 }
 

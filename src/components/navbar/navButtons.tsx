@@ -14,7 +14,7 @@ export const NavLogInButton = () => {
     <motion.a
       href={navItemLinks[1].link}
       target={navItemLinks[1].target}
-      className="font-planar -col-end-2 md:-col-end-3 2xl:-col-end-4 text-foreground select-none size-fit self-center pointer-events-auto"
+      className="font-planar text-2xl -col-end-2 md:-col-end-3 2xl:-col-end-4 text-foreground select-none size-fit self-center pointer-events-auto"
       variants={arrowLinkVariants}
       initial="initial"
       whileHover="hover"
@@ -29,13 +29,13 @@ export const NavDocsButton = () => {
     <motion.a
       href={navItemLinks[0].link}
       target={navItemLinks[0].target}
-      className="font-planar -col-end-3 md:-col-end-4 2xl:-col-end-5 flex text-foreground flex-row gap-1 size-fit
+      className="font-planar text-2xl -col-end-3 md:-col-end-4 2xl:-col-end-5 flex text-foreground flex-row gap-1 size-fit
        items-center select-none self-center pointer-events-auto"
       variants={arrowLinkVariants}
       initial="initial"
       whileHover="hover"
     >
-      {navItems[0]} <ExpressiveArrow size={"size-4"} />
+      {navItems[0]} <ExpressiveArrow size={"size-7"} />
     </motion.a>
   );
 };
