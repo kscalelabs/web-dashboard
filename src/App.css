@@ -13,19 +13,17 @@
   /*  font-weight: bold;*/
   /*  font-style: normal;*/
   /*}*/
-
   /*@font-face {*/
   /*  font-family: "KMR Apparat";*/
   /*  src: url("/assets/fonts/trial/KMR-Apparat-Medium.woff") format("woff");*/
   /*  font-weight: 500;*/
   /*  font-style: normal;*/
   /*}*/
-
   @font-face {
     font-family: "GT Planar";
     src:
-            url("/assets/fonts/GT-Planar-Regular.woff") format("woff"),
-            url("/assets/fonts/GT-Planar-Regular.woff2") format("woff2");
+      url("/assets/fonts/GT-Planar-Regular.woff") format("woff"),
+      url("/assets/fonts/GT-Planar-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
   }
@@ -33,150 +31,261 @@
   @font-face {
     font-family: "CoFo Sans Mono", monospace, monospace;
     src:
-            url("/assets/fonts/CoFoSansMono-Regular.woff") format("woff"),
-            url("/assets/fonts/CoFoSansMono-Regular.woff2") format("woff2");
+      url("/assets/fonts/CoFoSansMono-Regular.woff") format("woff"),
+      url("/assets/fonts/CoFoSansMono-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
   }
-
   :root {
-    --background: #f8f4f2;
-    --foreground: #120e15;
-    --off-var(--foreground): #f8f4f2;
-    --off-var(--background): #120e15;
-    --accent-aubergine: #7d0d8c;
-    --accent-dragonfruit: #b90674;
-    --accent-apple: #c90e33;
-    --accent-blood-orange: #fa4300;
-    --accent-tangerine: #ff9000;
-    --accent-butter: #f2f091;
+    --background: #f8f4f2ff;
+    --foreground: #120e15ff;
+    --logotype: #120e15ff;
+    --background-0: #f8f4f200;
+    --foreground-60: #120e159a;
+    --foreground-70: #120e15b3;
+    --filament-60: #f8f4f29a;
+    --filament-70: #f8f4f2b3;
+    --filament: #f8f4f2ff;
+    --carbon: #120e15ff;
+    --carbon-50: #120e1580;
+    --carbon-0: #120e1500;
+    --methyl: #7d0d8cff;
+    --plasma: #b90674ff;
+    --oxide: #c90e33ff;
+    --rust: #fa4300ff;
+    --molten: #ff9000ff;
+    --sol: #f2f091ff;
+    --grab: url("/assets/cursor/grab.svg"), grab;
+    --grabbing: url("/assets/cursor/grabbing.svg"), grabbing;
+    --pointer: url("/assets/cursor/pointer.svg"), pointer;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #0f0f10;
-      --foreground: #ede6e1;
-      --off-var(--background): #0f0f10;
-      --off-var(--foreground): #ede6e1;
-      --accent-aubergine: #771584;
-      --accent-dragonfruit: #a81770;
-      --accent-apple: #98253c;
-      --accent-blood-orange: #de4208;
-      --accent-tangerine: #f18a03;
-      --accent-butter: #eae9bc;
+      --background: #0f0f10ff;
+      --foreground: #ede6e1ff;
+      --logotype: #de4208ff;
+      --background-0: #0f0f1000;
+      --foreground-60: #ede6e180;
+      --foreground-70: #ede6e1b3;
+      --filament-60: #ede6e180;
+      --filament-70: #ede6e1b3;
+      --carbon: #0f0f10ff;
+      --carbon-50: #0f0f1080;
+      --carbon-0: #0f0f1000;
+      --filament: #ede6e1ff;
+      --methyl: #771584ff;
+      --plasma: #a81770ff;
+      --oxide: #98253cff;
+      --rust: #de4208ff;
+      --molten: #f18a03ff;
+      --sol: #eae9bcff;
+      --grab: url("/assets/cursor/grab_dark.svg"), grab;
+      --grabbing: url("/assets/cursor/grabbing_dark.svg"), grabbing;
+      --pointer: url("/assets/cursor/pointer_dark.svg"), pointer;
     }
   }
-}
 
-*::selection {
-  background: var(--foreground);
-  color: var(--background);
-}
+  *::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
 
-:root {
-  --radius: 0.5rem;
-  --font-mono: monospace;
-}
+  :root {
+    --radius: 0.5rem;
+    --font-mono: monospace;
+  }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-mono);
-}
-
-.container {
-  padding: 1em;
-  max-width: 100em;
-  border: 1px solid var(--foreground);
-  border-radius: 3px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-a {
-  color: var(--foreground);
-  text-decoration: none;
-  padding: 0.3em 0.6em;
-  border: 1px solid #333;
-  border-radius: 3px;
-  margin: 0.2em;
-  display: inline-block;
-  transition: border-color 0.2s;
-}
-
-a:hover {
-  border-color: var(--foreground);
-}
-
-.content {
-  margin-top: 16px;
-  margin-bottom: 56px;
-}
-
-canvas {
-  width: 100%;
-  height: auto;
-  touch-action: none;
-  border: 1px solid #333;
-  border-radius: 3px;
-}
-
-form {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-form textarea {
-  height: 10rem;
-  background: var(--background);
-  color: var(--foreground);
-  border: 1px solid #333;
-  font-family: var(--font-mono);
-}
-
-form button {
-  width: 100%;
-  background: var(--background);
-  color: var(--foreground);
-  border: 1px solid #333;
-  padding: 0.5em;
-  font-family: var(--font-mono);
-  cursor: pointer;
-}
-
-form button:hover {
-  border-color: var(--foreground);
-}
-
-.card {
-  background: var(--background);
-  border: 1px solid #333;
-  border-radius: 3px;
-  padding: 1em;
-  margin: 1em 0;
-}
-
-.card:hover {
-  border-color: var(--foreground);
-}
-
-@media (max-width: 600px) {
-  .about-section {
-    font-size: 0.9em;
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-mono);
   }
 
   .container {
-    padding: 0.5em;
+    padding: 1em;
+    max-width: 100em;
+    border: 1px solid var(--foreground);
+    border-radius: 3px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
-}
 
-@layer base {
-  * {
-    @apply border-[#333];
+  a {
+    color: var(--foreground);
+    text-decoration: none;
+    padding: 0.3em 0.6em;
+    border: 1px solid #333;
+    border-radius: 3px;
+    margin: 0.2em;
+    display: inline-block;
+    transition: border-color 0.2s;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  a:hover {
+    border-color: var(--foreground);
+  }
+
+  .content {
+    margin-top: 16px;
+    margin-bottom: 56px;
+  }
+
+  canvas {
+    width: 100%;
+    height: auto;
+    touch-action: none;
+    border: 1px solid #333;
+    border-radius: 3px;
+  }
+
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  form textarea {
+    height: 10rem;
+    background: var(--background);
+    color: var(--foreground);
+    border: 1px solid #333;
+    font-family: var(--font-mono);
+  }
+
+  form button {
+    width: 100%;
+    background: var(--background);
+    color: var(--foreground);
+    border: 1px solid #333;
+    padding: 0.5em;
+    font-family: var(--font-mono);
+    cursor: pointer;
+  }
+
+  form button:hover {
+    border-color: var(--foreground);
+  }
+
+  .card {
+    background: var(--background);
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 1em;
+    margin: 1em 0;
+  }
+
+  .card:hover {
+    border-color: var(--foreground);
+  }
+
+  @media (max-width: 600px) {
+    .about-section {
+      font-size: 0.9em;
+    }
+
+    .container {
+      padding: 0.5em;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-[#333];
+    }
+
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
+  /*CURSOR*/
+  *::selection {
+    @apply bg-rust text-background;
+  }
+
+  @media (pointer: fine) and (prefers-color-scheme: light) {
+    body {
+      cursor: url("/assets/cursor/default.svg"), auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span,
+    text,
+    code,
+    blockquote,
+    label,
+    li,
+    p {
+      cursor: url("/assets/cursor/text.svg"), text;
+    }
+
+    button,
+    button *,
+    a,
+    a *,
+    input,
+    input *,
+    label,
+    label *,
+    .pointer {
+      cursor: url("/assets/cursor/pointer.svg"), pointer;
+    }
+
+    .grab {
+      cursor: url("/assets/cursor/grab.svg"), grab;
+    }
+
+    .grab:active {
+      cursor: url("/assets/cursor/grabbing.svg"), grabbing;
+    }
+  }
+
+  @media (pointer: fine) and (prefers-color-scheme: dark) {
+    body {
+      cursor: url("/assets/cursor/default_dark.svg"), auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span,
+    text,
+    code,
+    blockquote,
+    label,
+    li,
+    p {
+      cursor: url("/assets/cursor/text_dark.svg"), text;
+    }
+
+    button,
+    button *,
+    a,
+    a *,
+    input,
+    input *,
+    label,
+    label *,
+    .pointer {
+      cursor: url("/assets/cursor/pointer_dark.svg"), pointer;
+    }
+
+    .grab {
+      cursor: url("/assets/cursor/grab_dark.svg"), grab;
+    }
+
+    .grab:active {
+      cursor: url("/assets/cursor/grabbing_dark.svg"), grabbing;
+    }
   }
 }

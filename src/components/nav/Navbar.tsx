@@ -42,7 +42,9 @@ const Navbar = () => {
               to={isAuthenticated ? ROUTES.HOME.path : ROUTES.LOGIN.path}
               className="flex items-center lg:flex-grow-0 bg-background hover:bg-foreground border border-foreground hover:border-backgruond p-2"
             >
-              <span className="text-foreground hover:text-background text-lg">K-Scale Labs</span>
+              <span className="text-foreground hover:text-background text-lg">
+                K-Scale Labs
+              </span>
             </Link>
             <Button
               onClick={() => setShowSidebar(true)}
@@ -84,26 +86,27 @@ const Navbar = () => {
                   </Button>
                 ))}
               </div>
-              {isAuthenticated && navItems.map((item) =>
-                item.isExternal ? (
-                  <NavButton
-                    key={item.path}
-                    to={item.path}
-                    currentPath={location.pathname}
-                    isExternal
-                  >
-                    {item.name}
-                  </NavButton>
-                ) : (
-                  <NavButton
-                    key={item.path}
-                    to={item.path}
-                    currentPath={location.pathname}
-                  >
-                    {item.name}
-                  </NavButton>
-                ),
-              )}
+              {isAuthenticated &&
+                navItems.map((item) =>
+                  item.isExternal ? (
+                    <NavButton
+                      key={item.path}
+                      to={item.path}
+                      currentPath={location.pathname}
+                      isExternal
+                    >
+                      {item.name}
+                    </NavButton>
+                  ) : (
+                    <NavButton
+                      key={item.path}
+                      to={item.path}
+                      currentPath={location.pathname}
+                    >
+                      {item.name}
+                    </NavButton>
+                  ),
+                )}
             </div>
             <div className="flex items-center space-x-4 text-foreground p-2 ml-4 text-sm tracking-widest">
               {isAuthenticated ? (

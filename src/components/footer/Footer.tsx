@@ -65,10 +65,16 @@ const Footer = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           <div className="flex flex-col items-start gap-2">
             <h2 className="text-foreground font-bold mb-1">Company</h2>
-            <Link to={ROUTES.ABOUT.path} className="text-foreground bg-background hover:text-background hover:bg-foreground ">
+            <Link
+              to={ROUTES.ABOUT.path}
+              className="text-foreground bg-background hover:text-background hover:bg-foreground "
+            >
               About
             </Link>
-            <Link to={ROUTES.RESEARCH.path} className="text-foreground bg-background hover:text-background hover:bg-foreground ">
+            <Link
+              to={ROUTES.RESEARCH.path}
+              className="text-foreground bg-background hover:text-background hover:bg-foreground "
+            >
               Research
             </Link>
             <Link
@@ -82,10 +88,16 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-start gap-2">
             <h2 className="text-foreground font-bold mb-1">Legal</h2>
-            <Link to={ROUTES.TOS.path} className="text-foreground bg-background hover:text-background hover:bg-foreground ">
+            <Link
+              to={ROUTES.TOS.path}
+              className="text-foreground bg-background hover:text-background hover:bg-foreground "
+            >
               Terms of Service
             </Link>
-            <Link to={ROUTES.PRIVACY.path} className="text-foreground bg-background hover:text-background hover:bg-foreground ">
+            <Link
+              to={ROUTES.PRIVACY.path}
+              className="text-foreground bg-background hover:text-background hover:bg-foreground "
+            >
               Privacy Policy
             </Link>
           </div>

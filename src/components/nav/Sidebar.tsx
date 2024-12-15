@@ -55,8 +55,8 @@ const Sidebar = ({ show, onClose }: SidebarProps) => {
     }
   };
 
-  const filteredNavItems = navItems.filter(item => {
-    if (!isAuthenticated && item.path.includes('/bots/browse')) {
+  const filteredNavItems = navItems.filter((item) => {
+    if (!isAuthenticated && item.path.includes("/bots/browse")) {
       return false;
     }
     return true;
@@ -95,7 +95,9 @@ const Sidebar = ({ show, onClose }: SidebarProps) => {
                         }
                       />
                     ))}
-                    {hasNavItems && <div className="border-t border-foreground"></div>}
+                    {hasNavItems && (
+                      <div className="border-t border-foreground"></div>
+                    )}
                   </div>
                 )}
                 {hasNavItems && (

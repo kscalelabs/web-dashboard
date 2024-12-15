@@ -297,7 +297,10 @@ export const RenderProfile = (props: RenderProfileProps) => {
                     value === "own" ? "border text-gray-12" : ""
                   }`}
                 >
-                  <TabsTrigger value="own" className="data-[state=active]:bg-gray-3">
+                  <TabsTrigger
+                    value="own"
+                    className="data-[state=active]:bg-gray-3"
+                  >
                     {getListingsTabLabel()}
                   </TabsTrigger>
                 </Button>
@@ -309,7 +312,10 @@ export const RenderProfile = (props: RenderProfileProps) => {
                       value === "upvoted" ? "border text-gray-12" : ""
                     }`}
                   >
-                    <TabsTrigger value="upvoted" className="data-[state=active]:bg-gray-3">
+                    <TabsTrigger
+                      value="upvoted"
+                      className="data-[state=active]:bg-gray-3"
+                    >
                       Upvoted Robots
                     </TabsTrigger>
                   </Button>

@@ -4,6 +4,7 @@ import "@/App.css";
 
 import NotFoundRedirect from "@/components/NotFoundRedirect";
 import PendoInitializer from "@/components/PendoInitializer";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import SprigInitializer from "@/components/SprigInitializer";
 import Footer from "@/components/footer/Footer";
@@ -33,7 +34,6 @@ import TermsOfService from "@/components/pages/TermsOfService";
 import { AlertQueue, AlertQueueProvider } from "@/hooks/useAlertQueue";
 import { AuthenticationProvider } from "@/hooks/useAuth";
 import ROUTES from "@/lib/types/routes";
-import ProtectedRoute from "@/components/ProtectedRoute";
 
 const App = () => {
   return (
@@ -54,7 +54,10 @@ const App = () => {
                         {/* Public routes */}
                         <Route path={ROUTES.LOGIN.path} element={<Login />} />
                         <Route path={ROUTES.SIGNUP.path} element={<Signup />} />
-                        <Route path={ROUTES.SIGNUP.EMAIL.path} element={<EmailSignup />} />
+                        <Route
+                          path={ROUTES.SIGNUP.EMAIL.path}
+                          element={<EmailSignup />}
+                        />
 
                         {/* Protected routes */}
                         <Route
@@ -67,12 +70,7 @@ const App = () => {
                         />
 
                         {/* General pages */}
-                        <Route
-                          path={ROUTES.ABOUT.path}
-                          element={
-                              <About />
-                          }
-                        />
+                        <Route path={ROUTES.ABOUT.path} element={<About />} />
                         <Route
                           path={ROUTES.RESEARCH.path}
                           element={<ResearchPage />}
