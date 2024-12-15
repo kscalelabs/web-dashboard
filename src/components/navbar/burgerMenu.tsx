@@ -9,7 +9,7 @@ import { motion } from "motion/react";
 const BurgerMenu = (isOpen: boolean) => {
   return isOpen ? (
     <motion.div
-      className={"flex flex-col col-span-full list-none justify-evenly"}
+      className={"flex flex-col col-span-full list-none justify-evenly h-[100dvh]"}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { ColorVariant, FillMode } from "@/components/util/constants";
 import { Size } from "@/components/util/constants";
 import routes from "@/lib/types/routes";
+import {ExpressiveArrow} from "@/components/ui/iconography/Iconography";
 
 const SHOP_URL = "https://shop.kscale.dev/collections/all";
 
@@ -149,6 +150,7 @@ export const NavCTAButton = ({
         )}
       >
         {children}
+        <ExpressiveArrow size={"size-6"}/>
       </a>
     </motion.button>
   ) : (
@@ -174,6 +176,7 @@ export const NavCTAButton = ({
       onClick={() => routes.BOTS}
     >
       {children}
+      <ExpressiveArrow size={"size-6"}/>
     </motion.button>
   );
 };

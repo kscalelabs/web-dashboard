@@ -120,7 +120,6 @@
     color: var(--foreground);
     margin: 0;
     padding: 0;
-    font-family: var(--font-mono);
   }
 
   .container {
@@ -170,7 +169,6 @@
     background: var(--background);
     color: var(--foreground);
     border: 1px solid #333;
-    font-family: var(--font-mono);
   }
 
   form button {
@@ -179,7 +177,6 @@
     color: var(--foreground);
     border: 1px solid #333;
     padding: 0.5em;
-    font-family: var(--font-mono);
     cursor: pointer;
   }
 
@@ -324,7 +321,8 @@
 
 nav a {
   border : none;
-  color: var(--background);
+  white-space: nowrap;
+  color: var(--foreground);
   padding: 0;
   margin: 0;
 }
@@ -332,10 +330,11 @@ nav a {
 
 footer a {
   border : none;
-  color: var(--background);
+  color: var(--filament);
   padding: 0;
   margin: 0;
 }
+
 
 ::-webkit-scrollbar {
     display: none;

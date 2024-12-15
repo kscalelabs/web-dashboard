@@ -8,7 +8,12 @@ import { NavCTAButton } from "@/components/ui/CTAButtons";
 import { FillMode } from "@/components/util/constants";
 import { useWindowSize } from "@/components/util/functions";
 import clsx from "clsx";
-import { AnimatePresence, useMotionValueEvent, useScroll } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "motion/react";
 
 export default function NavBar() {
   const { scrollY } = useScroll();
@@ -41,10 +46,9 @@ export default function NavBar() {
       <>
         <menu
           className={clsx(
-            "col-span-full grid bg-background grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw]",
-          )}
-        >
-          <Logotype />
+            "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw]",
+          )}>
+          <Logotype  />
           <BurgerOpenButton
             className="-col-end-1 place-self-end pointer-events-auto"
             atTop={atTop}
@@ -60,10 +64,9 @@ export default function NavBar() {
   const desktopNavBar = () => {
     return (
       <>
-        <Logotype />
-
-        <NavDocsButton />
-        <NavLogInButton />
+        <Logotype  />
+        <NavDocsButton  />
+        <NavLogInButton  />
 
         <NavCTAButton
           className="md:col-span-2 md:-col-end-1 2xl:col-span-3 2xl:-col-end-1"
@@ -91,8 +94,8 @@ export default function NavBar() {
   }, [mobileShouldOpenBurger]);
 
   return (
-    <nav className="fixed bg-background top-0 inset-x-0 z-50 h-[100dvh] md:h-auto md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none">
+    <motion.nav className="fixed bg-background top-0 inset-x-0 z-50 md:h-auto md:py-4 grid-a grid-rows-[min-content_auto] pointer-events-none">
       {navBasedOnWidth(width >= 768)}
-    </nav>
+    </motion.nav>
   );
 }
