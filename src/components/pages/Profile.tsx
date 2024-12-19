@@ -292,13 +292,13 @@ export const RenderProfile = (props: RenderProfileProps) => {
                 <Button
                   variant="outline"
                   asChild
-                  className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-gray-11 ${
+                  className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-foreground hover:text-background ${
                     value === "own" ? "border text-background" : ""
                   }`}
                 >
                   <TabsTrigger
                     value="own"
-                    className="data-[state=active]:bg-filament text-carbon"
+                    className="data-[state=active]:bg-rust text-filament hover:data-[state=active]:bg-filament hover:text-carbon"
                   >
                     {getListingsTabLabel()}
                   </TabsTrigger>
@@ -307,7 +307,7 @@ export const RenderProfile = (props: RenderProfileProps) => {
                   <Button
                     variant="outline"
                     asChild
-                    className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-gray-11 ${
+                    className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-rust ${
                       value === "upvoted" ? "border text-background" : ""
                     }`}
                   >
