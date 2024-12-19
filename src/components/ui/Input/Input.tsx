@@ -19,14 +19,14 @@ const Input = React.forwardRef<
       onWheel={handleWheel}
       className={cn(
         `flex h-10 w-full rounded-md
-        border border-gray-7 px-3 py-2 text-sm
-        ring-offset-background file:border-0 bg-gray-3
+        border border-foreground px-3 py-2 text-sm
+        ring-offset-background file:border-0 bg-foreground
         file:text-sm file:font-medium
-        placeholder:text-gray-11
+        placeholder:text-foreground
         focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring
         focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50
-        focus:border-primary-9 focus:ring focus:ring-primary-9 focus:ring-opacity-50
-        text-gray-12`,
+        focus:border-foreground focus:ring focus:ring-foreground focus:ring-opacity-50
+        text-background`,
         className,
       )}
       ref={ref}
@@ -43,13 +43,13 @@ const TextArea = React.forwardRef<
   return (
     <textarea
       className={cn(
-        `flex w-full rounded-md border border-gray-7 px-3 py-2 text-sm
-        ring-offset-background file:border-0 bg-gray-3
-        file:text-sm file:font-medium placeholder:text-gray-9
+        `flex w-full rounded-md border border-foreground px-3 py-2 text-sm
+        ring-offset-background file:border-0 bg-foreground
+        file:text-sm file:font-medium placeholder:text-foreground
         focus-visible:outline-none focus-visible:ring-2
         focus-visible:ring-ring
         disabled:cursor-not-allowed disabled:opacity-50
-        text-gray-12`,
+        text-background`,
         className,
       )}
       ref={ref}

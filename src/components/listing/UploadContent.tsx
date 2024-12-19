@@ -59,16 +59,16 @@ const UploadContent: FC<UploadContentProps> = ({ images, onChange }) => {
           {/* Dropzone Area */}
           <div
             className={`
-                border-2 border-dashed p-5 rounded-lg flex flex-col items-center justify-center h-64 transition-colors duration-300 hover:cursor-pointer hover:bg-gray-10 hover:border-gray-1
+                border-2 border-dashed p-5 rounded-lg flex flex-col items-center justify-center h-64 transition-colors duration-300 hover:cursor-pointer hover:bg-foreground hover:border-foreground
                 ${
                   isDragging
-                    ? "border-gray-1 bg-gray-10"
-                    : "border-gray-5 bg-gray-11"
+                    ? "border-foreground bg-foreground"
+                    : "border-foreground bg-foreground"
                 }`}
             onClick={onImageUpload}
             {...dragProps}
           >
-            <p className="text-gray-1">
+            <p className="text-foreground">
               Click to select files or drag and drop images here
             </p>
           </div>
@@ -81,10 +81,10 @@ const UploadContent: FC<UploadContentProps> = ({ images, onChange }) => {
                   <img
                     src={image["data_url"]}
                     alt=""
-                    className="w-full h-32 object-cover rounded-lg border border-gray-6"
+                    className="w-full h-32 object-cover rounded-lg border border-foreground"
                   />
                   <span
-                    className="absolute top-2 right-2 text-red-500 hover:text-red-600 transition-colors duration-200 cursor-pointer"
+                    className="absolute top-2 right-2 text-oxide hover:text-red-600 transition-colors duration-200 cursor-pointer"
                     onClick={() => onImageRemove(index)}
                   >
                     <XCircleFill size={24} />
@@ -92,7 +92,7 @@ const UploadContent: FC<UploadContentProps> = ({ images, onChange }) => {
                 </div>
               ))
             ) : (
-              <p className="text-gray-11 whitespace-nowrap">
+              <p className="text-foreground text-opacity-70 whitespace-nowrap">
                 No images uploaded yet.
               </p>
             )}

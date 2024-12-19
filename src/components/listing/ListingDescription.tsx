@@ -41,7 +41,7 @@ export const RenderDescription = ({ description }: RenderDescriptionProps) => {
             <table className="table-auto w-full">{children}</table>
           ),
           thead: ({ children }) => (
-            <thead className="bg-gray-50">{children}</thead>
+            <thead className="bg-foreground">{children}</thead>
           ),
           tbody: ({ children }) => <tbody>{children}</tbody>,
           tr: ({ children }) => <tr>{children}</tr>,
@@ -56,7 +56,7 @@ export const RenderDescription = ({ description }: RenderDescriptionProps) => {
               href={transformUrl(href || "")}
               target="_blank"
               rel="noreferrer"
-              className="text-blue-500"
+              className="text-plasma"
             >
               {children}
             </a>
@@ -170,7 +170,7 @@ const ListingDescription = (props: Props) => {
                   setNewDescription(e.target.value);
                   setHasChanged(true);
                 }}
-                className="border-b border-gray-5 mb-2 font-mono min-h-[200px] h-auto resize-none bg-black text-white"
+                className="border-b border-foreground mb-2 font-mono min-h-[200px] h-auto resize-none bg-background text-foreground"
                 style={{
                   height: `${Math.max(200, newDescription.split("\n").length * 24)}px`,
                 }}
@@ -183,7 +183,7 @@ const ListingDescription = (props: Props) => {
                   variant="ghost"
                   size="icon"
                   disabled={submitting}
-                  className="text-red-500 hover:text-red-700 hover:bg-transparent"
+                  className="text-plasma hover:text-red-700 hover:bg-transparent"
                 >
                   <FaTimes />
                 </Button>

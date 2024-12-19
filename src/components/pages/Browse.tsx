@@ -118,7 +118,7 @@ const Browse = () => {
       <div className="mb-10">
         <div className="flex flex-col justify-center mb-6 text-center max-w-5xl mx-auto">
           <h1 className="text-2xl font-bold mb-2">Community Robots Hub</h1>
-          <p className="text-gray-2 text-xs sm:text-lg">
+          <p className="text-foreground text-xs sm:text-lg">
             Explore and share robot designs from the community! Upload your
             OnShape CAD models and instantly convert them to URDF and MJCF
             formats for simulation and visualization
