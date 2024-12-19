@@ -38,7 +38,7 @@ const UrlInput = (props: UrlInputProps) => {
       onKeyDown={async (e) => {
         if (e.key === "Enter") await handleSave();
       }}
-      className="border border-gray-200 rounded-md px-4 py-2 w-full"
+      className="border border-foreground rounded-md px-4 py-2 w-full"
       placeholder="Enter Onshape URL..."
       autoFocus
     />
@@ -57,7 +57,7 @@ const UrlDisplay = ({ url, onCopy, disabled = false }: UrlDisplayProps) => (
       href={url || ""}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex-1 px-4 py-2 bg-gray-12 rounded-md hover:underline truncate text-gray-1"
+      className="flex-1 px-4 py-2 bg-background rounded-md hover:underline truncate text-foreground"
     >
       Linked Onshape Document
     </a>
@@ -249,7 +249,7 @@ const ListingOnshapeUpdate = (props: ListingOnshapeUpdateProps) => {
     <div className="pt-4 flex flex-col max-w-full">
       <div
         ref={messageContainerRef}
-        className="p-4 max-h-96 overflow-auto bg-gray-12 w-full"
+        className="p-4 max-h-96 overflow-auto bg-background w-full"
       >
         <div className="whitespace-pre">
           {messages
@@ -262,7 +262,7 @@ const ListingOnshapeUpdate = (props: ListingOnshapeUpdateProps) => {
                   "text-sm font-mono break-words",
                   level === "success" && "text-green-600 font-bold my-1",
                   level === "info" && "text-gray-11",
-                  level === "error" && "text-red-600 font-bold my-1",
+                  level === "error" && "text-oxide font-bold my-1",
                 )}
               >
                 <code>{message}</code>
@@ -294,15 +294,15 @@ const InstructionCard = ({
   title: string;
   instructions: { step: string; code: string }[];
 }) => (
-  <div className="mt-6 p-8 bg-white rounded-xl shadow-lg w-full border border-gray-200">
-    <h4 className="text-2xl font-semibold mb-6 text-gray-800">{title}</h4>
+  <div className="mt-6 p-8 bg-foreground rounded-xl shadow-lg w-full border border-foreground">
+    <h4 className="text-2xl font-semibold mb-6 text-background">{title}</h4>
     <ol className="list-decimal list-outside ml-6 space-y-6 text-base text-gray-700">
       {instructions.map(({ step, code }, index) => (
         <li key={index} className="leading-relaxed">
           {step}
           <CopyableCode
             code={code}
-            className="bg-gray-100 text-green-600 p-4 rounded-lg mt-3 font-mono text-sm border border-gray-200"
+            className="bg-foreground text-green-600 p-4 rounded-lg mt-3 font-mono text-sm border border-foreground"
           />
         </li>
       ))}
@@ -521,7 +521,7 @@ const ListingOnshape = (props: Props) => {
   };
 
   return (
-    <Card className="mt-6 border border-gray-200 shadow-lg">
+    <Card className="mt-6 border border-foreground shadow-lg">
       <CardHeader className="p-6">
         <CardTitle className="space-y-6">
           {submitting ? (

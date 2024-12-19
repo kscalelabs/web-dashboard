@@ -57,7 +57,7 @@ const Toast = (props: Props) => {
 
   return (
     <div
-      className="flex items-center w-full p-4 rounded-lg shadow text-gray-11 bg-gray-2"
+      className="flex items-center w-full p-4 rounded-lg shadow text-background bg-foreground"
       role="alert"
     >
       <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg">
@@ -66,7 +66,7 @@ const Toast = (props: Props) => {
       <div className="ms-3 text-sm font-normal max-w-xs">{message}</div>
       <Button
         variant="ghost"
-        className="ml-4 hover:bg-gray-11"
+        className="ml-4 hover:bg-background"
         onClick={onClose}
       >
         <span className="sr-only">Close</span>

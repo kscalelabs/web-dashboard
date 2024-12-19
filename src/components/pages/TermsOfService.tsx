@@ -4,7 +4,7 @@ const TermsOfService = () => {
   return (
     <Container>
       <h1 className="text-3xl font-bold mb-2">Terms of Service</h1>
-      <p className="mb-4 text-sm text-gray-2">
+      <p className="mb-4 text-sm text-foreground">
         Last updated: November 15, 2024
       </p>
       <section className="mb-6">

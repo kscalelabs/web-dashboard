@@ -72,7 +72,7 @@ const ListingDeleteButton = (props: Props) => {
         onClick={() => setConfirmDelete(true)}
         variant="outline"
         disabled={deleting}
-        className={`flex items-center text-red-600 hover:text-red-500 hover:border-red-600 ${className}`}
+        className={`flex items-center text-oxide hover:text-red-500 hover:border-oxide ${className}`}
       >
         <FaTrash className="mr-2 h-4 w-4" />
         <span>{deleting ? "Deleting..." : "Delete Listing"}</span>

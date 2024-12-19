@@ -20,9 +20,9 @@ const DeleteConfirmationModal = ({
 }: DeleteConfirmationModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="p-8 bg-gray-12 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-4 text-gray-2">{title}</h2>
-        <p className="mb-6 text-gray-7">{description}</p>
+      <div className="p-8 bg-background rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4 text-foreground">{title}</h2>
+        <p className="mb-6 text-foreground">{description}</p>
         <div className="flex justify-end space-x-4">
           <Button onClick={onClose} variant="outline">
             Cancel

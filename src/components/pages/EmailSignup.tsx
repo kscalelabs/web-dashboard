@@ -59,7 +59,7 @@ const EmailSignup = () => {
   if (isLoading) {
     return (
       <div className="flex flex-col items-center mt-20">
-        <Card className="w-[400px] shadow-md bg-gray-12 text-gray-2 rounded-lg">
+        <Card className="w-[400px] shadow-md bg-background text-foreground rounded-lg">
           <CardHeader>
             <Header title="Sign Up" />
           </CardHeader>
@@ -75,7 +75,7 @@ const EmailSignup = () => {
 
   return (
     <div className="flex flex-col items-center mt-20">
-      <Card className="w-[400px] shadow-md bg-gray-12 text-gray-2 rounded-lg">
+      <Card className="w-[400px] shadow-md bg-background text-foreground rounded-lg">
         <CardHeader>
           <Header title="Sign Up" />
         </CardHeader>

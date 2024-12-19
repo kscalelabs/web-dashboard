@@ -33,11 +33,11 @@ const HeroSection: React.FC = () => {
   return (
     <section className="relative overflow-hidden h-[40vh] rounded-lg">
       <PageHeader>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black border border-gray-500 rounded-lg p-4">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background border border-filament-60 rounded-lg p-4">
           <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold text-foreground">
             K-Scale Labs
           </h1>
-          <p className="text-gray-400 mt-2">
+          <p className="text-filament70 mt-2">
             Moving humanity up the Kardashev scale
           </p>
         </div>
@@ -90,16 +90,16 @@ const OptionsSection: React.FC = () => {
             }
           >
             <CardHeader>
-              <CardTitle className="text-gray-2 text-lg sm:text-xl">
+              <CardTitle className="text-foreground text-lg sm:text-xl">
                 {item.title}
               </CardTitle>
-              <CardDescription className="text-gray-7 font-light">
+              <CardDescription className="text-foreground font-light">
                 {item.description}
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-grow flex flex-col justify-end">
-              <item.icon className="w-12 h-12 mb-4 text-primary-9" />
-              <div className="inline-flex items-center text-sm font-medium text-primary-1">
+              <item.icon className="w-12 h-12 mb-4 text-foreground" />
+              <div className="inline-flex items-center text-sm font-medium text-foreground">
                 {item.buttonText}
                 {item.external ? (
                   <ExternalLinkIcon className="ml-1 h-4 w-4" />
