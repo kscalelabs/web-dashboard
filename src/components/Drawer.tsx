@@ -45,7 +45,7 @@ export const Drawer = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onClick={handleClose}
-          className="fixed inset-0 z-50 bg-neutral-950/70"
+          className="fixed inset-0 z-50 bg-background/70"
         >
           <motion.div
             id="drawer"
@@ -56,7 +56,7 @@ export const Drawer = ({
             transition={{
               ease: "easeInOut",
             }}
-            className="absolute bottom-0 h-[60vh] w-full overflow-hidden rounded-t-3xl bg-neutral-900"
+            className="absolute bottom-0 h-[60vh] w-full overflow-hidden rounded-t-3xl bg-background"
             style={{ y }}
             drag="y"
             dragControls={controls}
@@ -75,7 +75,7 @@ export const Drawer = ({
               bottom: 0.5,
             }}
           >
-            <div className="absolute left-0 right-0 top-0 z-10 flex justify-center bg-neutral-900 p-4">
+            <div className="absolute left-0 right-0 top-0 z-10 flex justify-center bg-background p-4">
               <button
                 onPointerDown={(e) => {
                   controls.start(e);

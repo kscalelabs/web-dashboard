@@ -65,7 +65,7 @@ const Listing = () => {
           ) : (
             <div className="text-center py-8">
               <h2 className="text-xl font-semibold">Listing Not Found</h2>
-              <p className="text-gray-600">
+              <p className="text-background">
                 The requested listing could not be found.
               </p>
             </div>

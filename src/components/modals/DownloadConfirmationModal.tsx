@@ -18,18 +18,18 @@ const DownloadConfirmationModal = ({
 }: DownloadConfirmationModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="p-8 bg-gray-12 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-4 text-gray-2">
+      <div className="p-8 bg-background rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4 text-foreground">
           Download Kernel Image
         </h2>
-        <div className="mb-6 space-y-2 text-gray-7">
+        <div className="mb-6 space-y-2 text-foreground">
           <p>Are you sure you want to download this kernel image?</p>
           <p>
-            <span className="text-gray-2 font-bold mb-4">File: </span>
+            <span className="text-foreground font-bold mb-4">File: </span>
             {fileName}
           </p>
           <p>
-            <span className="text-gray-2 front-bold mb-4">Size: </span>
+            <span className="text-foreground front-bold mb-4">Size: </span>
             {fileSize}
           </p>
         </div>

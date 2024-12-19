@@ -20,18 +20,18 @@ export default function RobotCard({ robot, onDeleteRobot }: RobotCardProps) {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   return (
-    <Card className="w-full bg-black border border-gray-700 hover:border-white transition-all duration-300">
+    <Card className="w-full bg-background border border-background hover:border-foreground transition-all duration-300">
       <div className="p-6">
         <div className="flex items-center justify-between gap-4">
           <Link
             to={ROUTES.TERMINAL.WITH_ID.buildPath({ id: robot.robot_id })}
             className="flex items-center gap-4 group flex-grow hover:cursor-pointer"
           >
-            <div className="p-2 bg-gray-900 rounded-lg group-hover:bg-gray-800 transition-colors">
-              <FaRobot className="h-6 w-6 text-white" />
+            <div className="p-2 bg-background rounded-lg group-hover:bg-background transition-colors">
+              <FaRobot className="h-6 w-6 text-foreground" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-white group-hover:text-primary-9 transition-colors">
+              <h3 className="text-lg font-semibold text-foreground group-hover:text-foreground transition-colors">
                 {robot.name}
               </h3>
             </div>
@@ -41,7 +41,7 @@ export default function RobotCard({ robot, onDeleteRobot }: RobotCardProps) {
               variant="ghost"
               size="icon"
               onClick={() => setIsDeleteModalOpen(true)}
-              className="h-10 w-10 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors"
+              className="h-10 w-10 rounded-lg bg-background text-foreground hover:bg-background transition-colors"
             >
               <FaTrash className="h-4 w-4" />
             </Button>
@@ -49,13 +49,13 @@ export default function RobotCard({ robot, onDeleteRobot }: RobotCardProps) {
         </div>
 
         {robot.description && (
-          <p className="mt-4 text-sm text-gray-400">{robot.description}</p>
+          <p className="mt-4 text-sm text-foreground">{robot.description}</p>
         )}
 
-        <div className="mt-4 pt-4 border-t border-gray-800">
+        <div className="mt-4 pt-4 border-t border-background">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm">
             <div>
-              <p className="text-gray-400">Listing</p>
+              <p className="text-foreground">Listing</p>
               {robot.is_deleted ? (
                 <p className="text-gray-500 italic">Listing deleted</p>
               ) : (
@@ -68,7 +68,7 @@ export default function RobotCard({ robot, onDeleteRobot }: RobotCardProps) {
                       username: robot.username,
                       slug: robot.slug,
                     })}
-                    className="text-white hover:text-primary-9 flex items-center gap-1 group transition-colors"
+                    className="text-foreground hover:text-foreground flex items-center gap-1 group transition-colors"
                   >
                     <span className="group-hover:underline">
                       {robot.username}/{robot.slug}
@@ -79,13 +79,13 @@ export default function RobotCard({ robot, onDeleteRobot }: RobotCardProps) {
               )}
             </div>
             <div>
-              <p className="text-gray-400">Registered</p>
-              <p className="text-white">
+              <p className="text-foreground">Registered</p>
+              <p className="text-foreground">
                 {formatDate(new Date(robot.created_at * 1000))}
               </p>
             </div>
             <div>
-              <p className="text-gray-400">Order ID</p>
+              <p className="text-foreground">Order ID</p>
               {robot.order_id ? (
                 <Tooltip
                   content="View order associated with robot"
@@ -93,7 +93,7 @@ export default function RobotCard({ robot, onDeleteRobot }: RobotCardProps) {
                 >
                   <Link
                     to={ROUTES.ORDERS.path}
-                    className="text-white hover:text-primary-9 flex items-center gap-1 group transition-colors"
+                    className="text-foreground hover:text-foreground flex items-center gap-1 group transition-colors"
                   >
                     <span className="group-hover:underline">
                       {robot.order_id}
@@ -102,7 +102,7 @@ export default function RobotCard({ robot, onDeleteRobot }: RobotCardProps) {
                   </Link>
                 </Tooltip>
               ) : (
-                <p className="text-white">No associated order</p>
+                <p className="text-foreground">No associated order</p>
               )}
             </div>
           </div>

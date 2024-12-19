@@ -232,7 +232,7 @@ const MJCFRenderer = ({ mjcfContent, files, useControls = true }: Props) => {
           const { renderer, scene, camera, controls } = initializeThreeJS(
             containerRef.current,
             {
-              backgroundColor: new THREE.Color("#f0f0f0"),
+              backgroundColor: new THREE.Color("#f8f4f2"),
             },
           );
 
@@ -293,7 +293,7 @@ const MJCFRenderer = ({ mjcfContent, files, useControls = true }: Props) => {
     >
       {errorToShow && (
         <div className="flex justify-center items-center w-full h-full">
-          <div className="text-red-500 font-mono p-4">
+          <div className="text-oxide font-mono p-4">
             {errorToShow.name}: {humanReadableError(errorToShow)}
           </div>
         </div>
@@ -309,7 +309,7 @@ const MJCFRenderer = ({ mjcfContent, files, useControls = true }: Props) => {
 
       {useControls && showControls && (
         <div className="absolute top-0 right-0 bottom-0 w-64 z-30">
-          <div className="h-full overflow-y-auto bg-[#f0f0f0]">
+          <div className="h-full overflow-y-auto bg-foreground">
             <div className="p-4 overflow-y-auto h-full">
               <div className="space-y-4">
                 {/* Add notification banner */}
@@ -334,7 +334,7 @@ const MJCFRenderer = ({ mjcfContent, files, useControls = true }: Props) => {
 
                 <button
                   onClick={() => setShowControls(false)}
-                  className="w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded flex items-center justify-center gap-2"
+                  className="w-full bg-gray-500 hover:bg-gray-600 text-foreground font-bold py-2 px-4 rounded flex items-center justify-center gap-2"
                 >
                   <FaChevronRight className="inline-block" />
                   Hide Controls
@@ -362,9 +362,9 @@ const MJCFRenderer = ({ mjcfContent, files, useControls = true }: Props) => {
                         onChange={(e) =>
                           updateJointPosition(index, parseFloat(e.target.value))
                         }
-                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                        className="w-full h-2 bg-foreground rounded-lg appearance-none cursor-pointer"
                       />
-                      <div className="flex justify-between text-xs text-[#333] mt-1">
+                      <div className="flex justify-between text-xs text-background mt-1">
                         <span>{"-3.14"}</span>
                         <span>{"3.14"}</span>
                       </div>
@@ -380,7 +380,7 @@ const MJCFRenderer = ({ mjcfContent, files, useControls = true }: Props) => {
       {useControls && !showControls && (
         <button
           onClick={() => setShowControls(true)}
-          className="absolute bottom-4 right-4 z-30 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full shadow-md"
+          className="absolute bottom-4 right-4 z-30 bg-gray-700 hover:bg-gray-600 text-foregrounde font-bold py-2 px-4 rounded-full shadow-md"
         >
           <FaChevronLeft />
         </button>
@@ -389,19 +389,19 @@ const MJCFRenderer = ({ mjcfContent, files, useControls = true }: Props) => {
       <div className="absolute bottom-4 left-4 z-50 flex gap-2">
         <button
           onClick={toggleSimulation}
-          className="bg-purple-500 hover:bg-purple-600 text-white font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
+          className="bg-purple-500 hover:bg-plasma text-foreground font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
         >
           {isSimulating ? <FaPause /> : <FaPlay />}
         </button>
         <button
           onClick={restartSimulation}
-          className="bg-purple-500 hover:bg-purple-600 text-white font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
+          className="bg-purple-500 hover:bg-plasma text-foreground font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
         >
           <FaUndo />
         </button>
         <button
           onClick={toggleFullScreen}
-          className="bg-purple-500 hover:bg-purple-600 text-white font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
+          className="bg-purple-500 hover:bg-plasma text-foreground font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
         >
           {isFullscreen ? <FaCompress /> : <FaExpand />}
         </button>

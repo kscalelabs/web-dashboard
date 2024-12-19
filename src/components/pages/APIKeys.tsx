@@ -90,7 +90,7 @@ const SingleKey = ({ token, permissions, onDelete }: SingleKeyProps) => {
         {permissions?.join(", ") || "None"}
       </p>
       {isActiveKey && (
-        <p className="text-sm text-orange-500">
+        <p className="text-sm text-molten">
           This is your active key. You cannot delete it.
         </p>
       )}

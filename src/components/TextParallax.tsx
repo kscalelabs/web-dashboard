@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export const TextParallaxContentExample = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-foreground">
       <TextParallaxContent
         imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="Collaborate"
@@ -91,7 +91,7 @@ const StickyImage: React.FC<StickyImageProps> = ({ imgUrl }) => {
       className="sticky z-0 overflow-hidden rounded-xl"
     >
       <motion.div
-        className="absolute inset-0 bg-neutral-950/70"
+        className="absolute inset-0 bg-background/70"
         style={{
           opacity,
         }}
@@ -122,7 +122,7 @@ const OverlayCopy: React.FC<OverlayCopyProps> = ({ subheading, heading }) => {
         opacity,
       }}
       ref={targetRef}
-      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
+      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-foreground"
     >
       <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
         {subheading}
@@ -148,7 +148,7 @@ export const ExampleContent: React.FC = () => (
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
         reiciendis blanditiis aliquam aut fugit sint.
       </p>
-      <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
+      <button className="w-full rounded bg-background px-9 py-4 text-xl text-foreground transition-colors hover:bg-background md:w-fit">
         Learn more <FiArrowUpRight className="inline" />
       </button>
     </div>

@@ -17,7 +17,7 @@ const AVStreamer = () => {
   const handleSendRequest = () => {};
 
   return (
-    <div className="border border-gray-700 bg-black rounded-lg overflow-hidden flex flex-col">
+    <div className="border border-backgruond bg-background rounded-lg overflow-hidden flex flex-col">
       <div className="p-4 space-y-4 flex-1 flex flex-col justify-center">
         {/* Server URL and controls */}
         <div className="flex flex-col sm:flex-row gap-2">
@@ -26,19 +26,19 @@ const AVStreamer = () => {
             value={serverUrl}
             onChange={(e) => setServerUrl(e.target.value)}
             placeholder="Enter WebRTC server URL (e.g., wss://server:8585)"
-            className="flex-1 px-3 py-2 bg-gray-800 text-white rounded-md"
+            className="flex-1 px-3 py-2 bg-background text-foreground rounded-md"
             disabled={isConnected}
           />
           <div className="flex flex-col sm:flex-row gap-2 sm:flex-shrink-0">
             <button
-              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors disabled:opacity-50"
+              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-foreground rounded-md transition-colors disabled:opacity-50"
               onClick={handleConnect}
               disabled={isConnected || isLoading || !serverUrl}
             >
               Connect
             </button>
             <button
-              className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors disabled:opacity-50"
+              className="px-4 py-2 bg-oxide hover:bg-red-700 text-foreground rounded-md transition-colors disabled:opacity-50"
               onClick={handleDisconnect}
               disabled={!isConnected || isLoading}
             >
@@ -64,7 +64,7 @@ const AVStreamer = () => {
               playsInline
             />
             {!isConnected && (
-              <div className="absolute inset-0 flex items-center justify-center border-2 border-dashed border-gray-700 p-4">
+              <div className="absolute inset-0 flex items-center justify-center border-2 border-dashed border-background p-4">
                 {isLoading
                   ? "Connecting..."
                   : "Waiting for video connection..."}
@@ -79,11 +79,11 @@ const AVStreamer = () => {
             <textarea
               value={requestText}
               placeholder="Enter JSON request to send over data channel"
-              className="w-full px-3 py-2 bg-gray-800 text-white rounded-md"
+              className="w-full px-3 py-2 bg-background text-foreground rounded-md"
               rows={4}
             />
             <button
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors"
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-foreground rounded-md transition-colors"
               onClick={handleSendRequest}
               disabled={!requestText}
             >
@@ -97,8 +97,8 @@ const AVStreamer = () => {
           <div className="flex-shrink-0">
             <FaMicrophone />
           </div>
-          <div className="flex-1 h-2 bg-gray-900 rounded-full overflow-hidden">
-            <div className="h-full w-0 bg-gray-700 rounded-full animate-pulse"></div>
+          <div className="flex-1 h-2 bg-background rounded-full overflow-hidden">
+            <div className="h-full w-0 bg-background rounded-full animate-pulse"></div>
           </div>
         </div>
       </div>

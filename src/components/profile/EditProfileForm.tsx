@@ -68,7 +68,7 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({
               className={`text-sm ${
                 isUsernameAvailable && !usernameError
                   ? "text-green-500"
-                  : "text-red-500"
+                  : "text-oxide"
               }`}
             >
               {usernameError ||
@@ -115,7 +115,7 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({
             id="bio"
             value={bio}
             onChange={(e) => setBio(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-11 shadow-sm focus:border-foreground focus:ring focus:ring-foreground focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-background shadow-sm focus:border-foreground focus:ring focus:ring-foreground focus:ring-opacity-50"
             rows={3}
           />
         </div>

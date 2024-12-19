@@ -3,7 +3,7 @@ const ListingGridSkeleton = () => {
     <div role="status" className="p-4 rounded animate-pulse">
       <div className="flex items-center justify-center h-48 mb-4 bg-background rounded">
         <svg
-          className="w-10 h-10 text-gray-200"
+          className="w-10 h-10 text-foreground"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"

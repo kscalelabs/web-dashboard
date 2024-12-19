@@ -55,11 +55,11 @@ const ArtifactCard: React.FC<Props> = ({ artifact, onDelete, canEdit }) => {
 
   return (
     <div
-      className={`bg-gray-2 shadow-md rounded-lg overflow-hidden flex flex-col relative ${deleting ? "opacity-50" : ""}`}
+      className={`bg-foreground shadow-md rounded-lg overflow-hidden flex flex-col relative ${deleting ? "opacity-50" : ""}`}
     >
       {deleting && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-10">
-          <p className="text-gray-12 font-semibold">Deleting...</p>
+        <div className="absolute inset-0 flex items-center justify-center bg-background bg-opacity-50 z-10">
+          <p className="text-background font-semibold">Deleting...</p>
         </div>
       )}
       <div className="p-4 flex-grow">
@@ -71,7 +71,7 @@ const ArtifactCard: React.FC<Props> = ({ artifact, onDelete, canEdit }) => {
             <button
               onClick={handleDelete}
               disabled={deleting}
-              className="text-gray-500 hover:text-red-500 transition-colors duration-200"
+              className="text-gray-500 hover:text-oxide transition-colors duration-200"
               aria-label="Delete artifact"
             >
               <FaTrash className="h-5 w-5" />

@@ -54,7 +54,7 @@ const LinkRobot = () => {
           <h1 className="text-3xl font-bold text-background mb-3">
             Link Your Robot
           </h1>
-          <p className="text-gray-600">
+          <p className="text-background">
             Enter the 6-digit code displayed on your robot
           </p>
         </div>

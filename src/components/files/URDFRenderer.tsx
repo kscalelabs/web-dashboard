@@ -475,21 +475,21 @@ const URDFRenderer = ({
           <button
             onClick={toggleOrientation}
             className={
-              "bg-purple-500 hover:bg-purple-600 text-white font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
+              "bg-purple-500 hover:bg-plasma text-foreground font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
             }
           >
             <FaChevronUp />
           </button>
           <button
             onClick={toggleAutoRotate}
-            className="bg-purple-500 hover:bg-purple-600 text-white font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
+            className="bg-purple-500 hover:bg-plasma text-foreground font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
           >
             <FaSync className={isAutoRotating ? "animate-pulse" : ""} />
           </button>
           <button
             onClick={toggleFullScreen}
             className={
-              "bg-purple-500 hover:bg-purple-600 text-white font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
+              "bg-purple-500 hover:bg-plasma text-foreground font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
             }
           >
             {isFullScreen ? <FaCompress /> : <FaExpand />}
@@ -497,7 +497,7 @@ const URDFRenderer = ({
           <button
             onClick={toggleWireframe}
             className={
-              "bg-purple-500 hover:bg-purple-600 text-white font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
+              "bg-purple-500 hover:bg-plasma text-foreground font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
             }
           >
             {isWireframe ? "S" : "W"}
@@ -505,7 +505,7 @@ const URDFRenderer = ({
           {supportedThemes.length > 1 && (
             <button
               onClick={toggleTheme}
-              className="bg-purple-500 hover:bg-purple-600 text-white font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
+              className="bg-purple-500 hover:bg-plasma text-foreground font-bold w-8 h-8 rounded-full shadow-md flex items-center justify-center"
             >
               {theme.charAt(0).toUpperCase()}
             </button>
@@ -523,21 +523,21 @@ const URDFRenderer = ({
                 <button
                   onClick={cycleAllJoints}
                   disabled={isCycling}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-foreground font-bold py-2 px-4 rounded disabled:opacity-50"
                 >
                   <FaPlay className="inline-block mr-2" />
                   {isCycling ? "Cycling..." : "Cycle All Joints"}
                 </button>
                 <button
                   onClick={resetJoints}
-                  className="w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded"
+                  className="w-full bg-gray-500 hover:bg-gray-600 text-foreground font-bold py-2 px-4 rounded"
                 >
                   <FaUndo className="inline-block mr-2" />
                   Reset Joints
                 </button>
                 <button
                   onClick={() => setShowControls(false)}
-                  className="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+                  className="w-full bg-foreground hover:bg-gray-400 text-background font-bold py-2 px-4 rounded"
                 >
                   <FaChevronRight className="inline-block mr-2" />
                   Hide Controls
@@ -573,7 +573,7 @@ const URDFRenderer = ({
                       onChange={(e) =>
                         handleJointChange(index, parseFloat(e.target.value))
                       }
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                      className="w-full h-2 bg-foreground rounded-lg appearance-none cursor-pointer"
                       disabled={isCycling}
                     />
                     <div
@@ -597,7 +597,7 @@ const URDFRenderer = ({
           onClick={() => setShowControls(true)}
           className={`${
             isFullScreen ? "fixed" : "absolute"
-          } bottom-4 right-4 z-30 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full shadow-md`}
+          } bottom-4 right-4 z-30 bg-foreground hover:bg-gray-300 text-background font-bold py-2 px-4 rounded-full shadow-md`}
         >
           <FaChevronLeft />
         </button>

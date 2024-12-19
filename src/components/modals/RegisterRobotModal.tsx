@@ -71,14 +71,14 @@ export function RegisterRobotModal({
 
         <div className="grid gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="name" className="text-sm font-medium text-gray-1">
+            <Label htmlFor="name" className="text-sm font-medium text-foreground">
               Name
             </Label>
             <Input
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="bg-gray-2 border-gray-3 text-gray-12"
+              className="bg-foreground border-foreground text-background"
               maxLength={32}
             />
             <div className="text-xs text-gray-11 text-right">
@@ -89,7 +89,7 @@ export function RegisterRobotModal({
           <div className="grid gap-2">
             <Label
               htmlFor="description"
-              className="text-sm font-medium text-gray-1"
+              className="text-sm font-medium text-foreground"
             >
               Description
             </Label>
@@ -97,7 +97,7 @@ export function RegisterRobotModal({
               id="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="bg-gray-2 border-gray-3 text-gray-12"
+              className="bg-foreground border-foreground text-background"
               rows={3}
               maxLength={2048}
             />

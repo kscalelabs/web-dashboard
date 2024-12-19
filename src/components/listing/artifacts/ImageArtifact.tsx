@@ -21,7 +21,7 @@ const ImageArtifact = ({ artifact }: Props) => {
   return (
     <>
       <div
-        className="w-full pt-[100%] relative bg-gray-200 cursor-pointer"
+        className="w-full pt-[100%] relative bg-foreground cursor-pointer"
         onClick={() => setIsModalOpen(true)}
       >
         <img

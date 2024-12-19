@@ -6,7 +6,7 @@ const PrivacyPolicy: React.FC = () => {
   return (
     <Container>
       <h1 className="text-3xl font-bold mb-2">Privacy Policy</h1>
-      <p className="mb-4 text-sm text-gray-600">
+      <p className="mb-4 text-sm text-background">
         Last updated {new Date().toLocaleDateString()}
       </p>
       <section className="mb-6">
@@ -53,7 +53,7 @@ const PrivacyPolicy: React.FC = () => {
         </p>
       </section>
 
-      <p className="mt-8 text-sm text-gray-600">
+      <p className="mt-8 text-sm text-background">
         © 2024 K-Scale Labs. All Rights Reserved.
       </p>
     </Container>
