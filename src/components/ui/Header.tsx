@@ -22,7 +22,7 @@ const Header = ({ title, label, onClosed, className }: HeaderProps) => {
       {onClosed && (
         <button
           onClick={onClosed}
-          className="absolute top-0 right-0 p-4 text-background"
+          className="absolute top-0 right-0 p-4 text-foreground"
         >
           <FaTimes />
         </button>
