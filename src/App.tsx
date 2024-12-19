@@ -49,7 +49,7 @@ const App = () => {
                   <PendoInitializer />
                   <SprigInitializer />
                   <div className="flex-grow">
-                    <div className="mt-24 mb-6 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 max-full">
+                    <div className="mt-28 mb-6 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 max-full">
                       <Routes>
                         {/* Public routes */}
                         <Route path={ROUTES.LOGIN.path} element={<Login />} />

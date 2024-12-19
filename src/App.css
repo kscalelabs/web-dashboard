@@ -56,6 +56,7 @@
     --grab: url("/assets/cursor/grab.svg"), grab;
     --grabbing: url("/assets/cursor/grabbing.svg"), grabbing;
     --pointer: url("/assets/cursor/pointer.svg"), pointer;
+    --selector: url("/assets/cursor/text.svg"), text;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -81,6 +82,10 @@
       --grab: url("/assets/cursor/grab_dark.svg"), grab;
       --grabbing: url("/assets/cursor/grabbing_dark.svg"), grabbing;
       --pointer: url("/assets/cursor/pointer_dark.svg"), pointer;
+    }
+
+    *::selection {
+      @apply bg-rust text-filament;
     }
   }
 }

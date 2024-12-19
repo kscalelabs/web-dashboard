@@ -57,7 +57,7 @@ const GDPRBanner: React.FC = () => {
               href="https://kscale.dev/privacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground underline ml-1"
+              className="text-foreground underline ml-1 hover:border-rust"
             >
               Privacy Policy
             </a>
@@ -65,13 +65,13 @@ const GDPRBanner: React.FC = () => {
           </div>
           <div className="flex justify-center gap-2">
             <button
-              className="bg-background text-foreground border border-foreground rounded-full px-4 py-2 text-sm hover:bg-foreground"
+              className="bg-background text-foreground border border-foreground rounded-full px-4 py-2 text-sm hover:bg-rust hover:text-filament hover:border-rust"
               onClick={handleOptOut}
             >
               Opt out
             </button>
             <button
-              className="bg-foreground text-foreground2 rounded-full px-4 py-2 transition-colors duration-300 hover:bg-foreground1"
+              className="bg-foreground text-background border border-foreground rounded-full px-4 py-2 transition-colors duration-300 hover:bg-plasma hover:text-filament hover:border-plasma"
               onClick={handleAccept}
             >
               Accept

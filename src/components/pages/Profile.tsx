@@ -290,30 +290,28 @@ export const RenderProfile = (props: RenderProfileProps) => {
             >
               <TabsList className="flex justify-center space-x-2 sm:space-x-4 mb-6 mt-2">
                 <Button
-                  variant="outline"
                   asChild
-                  className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-foreground hover:text-background ${
+                  className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-rust hover:text-filament ${
                     value === "own" ? "border text-background" : ""
                   }`}
                 >
                   <TabsTrigger
                     value="own"
-                    className="data-[state=active]:bg-rust text-filament hover:data-[state=active]:bg-filament hover:text-carbon"
+                    className="data-[state=active]:bg-rust data-[state=active]:text-filament hover:data-[state=active]:bg-background hover:data-[state=active]:text-rust "
                   >
                     {getListingsTabLabel()}
                   </TabsTrigger>
                 </Button>
                 {canEdit && (
                   <Button
-                    variant="outline"
                     asChild
-                    className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-rust ${
+                    className={`text-xs sm:text-sm px-2 sm:px-4 hover:bg-rust hover:text-filament ${
                       value === "upvoted" ? "border text-background" : ""
                     }`}
                   >
                     <TabsTrigger
                       value="upvoted"
-                      className="data-[state=active]:bg-foreground"
+                      className="data-[state=active]:bg-rust data-[state=active]:text-filament hover:data-[state=active]:bg-background hover:data-[state=active]:text-rust"
                     >
                       Upvoted Robots
                     </TabsTrigger>

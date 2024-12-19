@@ -9,6 +9,7 @@ export default {
       pointer: "var(--pointer)",
       grab: "var(--grab)",
       grabbing: "var(--grabbing)",
+      selector: "var(--selector)",
     },
     fontFamily: {
       planar: ["GT Planar", "sans-serif"],
@@ -17,6 +18,9 @@ export default {
       orbitron: ["Orbitron", "sans-serif"],
     },
     extend: {
+      screens:{
+        ml: '1170px',
+      },
       animation: {
         meteor: "meteor 5s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",

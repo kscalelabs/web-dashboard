@@ -1,18 +1,22 @@
+import ROUTES from "@/lib/types/routes";
+
 export const transitionEaseLinearDuration300: string =
   " transition ease-linear duration-300 ";
 
-export const navItems: string[] = ["Docs", "Log In", "Buy K-Bot"];
-export const navItemLinks: { link: string; target: string }[] = [
-  { link: "https://docs.kscale.dev/", target: "_blank" },
-  { link: "/login", target: "_self" },
-  { link: "https://discord.com/invite/kscale", target: "_blank" },
+export const navItems: string[] = ["Docs", "Robots Hub", "Account", "Login"];
+export const navItemLinks: { link: string }[] = [
+  { link: "https://docs.kscale.dev" },
+  { link: ROUTES.BOTS.BROWSE.path },
+  { link: ROUTES.ACCOUNT.path },
+  { link: "/login" },
 ];
 
-export const navItemsMobile: string[] = ["Docs", "Log In", "Discord"];
-export const navItemLinksMobile: { link: string; target: string }[] = [
-  { link: "https://docs.kscale.dev/", target: "_blank" },
-  { link: "/login", target: "_self" },
-  { link: "https://discord.com/invite/kscale", target: "_blank" },
+export const navItemsMobile: string[] = ["Docs", "Robots Hub", "Account", "Login"];
+export const navItemLinksMobile: { link: string; }[] = [
+  { link: "https://docs.kscale.dev"},
+  { link: ROUTES.BOTS.BROWSE.path },
+  { link: ROUTES.ACCOUNT.path },
+  { link: "/login" },
 ];
 
 export enum IconMode {

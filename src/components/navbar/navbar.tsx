@@ -3,11 +3,8 @@ import React, { useEffect, useState } from "react";
 import Logotype from "@/components/logotypes/logotype";
 import { BurgerMenu } from "@/components/navbar/burgerMenu";
 import BurgerOpenButton from "@/components/navbar/burgerOpenButton";
-import { NavDocsButton, NavLogInButton } from "@/components/navbar/navButtons";
-import { NavCTAButton } from "@/components/ui/CTAButtons";
-import { FillMode } from "@/components/util/constants";
+import {NavAccountButton, NavDocsButton, NavLogInButton, NavRobotsHubButton} from "@/components/navbar/navButtons";
 import { useWindowSize } from "@/components/util/functions";
-import { useAuthentication } from "@/hooks/useAuth";
 import clsx from "clsx";
 import {
   AnimatePresence,
@@ -16,12 +13,12 @@ import {
   useScroll,
 } from "motion/react";
 
+
 const NavBar = () => {
   const { scrollY } = useScroll();
   const [, setDesktopNavHidden] = useState(false);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
-  const { isAuthenticated } = useAuthentication();
 
   function update(current: number, previous: number): void {
     if (current < previous) {
@@ -48,7 +45,7 @@ const NavBar = () => {
       <>
         <menu
           className={clsx(
-            "col-span-full grid grid-cols-subgrid overflow-hidden py-4 items-end h-fit px-[5vw] -mx-[5vw]",
+            "col-span-full grid grid-cols-subgrid overflow-hidden items-end h-fit px-[5vw] -mx-[5vw]",
           )}
         >
           <Logotype />
@@ -60,7 +57,7 @@ const NavBar = () => {
           />
         </menu>
         <AnimatePresence>
-          {BurgerMenu(mobileShouldOpenBurger, isAuthenticated)}
+          {BurgerMenu(mobileShouldOpenBurger)}
         </AnimatePresence>
       </>
     );
@@ -70,15 +67,12 @@ const NavBar = () => {
     return (
       <>
         <Logotype />
-        <NavDocsButton />
-        <NavLogInButton />
-
-        <NavCTAButton
-          className="md:col-span-2 md:-col-end-1 2xl:col-span-3 2xl:-col-end-1"
-          mode={FillMode.FILL}
-        >
-          View all products
-        </NavCTAButton>
+        <div className={"flex flex-row xl:-col-end-4 ml:-col-end-5 lg:-col-end-5 -col-end-5 gap-2"}>
+          <NavDocsButton />
+          <NavRobotsHubButton/>
+          <NavAccountButton/>
+          <NavLogInButton />
+        </div>
       </>
     );
   };
@@ -100,7 +94,7 @@ const NavBar = () => {
 
   return (
     <motion.nav className="fixed bg-background top-0 inset-x-0 z-50 lg:py-7 md:h-auto py-4 grid-a grid-rows-[min-content_auto] pointer-events-none">
-      {navBasedOnWidth(width >= 768)}
+      {navBasedOnWidth(width >= 1000)}
     </motion.nav>
   );
 };
