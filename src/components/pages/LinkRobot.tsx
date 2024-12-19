@@ -49,12 +49,12 @@ const LinkRobot = () => {
 
   return (
     <Container>
-      <div className="max-w-md mx-auto mt-12 p-8 bg-white rounded-2xl shadow-lg">
+      <div className="max-w-md mx-auto mt-12 p-8 bg-foreground rounded-2xl shadow-lg">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-3">
+          <h1 className="text-3xl font-bold text-background mb-3">
             Link Your Robot
           </h1>
-          <p className="text-gray-600">
+          <p className="text-background">
             Enter the 6-digit code displayed on your robot
           </p>
         </div>
@@ -73,11 +73,11 @@ const LinkRobot = () => {
                   value={code[index]}
                   onChange={(e) => handleCodeChange(index, e.target.value)}
                   onKeyDown={(e) => handleKeyDown(index, e)}
-                  className="w-full h-16 text-center text-2xl font-semibold border-2 border-gray-200 rounded-xl
+                  className="w-full h-16 text-center text-2xl font-semibold border-2 border-foreground rounded-xl
                     focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200
                     transition-all duration-200
-                    disabled:bg-gray-50 disabled:cursor-not-allowed
-                    placeholder-gray-300"
+                    disabled:bg-foreground disabled:cursor-not-allowed
+                    placeholder-foreground"
                   placeholder="0"
                   disabled={isLoading}
                 />
@@ -88,8 +88,8 @@ const LinkRobot = () => {
             onClick={handleSubmit}
             disabled={isSubmitDisabled}
             className="w-full py-4 px-6 mt-4 bg-blue-600 hover:bg-blue-700
-              text-white font-semibold rounded-xl transition-colors duration-200
-              disabled:bg-gray-300 disabled:cursor-not-allowed
+              text-foreground font-semibold rounded-xl transition-colors duration-200
+              disabled:bg-foreground disabled:cursor-not-allowed
               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             {isLoading ? "Linking..." : "Link Robot"}

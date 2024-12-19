@@ -7,8 +7,8 @@ const Login = () => {
 
   return (
     <div className="mx-8">
-      <div className="flex justify-center items-center">
-        <AuthBlock title="Welcome back!" onClosed={() => navigate(-1)} />
+      <div className="flex min-h-[80dvh] justify-center items-center">
+        <AuthBlock title=" Welcome back!" onClosed={() => navigate(-1)} />
       </div>
     </div>
   );

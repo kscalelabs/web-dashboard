@@ -121,7 +121,7 @@ const CreateShare = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block mb-2 text-sm font-medium text-gray-1"
+                  className="block mb-2 text-sm font-medium text-foreground"
                 >
                   Name
                 </label>
@@ -140,7 +140,7 @@ const CreateShare = () => {
               <div className="relative">
                 <label
                   htmlFor="description"
-                  className="block mb-2 text-sm font-medium text-gray-1"
+                  className="block mb-2 text-sm font-medium text-foreground"
                 >
                   Description (supports Markdown formatting)
                 </label>
@@ -169,7 +169,7 @@ const CreateShare = () => {
               <div>
                 <label
                   htmlFor="slug"
-                  className="block mb-2 text-sm font-medium text-gray-300"
+                  className="block mb-2 text-sm font-medium text-foreground"
                 >
                   Slug
                 </label>
@@ -194,10 +194,10 @@ const CreateShare = () => {
               {/* URL Preview */}
               {previewUrl && (
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-gray-1">
+                  <label className="block mb-2 text-sm font-medium text-foreground">
                     Listing URL Preview
                   </label>
-                  <div className="p-2 bg-gray-5 rounded-md text-gray-12">
+                  <div className="p-2 bg-foreground rounded-md text-background">
                     {previewUrl}
                   </div>
                 </div>
@@ -205,7 +205,7 @@ const CreateShare = () => {
 
               {/* Photos */}
               <div>
-                <label className="block mb-2 text-sm font-medium text-gray-1">
+                <label className="block mb-2 text-sm font-medium text-foreground">
                   Photos
                 </label>
                 <UploadContent images={images} onChange={handleImageChange} />

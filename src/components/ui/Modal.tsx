@@ -26,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({
         onClick={onClose}
       ></div>
       <div
-        className={`relative bg-gray-12 text-gray-1 border border-gray-1 rounded-lg z-10 max-w-${size} w-full ${className}`}
+        className={`relative bg-background text-foreground border border-foreground rounded-lg z-10 max-w-${size} w-full ${className}`}
       >
         <button
           onClick={onClose}

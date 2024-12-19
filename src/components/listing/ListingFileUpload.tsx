@@ -90,7 +90,7 @@ const ListingFileUpload = (props: Props) => {
             <div className="w-full flex flex-col justify-center">
               <div className="text-center">{description}</div>
               {fileExtensions && (
-                <div className="text-center text-sm text-gray-7">
+                <div className="text-center text-sm text-foreground">
                   File extensions: {fileExtensions.join(", ")}
                 </div>
               )}
@@ -113,7 +113,7 @@ const ListingFileUpload = (props: Props) => {
                 e.stopPropagation();
                 onValueChange();
               }}
-              className="mt-2 border border-gray-2 hover:bg-gray-11 bg-gray-12 text-gray-2 rounded-lg"
+              className="mt-2 border border-foreground hover:bg-gray-11 bg-background text-foreground rounded-lg"
             >
               <span>Upload</span>
             </FileSubmitButton>

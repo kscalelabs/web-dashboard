@@ -27,15 +27,15 @@ const TerminalAllRobots = ({ robots, onDeleteRobot }: Props) => {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col gap-4 justify-center items-center bg-gray-12 p-10 rounded-lg max-w-3xl mx-auto border border-white">
-          <p className="text-gray-2 font-medium sm:text-lg">
+        <div className="flex flex-col gap-4 justify-center items-center bg-background p-10 rounded-lg max-w-3xl mx-auto border border-foreground">
+          <p className="text-foreground font-medium sm:text-lg">
             No robots registered.
           </p>
-          <p className="text-gray-2">Register a robot to get started.</p>
+          <p className="text-foreground">Register a robot to get started.</p>
           <Button
             variant="default"
             onClick={() => navigate(ROUTES.BOTS.BROWSE.path)}
-            className="flex items-center bg-gray-12 text-white hover:bg-gray-8 border border-white"
+            className="flex items-center bg-background text-foreground hover:bg-foreground border border-foreground"
           >
             <span>Browse Robots</span>
           </Button>

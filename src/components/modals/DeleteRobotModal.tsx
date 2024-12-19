@@ -64,7 +64,7 @@ export function DeleteRobotModal({
             </span>
           </div>
         </div>
-        {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+        {error && <div className="text-oxide text-sm mt-2">{error}</div>}
         <div className="flex justify-between gap-2">
           <Button onClick={onClose} variant="outline" disabled={isLoading}>
             Cancel

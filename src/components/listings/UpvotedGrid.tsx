@@ -108,7 +108,7 @@ const UpvotedGrid = ({ page, setPage }: UpvotedGridProps) => {
       </div>
       <div className="flex justify-between mt-6">
         <button
-          className={`px-4 py-2 rounded flex items-center justify-center ${prevButton ? "bg-gray-12 text-white" : "bg-gray-7 text-gray-12 cursor-not-allowed"}`}
+          className={`px-4 py-2 rounded flex items-center justify-center ${prevButton ? "bg-background text-foreground" : "bg-foreground text-background cursor-not-allowed"}`}
           onClick={() => {
             if (prevButton) {
               setPage(page - 1);
@@ -119,7 +119,7 @@ const UpvotedGrid = ({ page, setPage }: UpvotedGridProps) => {
           <span>Previous</span>
         </button>
         <button
-          className={`px-4 py-2 rounded flex items-center justify-center ${nextButton ? "bg-gray-12 text-white" : "bg-gray-7 text-gray-12 cursor-not-allowed"}`}
+          className={`px-4 py-2 rounded flex items-center justify-center ${nextButton ? "bg-background text-foreground" : "bg-foreground text-background cursor-not-allowed"}`}
           onClick={() => {
             if (nextButton) {
               setPage(page + 1);

@@ -52,7 +52,7 @@ const MediumArticles: React.FC = () => {
   }
 
   if (error) {
-    return <p className="text-gray-12">Error: {error}</p>;
+    return <p className="text-background">Error: {error}</p>;
   }
 
   return (
@@ -84,7 +84,7 @@ const MediumCard: React.FC<{ article: ResearchPost }> = ({ article }) => {
       : fallbackImage;
 
   return (
-    <Card className="bg-black border-gray-700 hover:border-white transition-all duration-300">
+    <Card className="bg-background border-gray-700 hover:botext-foreground transition-all duration-300">
       <CardContent className="p-0 flex flex-col">
         <a
           href={article.link}
@@ -109,7 +109,7 @@ const MediumCard: React.FC<{ article: ResearchPost }> = ({ article }) => {
               alt={article.author}
               className="rounded-full h-6 w-6"
             />
-            <div className="flex items-center gap-2 text-sm text-gray-400">
+            <div className="flex items-center gap-2 text-sm text-foreground">
               <span>{article.author}</span>
               <span>·</span>
               <span>{new Date(article.pubDate).toLocaleDateString()}</span>
@@ -122,10 +122,10 @@ const MediumCard: React.FC<{ article: ResearchPost }> = ({ article }) => {
             rel="noopener noreferrer"
             className="block"
           >
-            <h2 className="text-lg font-medium text-white mb-2 hover:underline line-clamp-2">
+            <h2 className="text-lg font-medium text-foreground mb-2 hover:underline line-clamp-2">
               {article.title}
             </h2>
-            <p className="text-sm text-gray-400 line-clamp-2 mb-4">
+            <p className="text-sm text-foreground line-clamp-2 mb-4">
               {article.description.replace(/<\/?[^>]+(>|$)/g, "")}
             </p>
           </a>
@@ -134,7 +134,7 @@ const MediumCard: React.FC<{ article: ResearchPost }> = ({ article }) => {
             href={article.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-white hover:underline"
+            className="text-sm text-foreground hover:underline"
           >
             Read More
           </a>

@@ -5,7 +5,7 @@ const Signup = () => {
     <div className="mx-8">
       <div className="flex justify-center items-center">
         <AuthBlock
-          title={<span className="text-gray-2">Welcome!</span>}
+          title={<span className="text-foreground">Welcome!</span>}
           signup
         />
       </div>

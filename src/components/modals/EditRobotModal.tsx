@@ -102,7 +102,7 @@ export function EditRobotModal({
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="bg-gray-2 border-gray-3 text-gray-12"
+              className="bg-foreground border-foreground text-background"
               maxLength={32}
             />
             <div className="text-xs text-gray-11 text-right">
@@ -113,7 +113,7 @@ export function EditRobotModal({
           <div className="grid gap-2">
             <Label
               htmlFor="description"
-              className="text-sm font-medium text-gray-1"
+              className="text-sm font-medium text-foreground"
             >
               Description
             </Label>
@@ -121,7 +121,7 @@ export function EditRobotModal({
               id="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="bg-gray-2 border-gray-3 text-gray-12"
+              className="bg-foreground border-foreground text-background"
               rows={3}
               maxLength={2048}
             />
@@ -133,7 +133,7 @@ export function EditRobotModal({
           <div className="grid gap-2">
             <Label
               htmlFor="orderId"
-              className="text-sm font-medium text-gray-1"
+              className="text-sm font-medium text-foreground"
             >
               Order ID (Optional)
             </Label>
@@ -141,12 +141,12 @@ export function EditRobotModal({
               id="orderId"
               value={orderId}
               onChange={(e) => setOrderId(e.target.value)}
-              className="bg-gray-2 border-gray-3 text-gray-12"
+              className="bg-foreground border-foreground text-background"
             />
           </div>
         </div>
 
-        {error && <div className="text-red-500 text-sm mt-4">{error}</div>}
+        {error && <div className="text-oxide text-sm mt-4">{error}</div>}
 
         <div className="flex justify-end mt-6">
           <Button

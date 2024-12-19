@@ -69,7 +69,7 @@ const ListingRenderer = ({ listing }: { listing: ListingResponse }) => {
             userVote={userVote}
           />
 
-          <hr className="border-gray-200 my-4" />
+          <hr className="border-foreground my-4" />
 
           {/* Metadata */}
           <ListingMetadata
@@ -82,7 +82,7 @@ const ListingRenderer = ({ listing }: { listing: ListingResponse }) => {
             createdAt={createdAt}
           />
 
-          <hr className="border-gray-2 my-4" />
+          <hr className="border-foreground my-4" />
 
           <ListingDescription
             listingId={listingId}
@@ -90,7 +90,7 @@ const ListingRenderer = ({ listing }: { listing: ListingResponse }) => {
             edit={canEdit}
           />
 
-          <hr className="border-gray-200 my-4" />
+          <hr className="border-foreground my-4" />
 
           {/* Build this robot */}
           <div className="flex flex-col gap-4">

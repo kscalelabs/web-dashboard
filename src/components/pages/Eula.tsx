@@ -6,7 +6,7 @@ const Eula = () => {
       <h1 className="text-3xl font-bold mb-2">
         Software End User License Agreement (EULA)
       </h1>
-      <p className="mb-4 text-sm text-gray-2">
+      <p className="mb-4 text-sm text-foreground">
         Effective Date: November 1, 2024
       </p>
       <p className="mb-4">
@@ -136,7 +136,7 @@ const Eula = () => {
         </p>
       </section>
 
-      <p className="mt-8 text-sm text-gray-600">
+      <p className="mt-8 text-sm text-filament-60">
         © 2024 K-Scale Labs. All Rights Reserved.
       </p>
     </Container>

@@ -45,11 +45,11 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({
         <div>
           <label
             htmlFor="username"
-            className="block text-sm font-medium text-gray-1"
+            className="block text-sm font-medium text-foreground"
           >
             Username
           </label>
-          <p className="text-xs text-gray-8 italic">
+          <p className="text-xs text-foreground italic">
             Changing your username will change the URL for all your posted
             listings.
           </p>
@@ -68,7 +68,7 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({
               className={`text-sm ${
                 isUsernameAvailable && !usernameError
                   ? "text-green-500"
-                  : "text-red-500"
+                  : "text-oxide"
               }`}
             >
               {usernameError ||
@@ -108,14 +108,14 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({
         </div>
 
         <div>
-          <label htmlFor="bio" className="block text-lg font-medium">
+          <label htmlFor="bio" className="block text-lg font-medium cursor-selector">
             Bio
           </label>
           <TextArea
             id="bio"
             value={bio}
             onChange={(e) => setBio(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-11 shadow-sm focus:border-primary-9 focus:ring focus:ring-primary-9 focus:ring-opacity-50"
+            className="cursor-selector mt-1 block w-full rounded-md border-plasma shadow-sm focus:border-plasma focus:ring focus:ring-plasma focus:ring-opacity-50"
             rows={3}
           />
         </div>

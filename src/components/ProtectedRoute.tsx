@@ -1,7 +1,8 @@
 import { Navigate, useLocation } from "react-router-dom";
+
+import { useFeaturedListings } from "@/components/listing/FeaturedListings";
 import { useAuthentication } from "@/hooks/useAuth";
 import ROUTES from "@/lib/types/routes";
-import { useFeaturedListings } from "@/components/listing/FeaturedListings";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -18,16 +19,18 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
     ROUTES.SIGNUP.EMAIL.path,
   ] as const;
 
-  if (publicPaths.some(path => location.pathname === path)) {
+  if (publicPaths.some((path) => location.pathname === path)) {
     return <>{children}</>;
   }
 
-  if (location.pathname.includes('/bots/browse') && !isAuthenticated) {
-    return <Navigate to={ROUTES.LOGIN.path} state={{ from: location }} replace />;
+  if (location.pathname.includes("/bots/browse") && !isAuthenticated) {
+    return (
+      <Navigate to={ROUTES.LOGIN.path} state={{ from: location }} replace />
+    );
   }
 
-  if (location.pathname.startsWith('/bot/')) {
-    const isFeaturedListing = featuredListings?.some(listing => {
+  if (location.pathname.startsWith("/bot/")) {
+    const isFeaturedListing = featuredListings?.some((listing) => {
       const listingPath = ROUTES.BOT.buildPath({
         username: listing.username,
         slug: listing.slug || "",
@@ -36,10 +39,14 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
     });
 
     if (!isAuthenticated && !isFeaturedListing) {
-      return <Navigate to={ROUTES.LOGIN.path} state={{ from: location }} replace />;
+      return (
+        <Navigate to={ROUTES.LOGIN.path} state={{ from: location }} replace />
+      );
     }
   } else if (!isAuthenticated) {
-    return <Navigate to={ROUTES.LOGIN.path} state={{ from: location }} replace />;
+    return (
+      <Navigate to={ROUTES.LOGIN.path} state={{ from: location }} replace />
+    );
   }
 
   return <>{children}</>;

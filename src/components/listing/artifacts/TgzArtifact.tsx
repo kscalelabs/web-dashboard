@@ -91,7 +91,7 @@ const CodeInstructions = ({ artifactId }: { artifactId: string }) => {
         </li>
         <li>
           In your Python code:
-          <pre className="text-gray-800 bg-gray-200 p-2 rounded mt-1 text-xs overflow-x-auto">
+          <pre className="text-background bg-foreground p-2 rounded mt-1 text-xs overflow-x-auto">
             <Highlight
               className="language-python"
               innerHTML={true}

@@ -130,7 +130,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
   }, [robot.robot_id]);
 
   return (
-    <div className="min-h-screen bg-black p-4 font-mono text-white">
+    <div className="min-h-screen bg-background p-4 font-mono text-foreground">
       {/* Navigation buttons */}
       <div className="flex gap-4 mb-4">
         <Button
@@ -164,7 +164,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="flex-1 bg-black border border-gray-700 px-2 py-1 text-white focus:outline-none focus:ring-1 focus:border-white"
+                className="flex-1 bg-background border border-background px-2 py-1 text-foreground focus:outline-none focus:ring-1 focus:border-foreground"
                 autoFocus
               />
               <Button
@@ -188,7 +188,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
               <h1 className="text-xl font-bold">{name || "Unnamed Robot"}</h1>
               <button
                 onClick={() => setIsEditingName(true)}
-                className="text-sm border border-gray-700 px-2 py-1 hover:bg-gray-700 transition-colors"
+                className="text-sm border border-background px-2 py-1 hover:bg-background transition-colors"
               >
                 Edit
               </button>
@@ -202,7 +202,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
               <textarea
                 value={description || ""}
                 onChange={(e) => setDescription(e.target.value)}
-                className="flex-1 bg-black border border-gray-700 px-2 py-1 text-white focus:outline-none focus:ring-1 focus:border-white min-h-[80px] font-mono"
+                className="flex-1 bg-background border border-background px-2 py-1 text-foreground focus:outline-none focus:ring-1 focus:border-foreground min-h-[80px] font-mono"
                 autoFocus
               />
               <div className="flex flex-col gap-2">
@@ -230,7 +230,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
               </p>
               <button
                 onClick={() => setIsEditingDescription(true)}
-                className="text-sm border border-gray-700 px-2 py-1 hover:bg-gray-700 transition-colors"
+                className="text-sm border border-background px-2 py-1 hover:bg-background transition-colors"
               >
                 Edit
               </button>
@@ -245,17 +245,17 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
         <AVStreamer />
 
         {/* 3D Mesh Visualization panel */}
-        <div className="border border-gray-700 bg-black rounded-lg h-full w-full overflow-hidden">
+        <div className="border border-background bg-background rounded-lg h-full w-full overflow-hidden">
           <TerminalRobotModel listingId={robot.listing_id} />
         </div>
 
         {/* Klang Input panel */}
-        <div className="border border-gray-700 bg-black rounded-lg overflow-hidden min-h-[300px]">
+        <div className="border border-background bg-background rounded-lg overflow-hidden min-h-[300px]">
           <div className="p-4 h-full flex flex-col gap-4">
             {FEATURE_FLAGS.KLANG_EXECUTION ? (
               <>
                 <textarea
-                  className="w-full h-full bg-black text-white border border-gray-700 p-2 font-mono resize-none focus:outline-none focus:ring-1 focus:border-white"
+                  className="w-full h-full bg-background text-foreground border border-background p-2 font-mono resize-none focus:outline-none focus:ring-1 focus:border-foreground"
                   placeholder="Enter code here..."
                 />
                 <Button variant="default" className="w-full">
@@ -266,12 +266,12 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
               <>
                 <div className="relative flex-1">
                   <textarea
-                    className="w-full h-full bg-black text-gray-500 border border-gray-700 p-2 font-mono resize-none focus:outline-none cursor-not-allowed"
+                    className="w-full h-full bg-background text-gray-500 border border-background p-2 font-mono resize-none focus:outline-none cursor-not-allowed"
                     placeholder="Klang code execution coming soon..."
                     disabled
                   />
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <span className="px-2 py-1 bg-gray-800 text-gray-400 rounded text-sm">
+                    <span className="px-2 py-1 bg-background text-foreground rounded text-sm">
                       Demo - In Development
                     </span>
                   </div>
@@ -289,8 +289,8 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
         </div>
 
         {/* Console output panel */}
-        <div className="border border-gray-700 bg-black rounded-lg overflow-hidden min-h-[300px]">
-          <div className="p-4 h-full overflow-auto whitespace-pre-wrap">
+        <div className="border border-background bg-background rounded-lg overflow-hidden min-h-[300px]">
+          <div className="p-4 h-full overflow-auto foregroundspace-pre-wrap">
             {[...terminalMessages].reverse().map((message, index) => (
               <div key={index}>{message}</div>
             ))}
@@ -298,7 +298,7 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
         </div>
 
         {krecs.length > 0 && (
-          <div className="border border-gray-700 bg-black rounded-lg overflow-hidden">
+          <div className="border border-background bg-background rounded-lg overflow-hidden">
             <div className="p-4 flex flex-col gap-4 max-h-[600px]">
               <div className="flex justify-between items-center">
                 <h3 className="text-sm font-semibold">Uploaded Files</h3>
@@ -338,15 +338,15 @@ const TerminalSingleRobot = ({ robot, onUpdateRobot }: Props) => {
         )}
 
         {selectedKrec && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-black border border-gray-700 rounded-lg w-full max-w-4xl">
-              <div className="p-4 border-b border-gray-700 flex justify-between items-center">
+          <div className="fixed inset-0 bg-background bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div className="bg-background border border-background rounded-lg w-full max-w-4xl">
+              <div className="p-4 border-b border-background flex justify-between items-center">
                 <h3 className="text-lg font-semibold">{selectedKrec.name}</h3>
                 <div className="flex gap-2">
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="text-red-500"
+                    className="text-oxide"
                     onClick={() => {
                       setDeleteKrecId(selectedKrec.id);
                       setSelectedKrec(null);

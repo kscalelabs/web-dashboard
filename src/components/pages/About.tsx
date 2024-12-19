@@ -4,7 +4,7 @@ import Container from "@/components/ui/container";
 const About = () => {
   return (
     <Container>
-      <div className="text-center bg-gray-12 text-gray-1 rounded-lg p-8">
+      <div className="text-center bg-background text-foreground rounded-lg p-8">
         <h1 className="text-4xl font-bold mb-4">K-Scale Labs</h1>
 
         <div className="my-6">
@@ -67,26 +67,6 @@ const About = () => {
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <footer className="mt-12 space-y-4">
-          <div>
-            <small className="block italic mb-2">Follow us on</small>
-            <div className="space-x-2">
-              <a href="https://discord.gg/kscale">Discord</a>
-              <a href="https://twitter.com/kscalelabs">Twitter</a>
-              <a href="https://github.com/kscalelabs">Github</a>
-              <a href="https://facebook.com/kscalelabs">FB</a>
-              <a href="https://instagram.com/kscalelabs">IG</a>
-            </div>
-          </div>
-          <div>
-            <small>
-              <a href="mailto:inquiries@kscalelabs.com">Business Inquiries</a>{" "}
-              <a href="https://calendly.com/kscale">Schedule a Call</a>
-            </small>
-          </div>
-        </footer>
       </div>
     </Container>
   );

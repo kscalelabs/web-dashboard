@@ -173,7 +173,7 @@ const FileBrowser = () => {
               {artifact.name}
             </h1>
             {artifact.description && (
-              <p className="text-sm text-gray-600 mt-2 break-words whitespace-pre-wrap overflow-wrap-anywhere">
+              <p className="text-sm text-filament-60 mt-2 break-words whitespace-pre-wrap overflow-wrap-anywhere">
                 {artifact.description}
               </p>
             )}
@@ -253,14 +253,14 @@ const FileBrowser = () => {
       </div>
       <div className="flex flex-col lg:flex-row lg:space-x-4">
         <div className="w-full lg:w-1/3 mb-4 lg:mb-0">
-          <div className="border border-gray-300 rounded-md p-6 relative lg:h-[600px] overflow-auto">
+          <div className="border border-foreground rounded-md p-6 relative lg:h-[600px] overflow-auto">
             {untarring ? (
               <div className="absolute inset-0 flex items-center justify-center">
                 <Spinner />
               </div>
             ) : untarredFiles.length === 0 ? (
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-gray-500">No files available</div>
+                <div className="text-filament-60">No files available</div>
               </div>
             ) : (
               <FileTreeViewer
@@ -272,16 +272,16 @@ const FileBrowser = () => {
           </div>
         </div>
         <div className="w-full lg:w-2/3">
-          <div className="border border-gray-300 rounded-md overflow-hidden relative h-[600px]">
+          <div className="border border-foreground rounded-md overflow-hidden relative h-[600px]">
             {selectedFile ? (
               <>
-                <div className="absolute top-2 left-2 z-10 bg-black/50 text-white px-2 py-1 rounded max-w-[80%] truncate">
+                <div className="absolute top-2 left-2 z-10 bg-background/50 text-foreground px-2 py-1 rounded max-w-[80%] truncate">
                   {selectedFile.name}
                 </div>
                 <FileRenderer file={selectedFile} allFiles={untarredFiles} />
               </>
             ) : (
-              <div className="h-full flex items-center justify-center text-gray-500">
+              <div className="h-full flex items-center justify-center text-filament-60">
                 Select a file to view its 3D model
               </div>
             )}

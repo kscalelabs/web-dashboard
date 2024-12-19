@@ -28,7 +28,7 @@ const ListingRegisterRobot = ({ listingId, className }: Props) => {
         <span className="mr-2">Create Robot Instance</span>
       </Button>
 
-      <p className="text-xs text-gray-6">
+      <p className="text-xs text-foreground">
         You can interact with your registered robots in the terminal.
       </p>
 

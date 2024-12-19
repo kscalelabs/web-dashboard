@@ -47,8 +47,8 @@ const GDPRBanner: React.FC = () => {
   return (
     <>
       {isVisible && !showOptOutForm && (
-        <div className="bg-gray-12 p-4 fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-lg flex flex-col items-center z-50 shadow-md rounded-lg border border-gray-2">
-          <div className="text-gray-1 text-xs sm:text-sm text-center mb-2 max-w-full">
+        <div className="bg-background p-4 fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-lg flex flex-col items-center z-50 shadow-md rounded-lg border border-foreground">
+          <div className="text-foreground text-xs sm:text-sm text-center mb-2 max-w-full">
             We value your privacy 🔒 <br />
             We use cookies to make it easier to interact with our website and to
             improve it. We want to better understand how our website is used.
@@ -57,7 +57,7 @@ const GDPRBanner: React.FC = () => {
               href="https://kscale.dev/privacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary-9 underline ml-1"
+              className="text-foreground underline ml-1 hover:border-rust"
             >
               Privacy Policy
             </a>
@@ -65,13 +65,13 @@ const GDPRBanner: React.FC = () => {
           </div>
           <div className="flex justify-center gap-2">
             <button
-              className="bg-gray-12 text-gray-1 border border-gray-7 rounded-full px-4 py-2 text-sm hover:bg-gray-8"
+              className="bg-background text-foreground border border-foreground rounded-full px-4 py-2 text-sm hover:bg-rust hover:text-filament hover:border-rust"
               onClick={handleOptOut}
             >
               Opt out
             </button>
             <button
-              className="bg-gray-1 text-gray-12 rounded-full px-4 py-2 transition-colors duration-300 hover:bg-gray-11"
+              className="bg-foreground text-background border border-foreground rounded-full px-4 py-2 transition-colors duration-300 hover:bg-plasma hover:text-filament hover:border-plasma"
               onClick={handleAccept}
             >
               Accept
@@ -81,13 +81,13 @@ const GDPRBanner: React.FC = () => {
       )}
 
       {showOptOutForm && (
-        <div className="bg-gray-12 p-4 fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-lg flex flex-col items-center z-50 shadow-md rounded-lg border border-gray-2">
-          <div className="text-gray-1 text-sm text-center mb-2 max-w-full">
+        <div className="bg-background p-4 fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-lg flex flex-col items-center z-50 shadow-md rounded-lg border border-foreground">
+          <div className="text-foreground text-sm text-center mb-2 max-w-full">
             Please select which services you would like to opt out of.
           </div>
 
           <div className="flex justify-between w-full px-4 py-2">
-            <label className="text-gray-1 text-sm">Necessary</label>
+            <label className="text-foreground text-sm">Necessary</label>
             <input
               type="checkbox"
               checked={true}
@@ -97,7 +97,7 @@ const GDPRBanner: React.FC = () => {
           </div>
 
           <div className="flex justify-between w-full px-4 py-2">
-            <label className="text-gray-1 text-sm">Analytics</label>
+            <label className="text-foreground text-sm">Analytics</label>
             <input
               type="checkbox"
               checked={googleAnalyticsConsent}
@@ -109,7 +109,7 @@ const GDPRBanner: React.FC = () => {
           </div>
 
           <div className="flex justify-between w-full px-4 py-2">
-            <label className="text-gray-1 text-sm">User Experience</label>
+            <label className="text-foreground text-sm">User Experience</label>
             <input
               type="checkbox"
               checked={sprigConsent && pendoConsent}
@@ -123,13 +123,13 @@ const GDPRBanner: React.FC = () => {
 
           <div className="flex justify-center gap-2 mt-4">
             <button
-              className="bg-gray-12 text-gray-1 border border-gray-7 rounded-full px-4 py-2 text-sm hover:bg-gray-8"
+              className="bg-background text-foreground border border-foreground rounded-full px-4 py-2 text-sm hover:bg-foreground"
               onClick={handleBackToBanner}
             >
               Back
             </button>
             <button
-              className="bg-primary-9 text-black rounded-full px-4 py-2 transition-colors duration-300 hover:bg-gray-11"
+              className="bg-foreground text-background rounded-full px-4 py-2 transition-colors duration-300 hover:bg-foreground"
               onClick={handleSaveOptOutPreferences}
             >
               Save Preferences

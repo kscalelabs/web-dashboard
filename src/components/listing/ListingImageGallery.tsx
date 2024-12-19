@@ -152,8 +152,8 @@ const ListingImageItem = ({
       <div
         key={artifact.urls.large}
         className={`aspect-square rounded-lg overflow-hidden cursor-pointer relative ${
-          currentImageIndex === index ? "ring-2 ring-gray-7" : ""
-        } ${artifact.is_main ? "ring-2 ring-white" : ""}`}
+          currentImageIndex === index ? "ring-2 ring-foreground" : ""
+        } ${artifact.is_main ? "ring-2 ring-foreground" : ""}`}
         onClick={() => setCurrentImageIndex(index)}
       >
         <ListingArtifactRenderer artifact={artifact} />
@@ -168,7 +168,7 @@ const ListingImageItem = ({
                     handleSetMain(e);
                   }}
                   disabled={isUpdating}
-                  className="text-gray-1 hover:bg-gray-1 hover:text-gray-12"
+                  className="tebg-foreground hover:bg-foreground hover:tebg-background"
                 >
                   <FaStar />
                 </Button>
@@ -179,7 +179,7 @@ const ListingImageItem = ({
                 <Button
                   variant="default"
                   onClick={initiateDownload}
-                  className="text-gray-12 bg-gray-2 hover:bg-gray-12 hover:text-gray-2"
+                  className="tebg-backgrountext-foreground hover:bg-background hover:text-foreground"
                 >
                   <FaFileDownload />
                 </Button>
@@ -248,7 +248,7 @@ const ListingImageGallery = ({ listingId, ...props }: Props) => {
         </div>
       ) : (
         <div className="flex justify-center items-center h-full">
-          <p className="text-gray-5">No images yet</p>
+          <p className="text-foreground">No images yet</p>
         </div>
       )}
     </>

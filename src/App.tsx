@@ -4,12 +4,13 @@ import "@/App.css";
 
 import NotFoundRedirect from "@/components/NotFoundRedirect";
 import PendoInitializer from "@/components/PendoInitializer";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import SprigInitializer from "@/components/SprigInitializer";
-import Footer from "@/components/footer/Footer";
+import Footer from "@/components/footer/footer";
 import GDPRBanner from "@/components/gdpr/gdprbanner";
 import { FeaturedListingsProvider } from "@/components/listing/FeaturedListings";
-import Navbar from "@/components/nav/Navbar";
+import NavBar from "@/components/navbar/navbar";
 import APIKeys from "@/components/pages/APIKeys";
 import About from "@/components/pages/About";
 import Account from "@/components/pages/Account";
@@ -31,9 +32,8 @@ import Signup from "@/components/pages/Signup";
 import Terminal from "@/components/pages/Terminal";
 import TermsOfService from "@/components/pages/TermsOfService";
 import { AlertQueue, AlertQueueProvider } from "@/hooks/useAlertQueue";
-import { AuthenticationProvider } from "@/hooks/useAuth";
+import {AuthenticationProvider} from "@/hooks/useAuth";
 import ROUTES from "@/lib/types/routes";
-import ProtectedRoute from "@/components/ProtectedRoute";
 
 const App = () => {
   return (
@@ -43,18 +43,21 @@ const App = () => {
           <AlertQueueProvider>
             <AlertQueue>
               <ScrollToTop>
-                <div className="min-h-screen bg-gray-12 text-gray-100 font-mono">
-                  <Navbar />
+                <NavBar/>
+                <div className="min-h-screen bg-background text-foreground font-mono">
                   <GDPRBanner />
                   <PendoInitializer />
                   <SprigInitializer />
                   <div className="flex-grow">
-                    <div className="mt-24 mb-6 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 max-full">
+                    <div className="mt-28 mb-6 mx-4 sm:mx-6 md:mx-10 xl:mx-16 2xl:mx-28 max-full">
                       <Routes>
                         {/* Public routes */}
                         <Route path={ROUTES.LOGIN.path} element={<Login />} />
                         <Route path={ROUTES.SIGNUP.path} element={<Signup />} />
-                        <Route path={ROUTES.SIGNUP.EMAIL.path} element={<EmailSignup />} />
+                        <Route
+                          path={ROUTES.SIGNUP.EMAIL.path}
+                          element={<EmailSignup />}
+                        />
 
                         {/* Protected routes */}
                         <Route
@@ -67,12 +70,7 @@ const App = () => {
                         />
 
                         {/* General pages */}
-                        <Route
-                          path={ROUTES.ABOUT.path}
-                          element={
-                              <About />
-                          }
-                        />
+                        <Route path={ROUTES.ABOUT.path} element={<About />} />
                         <Route
                           path={ROUTES.RESEARCH.path}
                           element={<ResearchPage />}
@@ -162,8 +160,8 @@ const App = () => {
                       </Routes>
                     </div>
                   </div>
-                  <Footer />
                 </div>
+                <Footer />
               </ScrollToTop>
             </AlertQueue>
           </AlertQueueProvider>

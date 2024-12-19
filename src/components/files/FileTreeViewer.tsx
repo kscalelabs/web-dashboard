@@ -51,14 +51,14 @@ const FileTreeView: React.FC<FileTreeViewProps> = ({
     return (
       <div>
         <div
-          className="flex items-center cursor-pointer hover:bg-gray-5 py-1"
+          className="flex items-center cursor-pointer hover:bg-foreground py-1"
           style={{ paddingLeft: `${indent}px` }}
           onClick={toggleOpen}
         >
           {isOpen ? (
-            <FaFolderOpen className="mr-2 text-yellow-500 flex-shrink-0" />
+            <FaFolderOpen className="mr-2 text-molten flex-shrink-0" />
           ) : (
-            <FaFolder className="mr-2 text-yellow-500 flex-shrink-0" />
+            <FaFolder className="mr-2 text-molten flex-shrink-0" />
           )}
           <span className="text-sm truncate text-gray-11" title={node.name}>
             {node.name}
@@ -84,7 +84,7 @@ const FileTreeView: React.FC<FileTreeViewProps> = ({
     const truncatedName = truncateFilename(node.name, 30);
     return (
       <div
-        className={`flex items-center cursor-pointer hover:bg-gray-6 py-1 ${
+        className={`flex items-center cursor-pointer hover:bg-foreground py-1 ${
           isSelected ? "bg-blue-800" : ""
         }`}
         style={{ paddingLeft: `${indent}px` }}
