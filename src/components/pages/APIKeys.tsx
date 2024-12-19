@@ -150,7 +150,7 @@ const APIKeys = () => {
 
   return (
     <RequireAuthentication>
-      <div className="container mx-auto max-w-4xl shadow-md rounded-lg bg-gray-12 text-gray-2 border relative">
+      <div className="container mx-auto max-w-4xl shadow-md rounded-lg bg-background text-foreground border relative">
         <div className="p-6">
           <h1 className="text-3xl font-extrabold mb-4">API Keys</h1>
           {apiKeys === null ? (
@@ -182,10 +182,10 @@ const APIKeys = () => {
                   />
                   <div
                     className={cx(
-                      "relative w-11 h-6 bg-gray-3 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-9",
+                      "relative w-11 h-6 bg-foreground peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-foreground",
                       "rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full",
-                      "peer-checked:after:border-gray-12 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-gray-12",
-                      "after:border-gray-6 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-9",
+                      "peer-checked:after:border-background after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-background",
+                      "after:border-foreground after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-foreground",
                     )}
                   ></div>
                 </label>

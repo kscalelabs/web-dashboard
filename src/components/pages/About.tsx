@@ -69,26 +69,6 @@ const About = () => {
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <footer className="mt-12 space-y-4">
-          <div>
-            <small className="block italic mb-2">Follow us on</small>
-            <div className="space-x-2">
-              <a href="https://discord.gg/kscale">Discord</a>
-              <a href="https://twitter.com/kscalelabs">Twitter</a>
-              <a href="https://github.com/kscalelabs">Github</a>
-              <a href="https://facebook.com/kscalelabs">FB</a>
-              <a href="https://instagram.com/kscalelabs">IG</a>
-            </div>
-          </div>
-          <div>
-            <small>
-              <a href="mailto:inquiries@kscalelabs.com">Business Inquiries</a>{" "}
-              <a href="https://calendly.com/kscale">Schedule a Call</a>
-            </small>
-          </div>
-        </footer>
       </div>
     </Container>
   );
