@@ -39,7 +39,6 @@ export const BurgerMenu = (isOpen: boolean, isAuthenticated: boolean) => {
             }
             return navItemLinksMobile[index].link;
           }
-
           return (
             <motion.button
               key={index}
