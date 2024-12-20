@@ -37,7 +37,7 @@ const ListingMetadata = ({
             onClick={() => {
               navigate(ROUTES.PROFILE.buildPath({ id: creatorId }));
             }}
-            className="text-blue-500 hover:bg-gray-100 rounded px-1 flex items-center gap-1"
+            className="text-plasma hover:bg-plasma hover:text-filament rounded px-1 flex items-center gap-1"
           >
             <FaUser className="text-xs" />
             {creatorName ?? creatorUsername ?? "Creator"}
@@ -51,7 +51,7 @@ const ListingMetadata = ({
               navigator.clipboard.writeText(`${listingTag}`);
               addAlert("Copied to clipboard!", "success");
             }}
-            className="text-blue-500 hover:bg-gray-100 rounded px-1 flex items-center gap-1"
+            className="text-plasma hover:bg-plasma hover:text-filament rounded px-1 flex items-center gap-1"
           >
             <FaClipboard className="text-xs" />
             {listingTag}
@@ -60,7 +60,7 @@ const ListingMetadata = ({
 
         {/* Stats */}
         <span className="flex items-center gap-1">
-          <FaEye /> <span className="ml-1 text-gray-7">{views} views</span>
+          <FaEye /> <span className="ml-1 text-foreground">{views} views</span>
         </span>
         <span className="text-xs">
           Posted {new Date(createdAt * 1000).toLocaleDateString()}
