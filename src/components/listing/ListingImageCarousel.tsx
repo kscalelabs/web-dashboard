@@ -38,7 +38,7 @@ const ListingImageCarousel = (props: Props) => {
   if (imageArtifacts.length === 0) {
     return (
       <div className="w-full md:w-1/2 relative">
-        <div className="aspect-square bg-white rounded-lg overflow-hidden">
+        <div className="aspect-square bg-foreground rounded-lg overflow-hidden">
           <img
             src={placeholder}
             alt={name}
@@ -76,15 +76,15 @@ const ListingImageCarousel = (props: Props) => {
           <>
             <button
               onClick={() => handleNavigate("prev")}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-gray-11"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-foreground/80 w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-rust"
             >
-              <FaChevronLeft className="text-gray-11" />
+              <FaChevronLeft className="text-rust" />
             </button>
             <button
               onClick={() => handleNavigate("next")}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-gray-11"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-foreground/80 w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-rust"
             >
-              <FaChevronRight className="text-gray-11" />
+              <FaChevronRight className="text-rust" />
             </button>
             {/* Dot indicators */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
@@ -96,8 +96,8 @@ const ListingImageCarousel = (props: Props) => {
                   }
                   className={`w-2 h-2 rounded-full transition-colors ${
                     index === currentImageArrayIndex
-                      ? "bg-white"
-                      : "bg-white/40"
+                      ? "bg-rust"
+                      : "bg-rust/40"
                   }`}
                 />
               ))}
@@ -108,12 +108,12 @@ const ListingImageCarousel = (props: Props) => {
 
       {isFullScreen && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-background/90 flex items-center justify-center"
           onClick={() => setIsFullScreen(false)}
         >
           <button
             onClick={() => setIsFullScreen(false)}
-            className="absolute top-4 right-4 text-gray-2 hover:text-gray-11 p-2"
+            className="absolute top-4 right-4 text-foreground hover:text-rust p-2"
           >
             <FaTimes className="w-6 h-6" />
           </button>

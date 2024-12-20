@@ -152,8 +152,8 @@ const ListingImageItem = ({
       <div
         key={artifact.urls.large}
         className={`aspect-square rounded-lg overflow-hidden cursor-pointer relative ${
-          currentImageIndex === index ? "ring-2 ring-foreground" : ""
-        } ${artifact.is_main ? "ring-2 ring-foreground" : ""}`}
+          currentImageIndex === index ? "ring-2 ring-rust/40" : ""
+        } ${artifact.is_main ? "ring-2 ring-rust" : ""}`}
         onClick={() => setCurrentImageIndex(index)}
       >
         <ListingArtifactRenderer artifact={artifact} />
@@ -168,7 +168,7 @@ const ListingImageItem = ({
                     handleSetMain(e);
                   }}
                   disabled={isUpdating}
-                  className="tebg-foreground hover:bg-foreground hover:tebg-background"
+                  className="text-foreground hover:bg-foreground hover:text-background"
                 >
                   <FaStar />
                 </Button>
@@ -179,7 +179,7 @@ const ListingImageItem = ({
                 <Button
                   variant="default"
                   onClick={initiateDownload}
-                  className="tebg-backgrountext-foreground hover:bg-background hover:text-foreground"
+                  className="text-background bg-foreground hover:bg-background hover:text-foreground"
                 >
                   <FaFileDownload />
                 </Button>
