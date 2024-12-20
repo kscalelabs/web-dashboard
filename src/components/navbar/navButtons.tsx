@@ -12,26 +12,40 @@ const arrowLinkVariants = {
 };
 
 const isSignupPage = location.pathname === ROUTES.SIGNUP.path;
-
-export const NavLogInButton = () => {
+const logoutPath =  ROUTES.LOGOUT.path;
+export const NavLogInButton = ({
+  isAuthenticated,
+}: {
+  isAuthenticated: boolean;
+}) => {
   return (
     <motion.a
-      href={isSignupPage ? ROUTES.SIGNUP.path : ROUTES.LOGIN.path}
+      href={isAuthenticated ? logoutPath : isSignupPage ? ROUTES.SIGNUP.path : ROUTES.LOGIN.path}
       target={"_self"}
       className="font-planar text-2xl whitespace-nowrap text-foreground select-none size-fit self-center pointer-events-auto"
       variants={arrowLinkVariants}
       initial="initial"
       whileHover="hover"
     >
-      {isSignupPage ? "Sign Up" : "Log In"}
+      {isAuthenticated ? "Log out" : isSignupPage ? "Sign Up" : "Log In"}
     </motion.a>
   );
 };
 
-export const NavAccountButton = () => {
+export const NavAccountButton = ({
+  isAuthenticated,
+}: {
+  isAuthenticated: boolean;
+}) => {
   return (
     <motion.a
-      href={navItemLinks[2].link}
+      href={
+        isAuthenticated
+          ? navItemLinks[2].link
+          : isSignupPage
+            ? ROUTES.SIGNUP.path
+            : ROUTES.LOGIN.path
+      }
       target={"_self"}
       className="font-planar text-2xl whitespace-nowrap text-foreground select-none size-fit self-center pointer-events-auto"
       variants={arrowLinkVariants}

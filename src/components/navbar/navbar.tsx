@@ -12,6 +12,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "motion/react";
+import {useAuthentication} from "@/hooks/useAuth";
 
 
 const NavBar = () => {
@@ -19,6 +20,7 @@ const NavBar = () => {
   const [, setDesktopNavHidden] = useState(false);
   const [desktopPreviousScroll, setPrevScroll] = useState(scrollY.get());
   const [mobileShouldOpenBurger, setMobileShouldOpenBurger] = useState(false);
+  const { isAuthenticated } = useAuthentication();
 
   function update(current: number, previous: number): void {
     if (current < previous) {
@@ -57,7 +59,7 @@ const NavBar = () => {
           />
         </menu>
         <AnimatePresence>
-          {BurgerMenu(mobileShouldOpenBurger)}
+          {BurgerMenu(mobileShouldOpenBurger, isAuthenticated)}
         </AnimatePresence>
       </>
     );
@@ -70,8 +72,8 @@ const NavBar = () => {
         <div className={"flex flex-row xl:-col-end-4 ml:-col-end-5 lg:-col-end-5 -col-end-5 gap-2"}>
           <NavDocsButton />
           <NavRobotsHubButton/>
-          <NavAccountButton/>
-          <NavLogInButton />
+          <NavAccountButton isAuthenticated={isAuthenticated}/>
+          <NavLogInButton isAuthenticated={isAuthenticated} />
         </div>
       </>
     );
