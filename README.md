@@ -12,7 +12,7 @@
 
 # K-Scale Website
 
-This is the codebase for our website frontend, built with React.
+This is the codebase for our website frontend, built with React and TypeScript.
 
 ## Getting Started
 
