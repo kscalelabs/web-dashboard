@@ -20,7 +20,7 @@ export default function RobotCard({ robot, onDeleteRobot }: RobotCardProps) {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   return (
-    <Card className="w-full bg-background border border-background hover:border-foreground transition-all duration-300">
+    <Card className="w-full bg-background border border-foreground transition-all duration-300">
       <div className="p-6">
         <div className="flex items-center justify-between gap-4">
           <Link
