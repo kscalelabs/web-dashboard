@@ -25,7 +25,7 @@ const ListingArtifactRenderer = ({ artifact }: Props) => {
         <div className="w-full h-full flex flex-col items-center justify-center gap-2">
           <Link
             to={ROUTES.FILE.buildPath({ artifactId: artifact.artifact_id })}
-            className="p-4 hover:bg-gray-700 rounded-lg transition-colors"
+            className="p-4 hover:bg-molten rounded-lg transition-colors"
           >
             <FaFileArchive className="w-16 h-16" />
           </Link>
@@ -47,7 +47,7 @@ const ListingArtifactRenderer = ({ artifact }: Props) => {
             <div className="font-medium text-sm sm:text-base truncate">
               {artifact.name}
             </div>
-            <div className="text-xs text-gray-500">Kernel Image File</div>
+            <div className="text-xs text-foreground">Kernel Image File</div>
             {artifact.size && (
               <div className="text-xs">{formatFileSize(artifact.size)}</div>
             )}
