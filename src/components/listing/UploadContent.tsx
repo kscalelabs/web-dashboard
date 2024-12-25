@@ -59,7 +59,7 @@ const UploadContent: FC<UploadContentProps> = ({ images, onChange }) => {
           {/* Dropzone Area */}
           <div
             className={`
-                border-2 border-dashed p-5 rounded-lg flex flex-col items-center justify-center h-64 transition-colors duration-300 hover:cursor-pointer hover:bg-foreground hover:border-foreground
+                border-2 border-dashed p-5 rounded-lg flex flex-col items-center justify-center h-64 transition-colors duration-300 cursor-pointer hover:bg-foreground hover:border-foreground
                 ${
                   isDragging
                     ? "border-foreground bg-foreground"

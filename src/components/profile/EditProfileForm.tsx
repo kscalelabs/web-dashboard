@@ -108,14 +108,14 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({
         </div>
 
         <div>
-          <label htmlFor="bio" className="block text-lg font-medium cursor-selector">
+          <label htmlFor="bio" className="block text-lg font-medium">
             Bio
           </label>
           <TextArea
             id="bio"
             value={bio}
             onChange={(e) => setBio(e.target.value)}
-            className="cursor-selector mt-1 block w-full rounded-md border-plasma shadow-sm focus:border-plasma focus:ring focus:ring-plasma focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-plasma shadow-sm focus:border-plasma focus:ring focus:ring-plasma focus:ring-opacity-50"
             rows={3}
           />
         </div>

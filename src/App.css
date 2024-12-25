@@ -53,10 +53,6 @@
     --rust: #fa4300ff;
     --molten: #ff9000ff;
     --sol: #f2f091ff;
-    --grab: url("/assets/cursor/grab.svg"), grab;
-    --grabbing: url("/assets/cursor/grabbing.svg"), grabbing;
-    --pointer: url("/assets/cursor/pointer.svg"), pointer;
-    --selector: url("/assets/cursor/text.svg"), text;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -79,9 +75,6 @@
       --rust: #de4208ff;
       --molten: #f18a03ff;
       --sol: #eae9bcff;
-      --grab: url("/assets/cursor/grab_dark.svg"), grab;
-      --grabbing: url("/assets/cursor/grabbing_dark.svg"), grabbing;
-      --pointer: url("/assets/cursor/pointer_dark.svg"), pointer;
     }
 
     *::selection {
@@ -219,93 +212,8 @@
     }
   }
 
-  /*CURSOR*/
   *::selection {
     @apply bg-rust text-background;
-  }
-
-  @media (pointer: fine) and (prefers-color-scheme: light) {
-    body {
-      cursor: url("/assets/cursor/default.svg"), auto;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    span,
-    text,
-    code,
-    blockquote,
-    label,
-    li,
-    p {
-      cursor: url("/assets/cursor/text.svg"), text;
-    }
-
-    button,
-    button *,
-    a,
-    a *,
-    input,
-    input *,
-    label,
-    label *,
-    .pointer {
-      cursor: url("/assets/cursor/pointer.svg"), pointer;
-    }
-
-    .grab {
-      cursor: url("/assets/cursor/grab.svg"), grab;
-    }
-
-    .grab:active {
-      cursor: url("/assets/cursor/grabbing.svg"), grabbing;
-    }
-  }
-
-  @media (pointer: fine) and (prefers-color-scheme: dark) {
-    body {
-      cursor: url("/assets/cursor/default_dark.svg"), auto;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    span,
-    text,
-    code,
-    blockquote,
-    label,
-    li,
-    p {
-      cursor: url("/assets/cursor/text_dark.svg"), text;
-    }
-
-    button,
-    button *,
-    a,
-    a *,
-    input,
-    input *,
-    label,
-    label *,
-    .pointer {
-      cursor: url("/assets/cursor/pointer_dark.svg"), pointer;
-    }
-
-    .grab {
-      cursor: url("/assets/cursor/grab_dark.svg"), grab;
-    }
-
-    .grab:active {
-      cursor: url("/assets/cursor/grabbing_dark.svg"), grabbing;
-    }
   }
 
 .scroll-lock {
