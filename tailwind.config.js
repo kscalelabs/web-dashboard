@@ -5,12 +5,6 @@ export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    cursor: {
-      pointer: "var(--pointer)",
-      grab: "var(--grab)",
-      grabbing: "var(--grabbing)",
-      selector: "var(--selector)",
-    },
     fontFamily: {
       planar: ["GT Planar", "sans-serif"],
       mono: ["Cofo Sans Mono", "monospace"],

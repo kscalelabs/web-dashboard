@@ -25,7 +25,7 @@ export default function RobotCard({ robot, onDeleteRobot }: RobotCardProps) {
         <div className="flex items-center justify-between gap-4">
           <Link
             to={ROUTES.TERMINAL.WITH_ID.buildPath({ id: robot.robot_id })}
-            className="flex items-center gap-4 group flex-grow hover:cursor-pointer"
+            className="flex items-center gap-4 group flex-grow cursor-pointer"
           >
             <div className="p-2 bg-background rounded-lg group-hover:bg-background transition-colors">
               <FaRobot className="h-6 w-6 text-foreground" />
