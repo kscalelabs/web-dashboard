@@ -195,6 +195,11 @@ export default function Footer() {
             title: "Send feedback",
             url: "https://docs.google.com/forms/d/e/1FAIpQLSemVaJ6HfieS9xDKv7SqWYArHyHLV-kraraiT_VEmPL_6lkPw/viewform",
           },
+          {
+            title: "About",
+            url: "/about",
+            isInternal: true
+          },
         ]}
         extraStyling={"col-span-2 sm:col-span-3 sm:col-start-4 md:col-span-2"}
       />
